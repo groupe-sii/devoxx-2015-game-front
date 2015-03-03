@@ -9,11 +9,11 @@ RPG.run(function() {
 
   'use strict';
 
+  var transport = RPG.Factory.transport();
   var player = RPG.Factory.player('Wizard');
-  var gfx = RPG.Factory.gfx();
   var game = RPG.Factory.game();
   var enemy = null;
-  var nbEnemy = 30;
+  var nbEnemy = 5;
   
   for (var i = nbEnemy - 1; i >= 0; i--) {
     enemy = RPG.Factory.enemy();
@@ -22,7 +22,7 @@ RPG.run(function() {
   };
   
   game.addPlayer(player);
-  game.play();
-  game.bots(true);
+  // game.bots(true);
+  // game.play();
 
 });
