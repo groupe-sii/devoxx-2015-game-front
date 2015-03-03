@@ -11,7 +11,7 @@ RPG.module('Transport', function() {
 
 	function Transport(PubSub){
 		this.pubsub = PubSub;
-		this.client = Stomp.over(new SockJS('http://192.168.0.32:8080/survival-game/game'));
+		this.client = Stomp.over(new SockJS('http://localhost:8080/survival-game/game'));
 		this.topics = {
 			subscribeTo : {
 				'/server/player/join': '/topic/game/player/join'
@@ -40,7 +40,7 @@ RPG.module('Transport', function() {
 		// this.client.subscribe('/topic/game/board/added', this.pubsub.subscribe);
 		this.pubsub.subscribe('/server/player/join', function(){
 			var data = [].slice.call(arguments, 1); // remove the topic
-			this.client.send('/topic/game/board/added', {}, JSON.stringify(data[0]));
+			this.client.send('/topic/game/player/join', {}, JSON.stringify(data[0]));
 		}.bind(this));
 	}
 
