@@ -23,7 +23,13 @@ RPG.module('Game', function() {
 		this.players = [];
 		this.selectedEnemy = null;
 		this.botsInterval = null;
+		this.configure();
 	};
+	Game.prototype.configure = function(){
+		this.pubsub.subscribe(RPG.topics.SUB_PLAYER_JOINED, function(){
+			debugger;
+		});
+	}
 	Game.prototype.addPlayer = function(player) {
 		this.player = player;
 		this.player.setPosition(generatePosition_(this.gfx.gridSize));
@@ -34,7 +40,7 @@ RPG.module('Game', function() {
 		this.place(player);
 		this.players.push(player);
 	};
-	Game.prototype.play = function() {
+	Game.prototype.run = function() {
 		var self = this;
 
 		this.pubsub.subscribe('/gfx/cell/click', function(topic, o) {});
