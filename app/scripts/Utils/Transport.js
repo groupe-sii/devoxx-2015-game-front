@@ -37,7 +37,12 @@ RPG.module('Transport', function() {
 		// 	}.bind(this));
 		// }
 		// 
-		// this.client.subscribe('/topic/game/board/added', this.pubsub.subscribe);
+		this.client.subscribe('/topic/game/board/added', function(data) {
+			console.debug("player added on board", JSON.parse(data.body));
+		});
+		this.client.subscribe('/queue/error', function(data) {
+			console.error(data);
+		});
 		this.pubsub.subscribe('/server/player/join', function(){
 			var data = [].slice.call(arguments, 1); // remove the topic
 			this.client.send('/topic/game/player/join', {}, JSON.stringify(data[0]));
