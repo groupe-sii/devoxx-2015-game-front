@@ -50,7 +50,10 @@ RPG.module('PubSub', function() {
 				}
 			}
 			return this;
-		}
+		},
+		on: this.subscribe,
+		off: this.unsubscribe,
+		fire: this.publish
 	};
 	
 });

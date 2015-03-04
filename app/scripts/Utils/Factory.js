@@ -28,7 +28,7 @@ RPG.module('Factory', function() {
 			return constructors[target];
 		},
 		enemy: function() {
-			return new RPG.Enemy(); // di.invoke(Enemy);
+			return di.invoke(Enemy);
 		},
 		player: function(type) {
 			type = RPG[type];
@@ -39,7 +39,7 @@ RPG.module('Factory', function() {
 				return player;
 			}
 			else {
-				throw 'Player "'+type+'" does not exist';
+				throw 'Player type "'+type+'" does not exist';
 			}
 		},
 		gfx: function() {
