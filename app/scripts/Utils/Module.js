@@ -26,8 +26,15 @@ var RPG = (function() {
       for (var cf in obj) {
         if (obj.hasOwnProperty(cf)) {
           RPG.__config__[cf] = obj[cf];
+          Object.defineProperty(RPG, cf, {
+            get: function get() {
+              return this.__config__[cf];
+            }
+          });
         }
       }
+
+
     },
 
     /**

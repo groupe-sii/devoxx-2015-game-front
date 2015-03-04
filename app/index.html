@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>DOM ♥ RPG</title>
+        <title>Devoxx ♥ 2015</title>
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
@@ -47,6 +47,7 @@
                 </div>
                 <p id="action-buttons">
                     <a class="btn btn-lg btn-success" data-action="join" href="#">Star Game!</a>
+                    <a class="btn btn-lg btn-success" data-action="quit" href="#">Quit Game!</a>
                     <a class="btn btn-lg btn-success" href="#">Spell</a>
                     <a class="btn btn-lg btn-success" href="#">Action</a>
                 </p>
@@ -57,7 +58,7 @@
             </div>
 
             <div class="footer">
-                <p>devoxx ♥ 2015</p>
+                <p>Devoxx ♥ 2015</p>
             </div>
 
         </div>
@@ -65,8 +66,10 @@
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
         <script src="bower_components/sockjs/sockjs.js"></script>
-        <script src="bower_components/stomp-websocket/lib/stomp.js"></script>
+        <script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -82,6 +85,7 @@
         <script src="scripts/Entities/Enemy.js"></script>
         <script src="scripts/Entities/Wizard.js"></script>
         <script src="scripts/Game.js"></script>
+        <script src="scripts/config.js"></script>
         <script src="scripts/app.js"></script>
         <!-- endbuild -->
 </body>

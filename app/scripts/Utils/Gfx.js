@@ -77,11 +77,14 @@ RPG.module('Gfx', function() {
       if (action && action.nodeName === 'A') {
       	switch(action.dataset.action){
       		case 'join':
-      			this.publish('/server/player/join', {
+      			this.publish(RPG.topics.TOPIC_PLAYER_JOIN, {
       				name: 'wassim',
       				avatar: 'wizard'
       			});
-      			break;	
+      			break;
+    			case 'quit':
+    				this.publish(RPG.topics.TOPIC_PLAYER_LEAVE);
+    				break;
       	}
       }
     });

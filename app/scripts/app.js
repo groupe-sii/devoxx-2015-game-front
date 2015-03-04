@@ -13,7 +13,7 @@ RPG.run(function() {
   var player = RPG.Factory.player('Wizard');
   var game = RPG.Factory.game();
   var enemy = null;
-  var nbEnemy = 5;
+  var nbEnemy = 0;
   
   for (var i = nbEnemy - 1; i >= 0; i--) {
     enemy = RPG.Factory.enemy();

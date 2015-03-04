@@ -12,40 +12,78 @@ RPG.module('Transport', function() {
 	function Transport(PubSub){
 		this.pubsub = PubSub;
 		this.client = Stomp.over(new SockJS('http://localhost:8080/game'));
-		this.topics = {
-			subscribeTo : {
-				'/server/player/join': '/topic/game/player/join'
-			},
-			publishTo : [
-				'/topic/game/board/added'
-			]
-		};
 		this.client.connect({}, this.onConnection.bind(this));
 	}
 
 	Transport.prototype.onConnection = function(){
-		// this.topics.publishTo.forEach(function(topic){
-		// 	this.client.subscribe(topic, function(){
-		// 		this.pubsub.publish(topic);
-		// 	}.bind(this));
-		// }.bind(this));
-		// for(var topic in this.topics.subscribeTo){
-		// 	this.pubsub.subscribe(topic, function(){
-		// 		var data = [].slice.call(arguments, 1); // remove the topic
-		// 		this.client.send(this.topics.subscribeTo[topic], {}, JSON.stringify(data[0]));
-		// 	}.bind(this));
-		// }
-		// 
-		this.client.subscribe('/topic/game/board/added', function(data) {
-			console.debug('player added on board', JSON.parse(data.body));
-		});
-		this.client.subscribe('/queue/error', function(data) {
-			console.error(data);
-		});
-		this.pubsub.subscribe('/server/player/join', function(){
-			var data = [].slice.call(arguments, 1); // remove the topic
-			this.client.send('/topic/game/player/join', {}, JSON.stringify(data[0]));
-		}.bind(this));
+		// subscriptions
+		for(var topic in Transport.prototype){
+			if(Transport.prototype.hasOwnProperty(topic)){
+				this.client.subscribe(topic, function(data) {
+					console.log(topic, arguments);
+					Transport.prototype[topic].call(this, data);
+					this.pubsub.publish(topic);
+				}.bind(this));
+			}
+		}
+
+		// publishes
+		this.pubsub.subscribe('/topic/game/player/join', this.send.bind(this));
+		this.pubsub.subscribe('/topic/game/player/quit', this.send.bind(this));
+	}
+
+	Transport.prototype.send = function(topic, data){
+		this.client.send(topic, {}, JSON.stringify(data));
+	}
+
+	// topics implementation 
+
+	Transport.prototype[RPG.topics.TOPIC_PLAYER_LIFE] = function(topic){
+		
+	}
+
+	Transport.prototype[RPG.topics.TOPIC_PLAYER_REVIVED] = function(topic){
+		
+	}
+
+	Transport.prototype[RPG.topics.TOPIC_PLAYER_HIT] = function(topic){
+		
+	}
+
+	Transport.prototype[RPG.topics.TOPIC_PLAYER_HEALED] = function(topic){
+		
+	}
+
+	Transport.prototype[RPG.topics.TOPIC_PLAYER_STATES] = function(topic){
+		
+	}
+
+	Transport.prototype[RPG.topics.TOPIC_PLAYER_JOINED] = function(topic){
+		
+	}
+
+	Transport.prototype[RPG.topics.TOPIC_PLAYER_MOVED] = function(){
+
+	}
+
+	Transport.prototype[RPG.topics.TOPIC_PLAYER_LEFT] = function(){
+
+	}
+
+	Transport.prototype[RPG.topics.TOPIC_ERROR_LOCAL] = function(){
+
+	}	
+
+	Transport.prototype[RPG.topics.TOPIC_ERROR_GLOBAL] = function(){
+
+	}
+
+	Transport.prototype[RPG.topics.TOPIC_MESSAGE_GLOBAL] = function(){
+
+	}
+
+	Transport.prototype[RPG.topics.TOPIC_ACTION_IMAGE_MOVED] = function(){
+
 	}
 
 	return Transport;
