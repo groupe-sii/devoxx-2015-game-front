@@ -23,18 +23,21 @@ RPG.module('Game', function() {
 		this.players = [];
 		this.selectedEnemy = null;
 		this.botsInterval = null;
-		this.configure();
 	};
-	Game.prototype.configure = function(){
-		this.pubsub.subscribe(RPG.topics.SUB_PLAYER_JOINED, function(){
-			
+	Game.prototype.on = function(topic, callback){
+		this.pubsub.subscribe(topic, function(topic, data){
+			callback(data);
 		});
+		return this;
 	}
-	Game.prototype.addPlayer = function(player) {
+	Game.prototype.addPlayer = function(player, position) {
 		this.player = player;
-		this.player.setPosition(generatePosition_(this.gfx.gridSize));
+		this.player.setPosition(position);
 		this.place(player);
 	};
+	Game.prototype.removePlayer = function(position){
+		this.gfx.remove(position).removePlayer(position);
+	}
 	Game.prototype.addEnemy = function(player) {
 		player.setPosition(generatePosition_(this.gfx.gridSize));
 		this.place(player);

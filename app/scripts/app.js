@@ -10,18 +10,30 @@ RPG.run(function() {
   'use strict';
 
   var transport = RPG.Factory.transport();
-  var player = RPG.Factory.player('Wizard');
   var game = RPG.Factory.game();
+
+  game.on(RPG.topics.SUB_PLAYER_JOINED, function(data){
+    
+    var player = RPG.Factory.player();
+    player.setName(data.player.playerInfo.name);
+    player.setAvatar(data.player.playerInfo.avatar);
+    game.addPlayer(player, data.newCell);
+
+  })
+  .on(RPG.topics.SUB_PLAYER_LEFT, function(data){
+
+    game.removePlayer(data.oldCell);
+
+  });
+
   var enemy = null;
   var nbEnemy = 0;
-  
   for (var i = nbEnemy - 1; i >= 0; i--) {
     enemy = RPG.Factory.enemy();
     enemy.setLife(Math.random() * 100);
     game.addEnemy(enemy);
   };
   
-  game.addPlayer(player);
   // game.bots(true);
   // game.play();
 

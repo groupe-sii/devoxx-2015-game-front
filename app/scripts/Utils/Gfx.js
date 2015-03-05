@@ -13,16 +13,21 @@ RPG.module('Gfx', function() {
     this.ai = AI;
     this.name = 'Gfx';
     this.gridSize = 10;
+
     this.joystick = document.querySelector('#rpg-joystick');
-    this.container = document.querySelector('#rpg-grid');
+    this.boardContainer = document.querySelector('#rpg-grid');
     this.buttons = document.querySelector('#action-buttons');
-
-    [this.container, this.joystick, this.buttons].forEach(function(el){
-    	el.on = function(eventName, fn) {
-	      el.addEventListener(eventName, fn.bind(this), false);
-	    }.bind(this);
+    this.upperButtons = document.querySelector('#upper-buttons');
+    this.avatars = document.querySelector('#avatar-container');
+    this.avatars.selected = this.avatars.querySelector('img.selected').src;
+    this.username = document.querySelector('#username');
+    [this.boardContainer, this.joystick, this.buttons, this.avatars, this.username, this.upperButtons].forEach(function(el) {
+      if (el) {
+        el.on = function(eventName, fn) {
+          el.addEventListener(eventName, fn.bind(this), false);
+        }.bind(this);
+      }
     }.bind(this));
-
     this.build();
   };
   Gfx.prototype.build = function() {
@@ -36,7 +41,7 @@ RPG.module('Gfx', function() {
       }
       grid += '</tr>';
     }
-    this.container.innerHTML = grid;
+    this.boardContainer.innerHTML = grid;
     this.attachEvents();
   };
   Gfx.prototype.draw = function(obj) {
@@ -49,11 +54,11 @@ RPG.module('Gfx', function() {
     item.dataset.y = obj.y;
     item.innerHTML = image + '<span>' + name + life + '</span>';
     item.addEventListener('click', this.itemSelected.bind(this), false);
-    this.container.appendChild(item);
+    this.boardContainer.appendChild(item);
     return item;
   };
   Gfx.prototype.attachEvents = function() {
-    this.container.on('click', function(e) {
+    this.boardContainer.on('click', function(e) {
       var cell = e.target;
       if (cell && cell.nodeName === 'TD') {
         cell.classList.toggle('rpg-selected');
@@ -64,44 +69,83 @@ RPG.module('Gfx', function() {
         });
       }
     });
-    this.joystick.on('click', function(e) {
-      e.preventDefault();
-      var move = e.target;
-      if (move && move.nodeName === 'A') {
-        this.publish('/gfx/player/move', move.dataset.direction);
-      }
-    });
+    if (this.joystick) {
+      this.joystick.on('click', function(e) {
+        e.preventDefault();
+        var move = e.target;
+        if (move && move.nodeName === 'A') {
+          this.publish('/gfx/player/move', move.dataset.direction);
+        }
+      });
+    }
+    var btnQuit = document.querySelector('[data-action="leave"]');
+    var menuContainer = document.querySelector('.menu');
+    var board = document.querySelector('.jumbotron.blur');
     this.buttons.on('click', function(e) {
-    	e.preventDefault();
+      e.preventDefault();
       var action = e.target;
       if (action && action.nodeName === 'A') {
-      	switch(action.dataset.action){
-      		case 'join':
-      			this.publish(RPG.topics.PUB_PLAYER_JOIN, {
-      				name: 'wassim',
-      				avatar: 'wizard'
-      			});
-      			break;
-    			case 'quit':
-    				this.publish(RPG.topics.PUB_PLAYER_LEAVE);
-    				break;
-      	}
+        switch (action.dataset.action) {
+          case 'join':
+          	btnQuit.classList.remove('hidden');
+						menuContainer.classList.add('move-top');
+						board.classList.remove('blur');
+            this.publish(RPG.topics.PUB_PLAYER_JOIN, {
+              name: this.username.value,
+              avatar: this.avatars.selected
+            });
+            break;
+        }
       }
     });
+    this.upperButtons.on('click', function(e){
+    	e.preventDefault();
+      var action = e.target;
+      if (action && action.nodeName === 'BUTTON') {
+        switch (action.dataset.action) {
+          case 'leave':
+          	btnQuit.classList.add('hidden');
+						menuContainer.classList.remove('move-top');
+						board.classList.add('blur');
+            this.publish(RPG.topics.PUB_PLAYER_LEAVE);
+          break;
+        }
+      }
+    });
+    this.avatars.on('click', function(e) {
+      e.preventDefault();
+      var action = e.target;
+      if (action && action.nodeName === 'IMG') {
+      	action.parentElement.querySelector('.selected').classList.remove('selected');
+      	action.classList.add('selected');
+      	this.avatars.selected = action.src;
+      }
+    });
+    var btnJoin = this.buttons.querySelector('[data-action="join"]');
+    this.username.on('keyup', function(e){
+    	var value = e.target.value;
+    	if(value === ''){
+    		btnJoin.setAttribute('disabled', true);
+    	}
+    	else {
+    		btnJoin.removeAttribute('disabled');
+    		this.username.value = value;
+    	}
+    });
     document.addEventListener('keydown', function(e) {
-    	var dir = '';
+      var dir = '';
       switch (e.which) {
         case 37: // left
-        	dir = 'left';
+          dir = 'left';
           break;
         case 38: // up
-        	dir = 'up';
+          dir = 'up';
           break;
         case 39: // right
-        	dir = 'right';
+          dir = 'right';
           break;
         case 40: // down
-        	dir = 'down';
+          dir = 'down';
           break;
         default:
           return; // exit this handler for other keys
@@ -123,7 +167,7 @@ RPG.module('Gfx', function() {
     });
   };
   Gfx.prototype.place = function(obj) {
-    var cell = this.container.querySelector('td[data-x="' + obj.x + '"][data-y="' + obj.y + '"]');
+    var cell = this.boardContainer.querySelector('td[data-x="' + obj.x + '"][data-y="' + obj.y + '"]');
     cell.classList.add('rpg-occupied');
     var item = this.draw(obj);
     this.transposePosition(item, cell);
@@ -205,10 +249,17 @@ RPG.module('Gfx', function() {
     item.dataset.y = o2.y;
   };
   Gfx.prototype.remove = function(obj) {
-    var cell = this.container.querySelector('td[data-x="' + obj.x + '"][data-y="' + obj.y + '"]');
+    var cell = this.boardContainer.querySelector('td[data-x="' + obj.x + '"][data-y="' + obj.y + '"]');
     cell.classList.remove('rpg-occupied');
     cell.innerHTML = '&middot;';
     this.publish('/gfx/item/removed', obj);
+    return this;
+  };
+  Gfx.prototype.removePlayer = function(obj){
+  	var item = document.querySelector('.rpg-item[data-x="' + obj.x + '"][data-y="' + obj.y + '"]');
+  	if(item){
+  		item.parentNode.removeChild(item);
+  	}
   };
   Gfx.prototype.hit = function(amout) {
     this.selectedEnemy.hit(amout);
@@ -222,7 +273,7 @@ RPG.module('Gfx', function() {
   };
   Gfx.prototype.getItem = function(obj, type) {
     type = type || '';
-    return this.container.querySelector(type + '[data-x="' + obj.x + '"][data-y="' + obj.y + '"]');
+    return this.boardContainer.querySelector(type + '[data-x="' + obj.x + '"][data-y="' + obj.y + '"]');
   };
   Gfx.prototype.publish = function() {
     return this.pubsub.publish.apply(this, arguments);

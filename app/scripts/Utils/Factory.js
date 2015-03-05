@@ -31,7 +31,7 @@ RPG.module('Factory', function() {
 			return di.invoke(Enemy);
 		},
 		player: function(type) {
-			type = RPG[type];
+			type = RPG[type] || RPG.Player;
 			if(type){
 				if (!player) {
 					player = di.invoke(type);

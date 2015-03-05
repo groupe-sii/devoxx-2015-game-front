@@ -22,13 +22,13 @@ RPG.module('Transport', function() {
     }
     // publishes
     this.pubsub.subscribe(RPG.topics.PUB_PLAYER_JOIN, this.send.bind(this));
-    // this.pubsub.subscribe('/topic/game/player/quit', this.send.bind(this));
+    this.pubsub.subscribe(RPG.topics.PUB_PLAYER_LEAVE, this.send.bind(this));
   }
   Transport.prototype.subscribe = function(topic){
   	this.client.subscribe(topic, function(data) {
       console.log(topic, data);
       Transport.prototype[topic].call(this, data);
-      this.pubsub.publish(topic);
+      this.pubsub.publish(topic, JSON.parse(data.body || data));
     }.bind(this));
   }
   Transport.prototype.send = function(topic, data) {
