@@ -3,90 +3,98 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <title>Devoxx ♥ 2015</title>
-        <meta name="viewport" content="width=device-width">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <!-- build:css styles/vendor.css -->
-        <!-- bower:css -->
-        <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
-        <!-- endbower -->
-        <!-- endbuild -->
-        <!-- build:css styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- endbuild -->
-    </head>
-    <body>
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
-
-        <div class="container">
-            <div class="header">
-                <ul class="nav nav-pills pull-right">
-                    <li class="active"><a href="#">Home</a></li>
-                </ul>
-                <h3 class="text-muted">DOM ♥ RPG</h3>
-            </div>
-
-            <div class="jumbotron">
-                <div class="rpg-player-info">
-                    <div id="rpg-selected-player"></div>
-                    <div id="rpg-selected-enemy"></div>
-                </div>
-                <div id="rpg-grid" class="rpg-grid"></div>
-            </div>
-            <div class="jumbotron">
-                <div id="rpg-joystick" class="rpg-joystick">
-                    <a class="btn" data-direction="up" href="#">▲</a>
-                    <a class="btn" data-direction="right" href="#">▶</a>
-                    <a class="btn" data-direction="down" href="#">▼</a>
-                    <a class="btn" data-direction="left" href="#">◀</a>
-                </div>
-                <p id="action-buttons">
-                    <a class="btn btn-lg btn-success" data-action="join" href="#">Star Game!</a>
-                    <a class="btn btn-lg btn-success" data-action="quit" href="#">Quit Game!</a>
-                    <a class="btn btn-lg btn-success" href="#">Spell</a>
-                    <a class="btn btn-lg btn-success" href="#">Action</a>
-                </p>
-            </div>
-
-            <div class="row marketing">
-                
-            </div>
-
-            <div class="footer">
-                <p>Devoxx ♥ 2015</p>
-            </div>
-
+<head>
+  <meta charset="utf-8">
+  <title>Devoxx ♥ 2015</title>
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body>
+  <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <div class="container">
+    <div class="header">
+      <ul class="nav pull-right" id="upper-buttons">
+        <li><button class="btn btn-lg btn-danger hidden" role="button" data-action="leave" href="#">Leave the game</button></li>
+      </ul>
+      <h3 class="text-muted">Devoxx <b class="text-danger">♥</b> 2015</h3>
+    </div>
+    <div class="jumbotron blur">
+      <div class="rpg-player-info">
+        <div id="rpg-selected-player"></div>
+        <div id="rpg-selected-enemy"></div>
+      </div>
+      <div id="rpg-grid" class="rpg-grid"></div>
+    </div>
+    <div class="menu">
+      <div class="jumbotron">
+        <!--
+                          <div id="rpg-joystick" class="rpg-joystick">
+                                <a class="btn" data-direction="up" href="#">▲</a>
+                                <a class="btn" data-direction="right" href="#">▶</a>
+                                <a class="btn" data-direction="down" href="#">▼</a>
+                                <a class="btn" data-direction="left" href="#">◀</a>
+                          </div>
+        -->
+        <div id="avatar-container">
+          <h1>Welcome to Devoxx 2015</h1>
+          <br>
+          <h4>Choose your avatar to enter the game</h4>
+          <img class="avatar img-circle" data-avatar="wizard-1" src="images/players-sprites/amg2_fr2.gif" alt="">
+          <img class="avatar img-circle" data-avatar="wizard-2" src="images/players-sprites/avt2_fr1.gif" alt="">
+          <img class="avatar img-circle" data-avatar="wizard-3" src="images/players-sprites/bmg3_fr2.gif" alt="">
+          <img class="avatar img-circle" data-avatar="wizard-4" src="images/players-sprites/ftr2_fr2.gif" alt="">
+          <img class="avatar img-circle selected" data-avatar="wizard-5" src="images/players-sprites/pdn3_fr2.gif" alt="">
+          <img class="avatar img-circle" data-avatar="wizard-6" src="images/players-sprites/scr2_fr2.gif" alt="">
+          <img class="avatar img-circle" data-avatar="wizard-7" src="images/players-sprites/wnv4_fr2.gif" alt="">
+          <img class="avatar img-circle" data-avatar="wizard-8" src="images/players-sprites/zph1_fr2.gif" alt="">
+          <img class="avatar img-circle" data-avatar="wizard-9" src="images/players-sprites/wmn2_fr2.gif" alt="">
         </div>
-
-
-        <!-- build:js scripts/vendor.js -->
-        <!-- bower:js -->
-        <script src="bower_components/jquery/jquery.js"></script>
-        <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
-        <script src="bower_components/sockjs/sockjs.js"></script>
-        <script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
-        <!-- endbower -->
-        <!-- endbuild -->
-
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/Utils/Module.js"></script>
-        <script src="scripts/config.js"></script>
-        <script src="scripts/Utils/AI.js"></script>
-        <script src="scripts/Utils/Injector.js"></script>
-        <script src="scripts/Utils/Factory.js"></script>
-        <script src="scripts/Utils/PubSub.js"></script>
-        <script src="scripts/Utils/Gfx.js"></script>
-        <script src="scripts/Utils/Transport.js"></script>
-        <script src="scripts/Entities/Player.js"></script>
-        <script src="scripts/Entities/Enemy.js"></script>
-        <script src="scripts/Entities/Wizard.js"></script>
-        <script src="scripts/Game.js"></script>
-        <script src="scripts/app.js"></script>
-        <!-- endbuild -->
+        <div class="form-group center-block">
+          <input placeholder="Enter your username" type="text" class="form-control input-sm" id="username" placeholder="Enter email">
+        </div>
+        <p id="action-buttons" class="action-buttons">
+        <a class="btn btn-lg btn-primary" disabled="disabled" role="button" data-action="join" href="#">Join the Game</a>
+        <a class="btn btn-lg btn-danger hidden" disabled="disabled" role="button" data-action="quit" href="#">Leave...</a>
+        </p>
+      </div>
+    </div>
+    <div class="row marketing"></div>
+    <div class="footer">
+      <p>Devoxx <b class="text-danger">♥</b> 2015 (by <a href="http://www.groupe-sii.com/en">SII Group - The partner in technology</a>)</p>
+    </div>
+  </div>
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/jquery.js"></script>
+  <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/sockjs/sockjs.js"></script>
+  <script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:js({app,.tmp}) scripts/main.js -->
+  <script src="scripts/Utils/Module.js"></script>
+  <script src="scripts/config.js"></script>
+  <script src="scripts/Utils/AI.js"></script>
+  <script src="scripts/Utils/Injector.js"></script>
+  <script src="scripts/Utils/Factory.js"></script>
+  <script src="scripts/Utils/PubSub.js"></script>
+  <script src="scripts/Utils/Gfx.js"></script>
+  <script src="scripts/Utils/Transport.js"></script>
+  <script src="scripts/Entities/Player.js"></script>
+  <script src="scripts/Entities/Enemy.js"></script>
+  <script src="scripts/Entities/Wizard.js"></script>
+  <script src="scripts/Game.js"></script>
+  <script src="scripts/app.js"></script>
+  <!-- endbuild -->
 </body>
 </html>
