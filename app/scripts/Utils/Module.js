@@ -23,17 +23,19 @@ var RPG = (function() {
      * @param  {Object} obj A configuration object.
      */
     config: function config(obj) {
+      var defineProperty = function(cf){
+        Object.defineProperty(RPG, cf, {
+          get: function get() {
+            return this.__config__[cf];
+          }
+        });
+      }
       for (var cf in obj) {
         if (obj.hasOwnProperty(cf)) {
           RPG.__config__[cf] = obj[cf];
-          Object.defineProperty(RPG, cf, {
-            get: function get() {
-              return this.__config__[cf];
-            }
-          });
+          defineProperty(cf);
         }
       }
-
 
     },
 

@@ -6,12 +6,16 @@
  * @author Wassim Chegham
  */
 RPG.config({
+
+	'socket': {
+		'url': 'http://localhost:8080/game'
+	},
   
 	/**
 	 * Topics list mapping
 	 * @type {Object}
 	 */
-  topics: {
+  'topics': {
     'PUB_PLAYER_JOIN': '/topic/game/player/join',
     'PUB_PLAYER_LEAVE': '/topic/game/player/quit',
     'SUB_PLAYER_DIED': '/topic/game/player/died',
