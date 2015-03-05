@@ -6,7 +6,6 @@
  * @author Wassim Chegham
  */
 RPG.entity('Player', function() {
-  
   'use strict';
 
   function Player() {
@@ -17,27 +16,20 @@ RPG.entity('Player', function() {
       x: 0,
       y: 0
     };
+    for (var property in this) {
+      if (this.hasOwnProperty(property)) {
+        this.autoSetterGetter(property);
+      }
+    }
   }
-  Player.prototype.setLife = function(life) {
-    this.life = life;
-  };
-  Player.prototype.getLife = function() {
-    return this.life;
-  };
-  Player.prototype.getAvatar = function() {
-    return this.avatar;
-  };
-  Player.prototype.getName = function() {
-    return this.name;
-  };
-  Player.prototype.setPosition = function(obj) {
-    this.position = obj;
-  };
-  Player.prototype.getPosition = function() {
-    return this.position;
-  };
-  Player.prototype.hit = function(amout) {
-    this.life -= amout;
-  };
+  Player.prototype.autoSetterGetter = function(property) {
+    var upperProperty = property[0].toUpperCase() + property.slice(1);
+    this['get' + upperProperty] = function() {
+      return this[property];
+    }
+    this['set' + upperProperty] = function(value) {
+      return this[property] = value;
+    }
+  }
   return Player;
 });
