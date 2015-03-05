@@ -1,6 +1,6 @@
 {
-  "name": "dom-rpg-devoxx",
-  "description": "An RPG made using DOM (for Devoxx)",
+  "name": "devoxx-2015",
+  "description": "An HTML5 game made specifically for the Devoxx 2015 event.",
   "license": "GPL",
   "version": "1.0.0",
   "devDependencies": {
@@ -34,7 +34,8 @@
     "run-sequence": "^1.0.2",
     "serve-index": "^1.1.4",
     "serve-static": "^1.4.0",
-    "wiredep": "^2.0.0"
+    "wiredep": "^2.0.0",
+    "plato": "^1.3.0"
   },
   "engines": {
     "node": ">=0.10.0"

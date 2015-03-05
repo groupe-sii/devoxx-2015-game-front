@@ -6,11 +6,12 @@
 var fs = require('fs');
 var gulp = require('gulp');
 var runseq = require('run-sequence');
+var plato = require('plato');
 var $ = require('gulp-load-plugins')();
 var pkg = require('./package.json');
 var banner = [
   '/**', 
-  ' * <%= pkg.name %> - Copyright (c) <%= new Date().getFullYear() %> Groupe SII.', 
+  ' * <%= pkg.name %> - Copyright (c) <%= new Date().getFullYear() %> SII Group.', 
   ' * <%= pkg.description %>', 
   ' * @version v<%= pkg.version %>', 
   ' * @license <%= pkg.license %>', 
@@ -30,6 +31,22 @@ gulp.task('jshint', function() {
   return gulp.src(JS_FILES)
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'));
+});
+
+
+gulp.task('plato', function(done){
+  var outputDir = './reporters/plato/';
+  // null options for this example
+  var options = {
+    title: pkg.name+' - Plato Report'
+  };
+
+  var callback = function (report){
+    console.log('plato report done.');
+  };
+
+  plato.inspect(JS_FILES, outputDir, options, callback);
+  done();
 });
 
 gulp.task('styles', function() {
@@ -118,20 +135,7 @@ gulp.task('watch', ['connect'], function() {
   gulp.watch('bower.json', ['wiredep']);
 });
 
-gulp.task('war', function(which) {
-  // read updated config (version key)
-  var war = pkg.config.war.name.replace('%v', pkg.version + '-SNAPSHOT-' + (+new Date()));
-  return gulp.src('dist/**/*')
-    .pipe($.war({
-      welcome: 'accueil.html',
-      displayName: pkg.config.war.displayName,
-      version: pkg.version
-    }))
-    .pipe($.zip(war))
-    .pipe(gulp.dest('deploy/'));
-});
-
-gulp.task('build', ['jshint', 'html', 'images', 'fonts', 'extras'], function() {
+gulp.task('build', ['plato', 'jshint', 'html', 'images', 'fonts', 'extras'], function() {
   return gulp.src('dist/**/*')
     .pipe($.size({
       title: 'build done',
