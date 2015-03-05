@@ -133,24 +133,24 @@ RPG.module('Gfx', function() {
     	}
     });
     document.addEventListener('keydown', function(e) {
-      var dir = '';
+      var topic = '';
       switch (e.which) {
         case 37: // left
-          dir = 'left';
+          topic = RPG.topics.PUB_PLAYER_MOVE_LEFT;
           break;
         case 38: // up
-          dir = 'up';
+          topic = RPG.topics.PUB_PLAYER_MOVE_UP;
           break;
         case 39: // right
-          dir = 'right';
+          topic = RPG.topics.PUB_PLAYER_MOVE_RIGHT;
           break;
         case 40: // down
-          dir = 'down';
+          topic = RPG.topics.PUB_PLAYER_MOVE_DOWN;
           break;
         default:
-          return; // exit this handler for other keys
+          return true;
       }
-      this.publish('/gfx/player/move', dir);
+      this.publish(topic);
       e.preventDefault();
     }.bind(this));
   };
