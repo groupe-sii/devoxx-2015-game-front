@@ -35,6 +35,6 @@ RPG.config({
     'SUB_PLAYER_LEFT': '/topic/game/board/removed',
     'SUB_ERROR_GLOBAL': '/topic/game/message/error',
     'SUB_MESSAGE_GLOBAL': '/topic/game/message',
-    'SUB_ERROR_LOCAL': '/queue/error'
+    'SUB_ERROR_LOCAL': '/queue/errors'
   }
 });

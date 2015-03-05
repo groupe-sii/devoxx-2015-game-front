@@ -2,6 +2,7 @@
   "name": "devoxx-2015",
   "description": "An HTML5 game made specifically for the Devoxx 2015 event.",
   "license": "GPL",
+  "author": "SII Group / Wassim Chegham <maneki.nekko@gmail.com>",
   "version": "1.0.0",
   "devDependencies": {
     "apache-server-configs": "^2.7.1",

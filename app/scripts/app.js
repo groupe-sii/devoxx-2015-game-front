@@ -11,10 +11,11 @@ RPG.run(function() {
 
   var transport = RPG.Factory.transport();
   var game = RPG.Factory.game();
+  var player = null;
 
   game.on(RPG.topics.SUB_PLAYER_JOINED, function(data){
     
-    var player = RPG.Factory.player();
+    player = RPG.Factory.player();
     player.setName(data.player.playerInfo.name);
     player.setAvatar(data.player.playerInfo.avatar);
     game.addPlayer(player, data.newCell);
@@ -26,13 +27,13 @@ RPG.run(function() {
 
   });
 
-  var enemy = null;
-  var nbEnemy = 0;
-  for (var i = nbEnemy - 1; i >= 0; i--) {
-    enemy = RPG.Factory.enemy();
-    enemy.setLife(Math.random() * 100);
-    game.addEnemy(enemy);
-  };
+  // var enemy = null;
+  // var nbEnemy = 0;
+  // for (var i = nbEnemy - 1; i >= 0; i--) {
+  //   enemy = RPG.Factory.enemy();
+  //   enemy.setLife(Math.random() * 100);
+  //   game.addEnemy(enemy);
+  // };
   
   // game.bots(true);
   // game.play();

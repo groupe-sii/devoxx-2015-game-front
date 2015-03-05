@@ -23,6 +23,7 @@ RPG.module('Game', function() {
 		this.players = [];
 		this.selectedEnemy = null;
 		this.botsInterval = null;
+		this.run();
 	};
 	Game.prototype.on = function(topic, callback){
 		this.pubsub.subscribe(topic, function(topic, data){
@@ -48,11 +49,13 @@ RPG.module('Game', function() {
 
 		this.pubsub.subscribe('/gfx/cell/click', function(topic, o) {});
 		this.pubsub.subscribe('/gfx/item/place', function() {});
-		this.pubsub.subscribe('/gfx/player/move', function(topic, direction) {
+		this.pubsub.subscribe(RPG.topics.SUB_PLAYER_MOVED, function(topic, data) {
 			var position = self.gfx.move({
-				x: self.player.position.x,
-				y: self.player.position.y,
-				direction: direction
+				x: data.oldCell.x,
+				y: data.oldCell.y
+			}, {
+				x: data.newCell.x,
+				y: data.newCell.y
 			});
 			self.player.setPosition(position);
 		});
@@ -80,9 +83,6 @@ RPG.module('Game', function() {
 				}
 			});
 		});
-
-
-		this.gfx.selectPlayer(this.player);
 	};
 	Game.prototype.place = function(player) {
 		var obj = player.getPosition();

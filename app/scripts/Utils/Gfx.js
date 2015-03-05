@@ -191,34 +191,8 @@ RPG.module('Gfx', function() {
     var image = '<img src="' + p.getAvatar() + '" width="32px" height="32px"/>';
     container.innerHTML = image + name + life;
   };
-  Gfx.prototype.move = function(obj) {
-    var o = {
-      x: obj.x,
-      y: obj.y
-    };
-    switch (obj.direction) {
-      case 'up':
-        o.y -= 1;
-        break;
-      case 'down':
-        o.y += 1;
-        break;
-      case 'left':
-        o.x -= 1;
-        break;
-      case 'right':
-        o.x += 1;
-        break;
-    }
-    if (this.isEmptyCell(o)) {
-      this.translate(obj, o);
-      this.publish('/gfx/item/moved', o);
-      return o;
-    } else {
-      this.collide(obj);
-      this.publish('/gfx/item/collide', o);
-      return obj;
-    }
+  Gfx.prototype.move = function(from, to) {
+    this.translate(from, to);
   };
   Gfx.prototype.isEmptyCell = function(obj) {
     var cell = this.getItem(obj, 'td');
