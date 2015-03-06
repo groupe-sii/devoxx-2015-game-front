@@ -77,10 +77,10 @@ gulp.task('html', ['styles'], function() {
 gulp.task('images', function() {
   return gulp.src(IMG_FILES)
     .pipe($.filter('**/*.{gif,jpeg,jpg,png,svg,webp}'))
-    .pipe($.cache($.imagemin({
-      progressive: true,
-      interlaced: true
-    })))
+    // .pipe($.cache($.imagemin({
+    //   progressive: true,
+    //   interlaced: true
+    // })))
     .pipe(gulp.dest('dist/images'));
 });
 
