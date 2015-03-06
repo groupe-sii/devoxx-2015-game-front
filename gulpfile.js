@@ -135,7 +135,7 @@ gulp.task('watch', ['connect'], function() {
   gulp.watch('bower.json', ['wiredep']);
 });
 
-gulp.task('build', ['plato', 'jshint', 'html', 'images', 'fonts', 'extras'], function() {
+gulp.task('build', ['plato', 'jshint', 'html'/*, 'images'*/, 'fonts', 'extras'], function() {
   return gulp.src('dist/**/*')
     .pipe($.size({
       title: 'build done',
