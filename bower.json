@@ -1,11 +1,12 @@
 {
-  "name": "dom-rpg-devoxx",
+  "name": "devoxx-2015",
   "private": true,
+  "author": "SII Group / Wassim Chegham <maneki.nekko@gmail.com>",
   "dependencies": {
+    "jquery": "~2.1.3",
     "sass-bootstrap": "~3.0.0",
     "sockjs": "~0.3.4",
-    "stomp-websocket": "~2.3.4",
-    "jquery": "~2.1.3"
+    "stomp-websocket": "~2.3.4"
   },
   "devDependencies": {}
 }
