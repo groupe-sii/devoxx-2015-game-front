@@ -26,10 +26,10 @@ RPG.entity('Player', function() {
     var upperProperty = property[0].toUpperCase() + property.slice(1);
     this['get' + upperProperty] = function() {
       return this[property];
-    }
+    };
     this['set' + upperProperty] = function(value) {
-      return this[property] = value;
-    }
-  }
+      this[property] = value;
+    };
+  };
   return Player;
 });

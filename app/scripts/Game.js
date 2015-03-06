@@ -24,13 +24,13 @@ RPG.module('Game', function() {
 		this.selectedEnemy = null;
 		this.botsInterval = null;
 		this.run();
-	};
+	}
 	Game.prototype.on = function(topic, callback){
 		this.pubsub.subscribe(topic, function(topic, data){
 			callback(data);
 		});
 		return this;
-	}
+	};
 	Game.prototype.addPlayer = function(player, position) {
 		this.player = player;
 		this.player.setPosition(position);
@@ -38,7 +38,7 @@ RPG.module('Game', function() {
 	};
 	Game.prototype.removePlayer = function(position){
 		this.gfx.remove(position).removePlayer(position);
-	}
+	};
 	Game.prototype.addEnemy = function(player) {
 		player.setPosition(generatePosition_(this.gfx.gridSize));
 		this.place(player);
@@ -47,7 +47,7 @@ RPG.module('Game', function() {
 	Game.prototype.run = function() {
 		var self = this;
 
-		this.pubsub.subscribe('/gfx/cell/click', function(topic, o) {});
+		this.pubsub.subscribe('/gfx/cell/click', function(/*topic, o*/) {});
 		this.pubsub.subscribe('/gfx/item/place', function() {});
 		this.pubsub.subscribe(RPG.topics.SUB_PLAYER_MOVED, function(topic, data) {
 			var position = self.gfx.move({
@@ -102,7 +102,7 @@ RPG.module('Game', function() {
 
 				for (var i = this.players.length - 1; i >= 0; i--) {
 					this.pubsub.publish('/gfx/enemy/move', i);
-				};
+				}
 
 				// this.pubsub.publish('/gfx/enemy/move', id);
 			}.bind(this), 400);

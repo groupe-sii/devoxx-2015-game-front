@@ -29,7 +29,7 @@ RPG.module('Gfx', function() {
       }
     }.bind(this));
     this.build();
-  };
+  }
   Gfx.prototype.build = function() {
     var grid = '<table>';
     for (var i = 0; i < this.gridSize; i += 1) {
@@ -251,9 +251,9 @@ RPG.module('Gfx', function() {
   };
   Gfx.prototype.publish = function() {
     return this.pubsub.publish.apply(this, arguments);
-  }
+  };
   Gfx.prototype.subscribe = function() {
-    return pubsub.subscribe.apply(this, arguments);
-  }
+    return this.pubsub.subscribe.apply(this, arguments);
+  };
   return Gfx;
 });

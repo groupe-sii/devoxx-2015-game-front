@@ -29,7 +29,7 @@ var RPG = (function() {
             return this.__config__[cf];
           }
         });
-      }
+      };
       for (var cf in obj) {
         if (obj.hasOwnProperty(cf)) {
           RPG.__config__[cf] = obj[cf];

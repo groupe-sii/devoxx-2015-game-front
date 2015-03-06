@@ -9,12 +9,11 @@ RPG.module('PubSub', function() {
   
 	'use strict';
 
-	var pubsub = {};
 	var topics = {};
 	var subUid = -1;
 
 	return {
-		publish: function(topic, args) {
+		publish: function(topic) {
 			// console.log('publish', topic, args);
 			if (!topics[topic]) {
 				return false;

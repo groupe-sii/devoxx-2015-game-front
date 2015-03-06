@@ -9,7 +9,7 @@ RPG.run(function() {
 
   'use strict';
 
-  var transport = RPG.Factory.transport();
+  RPG.Factory.transport();
   var game = RPG.Factory.game();
   var player = null;
 
