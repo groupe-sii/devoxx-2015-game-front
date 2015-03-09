@@ -13,6 +13,9 @@ RPG.module('Transport', function() {
     this.client = Stomp.over(new SockJS(RPG.socket.url));
     this.client.connect({}, this.onConnection.bind(this));
   }
+  Transport.prototype.close = function(){
+  	this.client.disconnect();
+  };
   Transport.prototype.onConnection = function() {
     // subscriptions
     for (var topic in Transport.prototype) {
@@ -30,7 +33,7 @@ RPG.module('Transport', function() {
   };
   Transport.prototype.subscribe = function(topic){
   	this.client.subscribe(topic, function(data) {
-      console.log(topic, data);
+      // console.log(topic, data);
       Transport.prototype[topic].call(this, data);
       this.pubsub.publish(topic, JSON.parse(data.body || data));
     }.bind(this));
@@ -55,6 +58,7 @@ RPG.module('Transport', function() {
   Transport.prototype[RPG.topics.SUB_ACTION_IMAGE_MOVED] = function(/* topic */) {};
   Transport.prototype[RPG.topics.SUB_PLAYER_MOVED] = function(/* topic */) {};
   Transport.prototype[RPG.topics.SUB_PLAYER_JOINED] = function(/* topic */) {};
+  Transport.prototype[RPG.topics.SUB_OTHER_JOINED] = function(/* topic */) {};
   Transport.prototype[RPG.topics.SUB_PLAYER_LEFT] = function(/* topic */) {};
   Transport.prototype[RPG.topics.SUB_ERROR_GLOBAL] = function(/* topic */) {};
   Transport.prototype[RPG.topics.SUB_MESSAGE_GLOBAL] = function(/* topic */) {};
