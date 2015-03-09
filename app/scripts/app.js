@@ -9,23 +9,9 @@ RPG.run(function() {
 
   'use strict';
 
-  RPG.Factory.transport();
+
   var game = RPG.Factory.game();
-  var player = null;
-
-  game.on(RPG.topics.SUB_PLAYER_JOINED, function(data){
-    
-    player = RPG.Factory.player();
-    player.setName(data.player.playerInfo.name);
-    player.setAvatar(data.player.playerInfo.avatar);
-    game.addPlayer(player, data.newCell);
-
-  })
-  .on(RPG.topics.SUB_PLAYER_LEFT, function(data){
-
-    game.removePlayer(data.oldCell);
-
-  });
+  game.run();
 
   // var enemy = null;
   // var nbEnemy = 0;
