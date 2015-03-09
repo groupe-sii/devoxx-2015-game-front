@@ -8,6 +8,11 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  font-size: 1em;
+}
+
+h1, h2, h3, h4, a.btn {
+  font-family: 'Press Start 2P';
 }
 
 .header,

@@ -174,8 +174,10 @@ RPG.module('Gfx', function() {
     this.publish('/gfx/item/placed', obj);
   };
   Gfx.prototype.transposePosition = function(item, cell) {
-    item.style.top = cell.offsetTop + 15 + 'px';
-    item.style.left = cell.offsetLeft + 15 + 'px';
+    if(item){
+      item.style.top = cell.offsetTop + 15 + 'px';
+      item.style.left = cell.offsetLeft + 15 + 'px';
+    }
   };
   Gfx.prototype.selectPlayer = function(p) {
     var container = document.querySelector('#rpg-selected-player');
