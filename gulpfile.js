@@ -21,7 +21,7 @@ var banner = [
 // read initial config
 var JS_FILES = ['app/scripts/**/*.js'];
 var CSS_FILES = ['app/**/*.css'];
-var HTML_FILES = ['app/**/*.html'];
+var HTML_FILES = ['app/**/*.html', 'components/**/*.html'];
 var IMG_FILES = ['app/images/**/*'];
 var FONT_FILES = ['app/fonts/**/*'];
 var EXTRA_FILES = ['app/*.*', '!app/*.html', '!app/**/.DS_Store', 'node_modules/apache-server-configs/dist/.htaccess'];
