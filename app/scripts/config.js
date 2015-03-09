@@ -32,6 +32,7 @@ RPG.config({
     'SUB_ACTION_IMAGE_MOVED': '/topic/game/action/image/moved',
     'SUB_PLAYER_MOVED': '/topic/game/board/moved',
     'SUB_PLAYER_JOINED': '/topic/game/board/added',
+    'SUB_OTHER_JOINED': '/topic/game/joined',
     'SUB_PLAYER_LEFT': '/topic/game/board/removed',
     'SUB_ERROR_GLOBAL': '/topic/game/message/error',
     'SUB_MESSAGE_GLOBAL': '/topic/game/message',
