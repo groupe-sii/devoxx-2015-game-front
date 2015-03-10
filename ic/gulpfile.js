@@ -1,5 +1,5 @@
-var projectName = "iBRT";
-var projectPath = "/home/clegallo/.jenkins/workspace/iBRT_GUI/";
+var projectName = "Devoxx-Game";
+var projectPath = "/var/lib/jenkins/workspace/devoxx-game-front/";
 
 var cssSources = ['../app/styles/*.css'];
 var jsSources = ['../app/scripts/**/*.js'];
