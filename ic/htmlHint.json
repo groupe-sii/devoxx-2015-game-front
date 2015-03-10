@@ -1,0 +1,501 @@
+{
+"language" : "html",
+"project" : "iBRT",
+"projectPath" : "/home/clegallo/.jenkins/workspace/iBRT_GUI/",
+"version" : "1.1.0",
+"files" : [	{
+	"name" : "Main.html",
+	"path" : "src/app/core/template/Main.html",
+	"nbLines" : 7,
+	"nbComments" : 0,
+	"nbCloc" : 7,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257747
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Login.html",
+	"path" : "src/app/service/auth/view/template/Login.html",
+	"nbLines" : 4,
+	"nbComments" : 0,
+	"nbCloc" : 4,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257749
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "BreadCrumb.html",
+	"path" : "src/app/service/common/widget/template/BreadCrumb.html",
+	"nbLines" : 4,
+	"nbComments" : 0,
+	"nbCloc" : 4,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257750
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "CopyPaste.html",
+	"path" : "src/app/service/common/widget/template/CopyPaste.html",
+	"nbLines" : 3,
+	"nbComments" : 0,
+	"nbCloc" : 3,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257751
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "DateFilter.html",
+	"path" : "src/app/service/common/widget/template/DateFilter.html",
+	"nbLines" : 41,
+	"nbComments" : 0,
+	"nbCloc" : 40,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257752
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ExportForm.html",
+	"path" : "src/app/service/common/widget/template/ExportForm.html",
+	"nbLines" : 114,
+	"nbComments" : 0,
+	"nbCloc" : 113,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257754
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Footer.html",
+	"path" : "src/app/service/common/widget/template/Footer.html",
+	"nbLines" : 3,
+	"nbComments" : 0,
+	"nbCloc" : 3,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257755
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "GroupFilter.html",
+	"path" : "src/app/service/common/widget/template/GroupFilter.html",
+	"nbLines" : 62,
+	"nbComments" : 0,
+	"nbCloc" : 61,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257756
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Header.html",
+	"path" : "src/app/service/common/widget/template/Header.html",
+	"nbLines" : 18,
+	"nbComments" : 0,
+	"nbCloc" : 18,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257757
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Menu.html",
+	"path" : "src/app/service/common/widget/template/Menu.html",
+	"nbLines" : 4,
+	"nbComments" : 0,
+	"nbCloc" : 4,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257758
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Pager.html",
+	"path" : "src/app/service/common/widget/template/Pager.html",
+	"nbLines" : 7,
+	"nbComments" : 0,
+	"nbCloc" : 7,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257759
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Home.html",
+	"path" : "src/app/service/monitor/view/template/Home.html",
+	"nbLines" : 76,
+	"nbComments" : 0,
+	"nbCloc" : 76,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257762
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ParametersSumup.html",
+	"path" : "src/app/service/monitor/widget/template/ParametersSumup.html",
+	"nbLines" : 30,
+	"nbComments" : 0,
+	"nbCloc" : 30,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257762
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportCard.html",
+	"path" : "src/app/service/monitor/widget/template/ReportCard.html",
+	"nbLines" : 17,
+	"nbComments" : 0,
+	"nbCloc" : 17,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257764
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageCustomers.html",
+	"path" : "src/app/service/operations/view/template/ManageCustomers.html",
+	"nbLines" : 61,
+	"nbComments" : 0,
+	"nbCloc" : 61,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257765
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageJobs.html",
+	"path" : "src/app/service/operations/view/template/ManageJobs.html",
+	"nbLines" : 86,
+	"nbComments" : 0,
+	"nbCloc" : 85,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257766
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "QualifyForm.html",
+	"path" : "src/app/service/operations/widget/template/QualifyForm.html",
+	"nbLines" : 26,
+	"nbComments" : 0,
+	"nbCloc" : 25,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257767
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "CreateReport.html",
+	"path" : "src/app/service/reports/view/template/CreateReport.html",
+	"nbLines" : 5,
+	"nbComments" : 0,
+	"nbCloc" : 5,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257768
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportsList.html",
+	"path" : "src/app/service/reports/view/template/ReportsList.html",
+	"nbLines" : 8,
+	"nbComments" : 0,
+	"nbCloc" : 8,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257768
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageGrids.html",
+	"path" : "src/app/service/settings/view/template/ManageGrids.html",
+	"nbLines" : 13,
+	"nbComments" : 0,
+	"nbCloc" : 13,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257769
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageUsers.html",
+	"path" : "src/app/service/settings/view/template/ManageUsers.html",
+	"nbLines" : 40,
+	"nbComments" : 0,
+	"nbCloc" : 40,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257770
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "CollectorForm.html",
+	"path" : "src/app/service/settings/widget/template/CollectorForm.html",
+	"nbLines" : 54,
+	"nbComments" : 0,
+	"nbCloc" : 53,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Doctype must be first.",
+		"description" : "Doctype must be first.",
+		"rulekey" : "doctype-first",
+		"severity" : "MAJOR",
+		"reporter" : "htmlhint",
+		"creationDate" : 1425804257772
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}}],
+"nbFiles" : 22,
+"nbLines" : 683,
+"nbCloc" : 677,
+"nbComments" : 0,
+"violations" : {
+	"blocker" : 0,
+	"critical" : 0,
+	"major" : 22,
+	"minor" : 0,
+	"info" : 0
+	}
+}

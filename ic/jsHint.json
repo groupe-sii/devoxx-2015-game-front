@@ -1,0 +1,2055 @@
+{
+"language" : "html",
+"project" : "iBRT",
+"projectPath" : "/home/clegallo/.jenkins/workspace/iBRT_GUI/",
+"version" : "1.1.0",
+"files" : [	{
+	"name" : "app.profile.js",
+	"path" : "src/app/app.profile.js",
+	"nbLines" : 17,
+	"nbComments" : 0,
+	"nbCloc" : 16,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "dojoConfig.js",
+	"path" : "src/app/dojoConfig.js",
+	"nbLines" : 13,
+	"nbComments" : 0,
+	"nbCloc" : 13,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "initialize.js",
+	"path" : "src/app/initialize.js",
+	"nbLines" : 16,
+	"nbComments" : 0,
+	"nbCloc" : 15,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Main.js",
+	"path" : "src/app/core/Main.js",
+	"nbLines" : 113,
+	"nbComments" : 0,
+	"nbCloc" : 110,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Service.js",
+	"path" : "src/app/service/auth/Service.js",
+	"nbLines" : 69,
+	"nbComments" : 0,
+	"nbCloc" : 68,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Service.js",
+	"path" : "src/app/service/monitor/Service.js",
+	"nbLines" : 69,
+	"nbComments" : 0,
+	"nbCloc" : 68,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Service.js",
+	"path" : "src/app/service/operations/Service.js",
+	"nbLines" : 68,
+	"nbComments" : 0,
+	"nbCloc" : 66,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Service.js",
+	"path" : "src/app/service/reports/Service.js",
+	"nbLines" : 68,
+	"nbComments" : 0,
+	"nbCloc" : 67,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Service.js",
+	"path" : "src/app/service/settings/Service.js",
+	"nbLines" : 69,
+	"nbComments" : 0,
+	"nbCloc" : 68,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Titles.js",
+	"path" : "src/app/config/core/nls/Titles.js",
+	"nbLines" : 35,
+	"nbComments" : 0,
+	"nbCloc" : 34,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Proxy.js",
+	"path" : "src/app/service/auth/data/Proxy.js",
+	"nbLines" : 73,
+	"nbComments" : 0,
+	"nbCloc" : 67,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/auth/nls/Errors.js",
+	"nbLines" : 5,
+	"nbComments" : 0,
+	"nbCloc" : 5,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Login.js",
+	"path" : "src/app/service/auth/view/Login.js",
+	"nbLines" : 144,
+	"nbComments" : 0,
+	"nbCloc" : 139,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/common/nls/Errors.js",
+	"nbLines" : 23,
+	"nbComments" : 0,
+	"nbCloc" : 23,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "AuthManager.js",
+	"path" : "src/app/service/common/technical/AuthManager.js",
+	"nbLines" : 322,
+	"nbComments" : 0,
+	"nbCloc" : 321,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Filter.js",
+	"path" : "src/app/service/common/technical/Filter.js",
+	"nbLines" : 131,
+	"nbComments" : 0,
+	"nbCloc" : 127,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Proxy.js",
+	"path" : "src/app/service/common/technical/Proxy.js",
+	"nbLines" : 111,
+	"nbComments" : 0,
+	"nbCloc" : 105,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "BreadCrumb.js",
+	"path" : "src/app/service/common/widget/BreadCrumb.js",
+	"nbLines" : 168,
+	"nbComments" : 0,
+	"nbCloc" : 164,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "CopyPaste.js",
+	"path" : "src/app/service/common/widget/CopyPaste.js",
+	"nbLines" : 139,
+	"nbComments" : 0,
+	"nbCloc" : 132,
+	"issues" : [{
+		"line" : 104,
+		"message" : "Use '===' to compare with 'false'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804084606
+		},{
+		"line" : 121,
+		"message" : "Use '===' to compare with 'false'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804084606
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 2,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "DateFilter.js",
+	"path" : "src/app/service/common/widget/DateFilter.js",
+	"nbLines" : 160,
+	"nbComments" : 0,
+	"nbCloc" : 152,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ExportForm.js",
+	"path" : "src/app/service/common/widget/ExportForm.js",
+	"nbLines" : 456,
+	"nbComments" : 0,
+	"nbCloc" : 441,
+	"issues" : [{
+		"line" : 369,
+		"message" : "Use '===' to compare with '0'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804084774
+		},{
+		"line" : 376,
+		"message" : "'i' is already defined.",
+		"description" : "'{a}' is already defined.",
+		"rulekey" : "W004",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804084774
+		},{
+		"line" : 392,
+		"message" : "Use '===' to compare with '0'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804084774
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 3,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Footer.js",
+	"path" : "src/app/service/common/widget/Footer.js",
+	"nbLines" : 61,
+	"nbComments" : 0,
+	"nbCloc" : 56,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "GroupFilter.js",
+	"path" : "src/app/service/common/widget/GroupFilter.js",
+	"nbLines" : 413,
+	"nbComments" : 0,
+	"nbCloc" : 399,
+	"issues" : [{
+		"line" : 86,
+		"message" : "Use '!==' to compare with ''.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804084888
+		},{
+		"line" : 118,
+		"message" : "Use '!==' to compare with ''.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804084888
+		},{
+		"line" : 149,
+		"message" : "Use '!==' to compare with ''.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804084888
+		},{
+		"line" : 180,
+		"message" : "Use '!==' to compare with ''.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804084888
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 4,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Header.js",
+	"path" : "src/app/service/common/widget/Header.js",
+	"nbLines" : 164,
+	"nbComments" : 0,
+	"nbCloc" : 156,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Menu.js",
+	"path" : "src/app/service/common/widget/Menu.js",
+	"nbLines" : 242,
+	"nbComments" : 0,
+	"nbCloc" : 234,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Pager.js",
+	"path" : "src/app/service/common/widget/Pager.js",
+	"nbLines" : 128,
+	"nbComments" : 0,
+	"nbCloc" : 119,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Proxy.js",
+	"path" : "src/app/service/monitor/data/Proxy.js",
+	"nbLines" : 255,
+	"nbComments" : 0,
+	"nbCloc" : 234,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/monitor/nls/Errors.js",
+	"nbLines" : 5,
+	"nbComments" : 0,
+	"nbCloc" : 5,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Home.js",
+	"path" : "src/app/service/monitor/view/Home.js",
+	"nbLines" : 791,
+	"nbComments" : 0,
+	"nbCloc" : 766,
+	"issues" : [{
+		"line" : 207,
+		"message" : "Use '===' to compare with 'null'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085179
+		},{
+		"line" : 446,
+		"message" : "Use '===' to compare with '0'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085179
+		},{
+		"line" : 457,
+		"message" : "Use '===' to compare with ''.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085179
+		},{
+		"line" : 478,
+		"message" : "Use '===' to compare with '0'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085179
+		},{
+		"line" : 545,
+		"message" : "Use '===' to compare with 'true'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085179
+		},{
+		"line" : 575,
+		"message" : "Use '===' to compare with '0'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085179
+		},{
+		"line" : 635,
+		"message" : "Use '===' to compare with '0'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085179
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 7,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ParametersSumup.js",
+	"path" : "src/app/service/monitor/widget/ParametersSumup.js",
+	"nbLines" : 92,
+	"nbComments" : 0,
+	"nbCloc" : 86,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportCard.js",
+	"path" : "src/app/service/monitor/widget/ReportCard.js",
+	"nbLines" : 176,
+	"nbComments" : 0,
+	"nbCloc" : 169,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportChart.js",
+	"path" : "src/app/service/monitor/widget/ReportChart.js",
+	"nbLines" : 207,
+	"nbComments" : 0,
+	"nbCloc" : 201,
+	"issues" : [{
+		"line" : 114,
+		"message" : "Use '!==' to compare with 'null'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085273
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportGrid.js",
+	"path" : "src/app/service/monitor/widget/ReportGrid.js",
+	"nbLines" : 408,
+	"nbComments" : 0,
+	"nbCloc" : 396,
+	"issues" : [{
+		"line" : 65,
+		"message" : "Use '===' to compare with 'null'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085350
+		},{
+		"line" : 70,
+		"message" : "Use '===' to compare with 'null'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085350
+		},{
+		"line" : 247,
+		"message" : "Use '===' to compare with 'false'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085350
+		},{
+		"line" : 250,
+		"message" : "Use '!==' to compare with ''.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085350
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 4,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Proxy.js",
+	"path" : "src/app/service/operations/data/Proxy.js",
+	"nbLines" : 232,
+	"nbComments" : 0,
+	"nbCloc" : 213,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/operations/nls/Errors.js",
+	"nbLines" : 5,
+	"nbComments" : 0,
+	"nbCloc" : 5,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageCustomers.js",
+	"path" : "src/app/service/operations/view/ManageCustomers.js",
+	"nbLines" : 423,
+	"nbComments" : 0,
+	"nbCloc" : 406,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageJobs.js",
+	"path" : "src/app/service/operations/view/ManageJobs.js",
+	"nbLines" : 1045,
+	"nbComments" : 0,
+	"nbCloc" : 1007,
+	"issues" : [{
+		"line" : 142,
+		"message" : "Use '!==' to compare with ''.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085644
+		},{
+		"line" : 143,
+		"message" : "Use '===' to compare with 'true'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085644
+		},{
+		"line" : 205,
+		"message" : "Use '!==' to compare with 'null'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085644
+		},{
+		"line" : 205,
+		"message" : "Use '!==' to compare with ''.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085644
+		},{
+		"line" : 233,
+		"message" : "Use '===' to compare with '0'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085644
+		},{
+		"line" : 282,
+		"message" : "Use '===' to compare with 'true'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085644
+		},{
+		"line" : 434,
+		"message" : "Unnecessary semicolon.",
+		"description" : "Unnecessary semicolon.",
+		"rulekey" : "W032",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085644
+		},{
+		"line" : 435,
+		"message" : "Unnecessary semicolon.",
+		"description" : "Unnecessary semicolon.",
+		"rulekey" : "W032",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085644
+		},{
+		"line" : 516,
+		"message" : "Use '===' to compare with 'null'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085644
+		},{
+		"line" : 669,
+		"message" : "Use '===' to compare with 'false'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085644
+		},{
+		"line" : 672,
+		"message" : "Use '!==' to compare with ''.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085644
+		},{
+		"line" : 930,
+		"message" : "Use '===' to compare with '0'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085644
+		},{
+		"line" : 985,
+		"message" : "Use '===' to compare with 'true'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085644
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 13,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "QualifForm.js",
+	"path" : "src/app/service/operations/widget/QualifForm.js",
+	"nbLines" : 260,
+	"nbComments" : 0,
+	"nbCloc" : 249,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Proxy.js",
+	"path" : "src/app/service/reports/data/Proxy.js",
+	"nbLines" : 191,
+	"nbComments" : 0,
+	"nbCloc" : 180,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/reports/nls/Errors.js",
+	"nbLines" : 5,
+	"nbComments" : 0,
+	"nbCloc" : 5,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "CreateReport.js",
+	"path" : "src/app/service/reports/view/CreateReport.js",
+	"nbLines" : 376,
+	"nbComments" : 0,
+	"nbCloc" : 363,
+	"issues" : [{
+		"line" : 118,
+		"message" : "Use '===' to compare with 'null'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085766
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportsList.js",
+	"path" : "src/app/service/reports/view/ReportsList.js",
+	"nbLines" : 390,
+	"nbComments" : 0,
+	"nbCloc" : 377,
+	"issues" : [{
+		"line" : 191,
+		"message" : "Use '!==' to compare with 'null'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085814
+		},{
+		"line" : 191,
+		"message" : "Use '!==' to compare with ''.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085814
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 2,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Proxy.js",
+	"path" : "src/app/service/settings/data/Proxy.js",
+	"nbLines" : 309,
+	"nbComments" : 0,
+	"nbCloc" : 280,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/settings/nls/Errors.js",
+	"nbLines" : 5,
+	"nbComments" : 0,
+	"nbCloc" : 5,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageGrids.js",
+	"path" : "src/app/service/settings/view/ManageGrids.js",
+	"nbLines" : 702,
+	"nbComments" : 0,
+	"nbCloc" : 675,
+	"issues" : [{
+		"line" : 108,
+		"message" : "Use '===' to compare with '0'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085935
+		},{
+		"line" : 240,
+		"message" : "Use '===' to compare with '0'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085935
+		},{
+		"line" : 274,
+		"message" : "Use '===' to compare with '0'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085935
+		},{
+		"line" : 343,
+		"message" : "Use '===' to compare with '0'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804085935
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 4,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageUsers.js",
+	"path" : "src/app/service/settings/view/ManageUsers.js",
+	"nbLines" : 427,
+	"nbComments" : 0,
+	"nbCloc" : 403,
+	"issues" : [{
+		"line" : 172,
+		"message" : "Use '===' to compare with '0'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804086009
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "CollectorForm.js",
+	"path" : "src/app/service/settings/widget/CollectorForm.js",
+	"nbLines" : 262,
+	"nbComments" : 0,
+	"nbCloc" : 253,
+	"issues" : [{
+		"line" : 241,
+		"message" : "Use '===' to compare with '0'.",
+		"description" : "Use '{a}' to compare with '{b}'.",
+		"rulekey" : "W041",
+		"severity" : "MAJOR",
+		"reporter" : "jshint",
+		"creationDate" : 1425804086052
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 1,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Titles.js",
+	"path" : "src/app/config/core/nls/en/Titles.js",
+	"nbLines" : 4,
+	"nbComments" : 0,
+	"nbCloc" : 4,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Titles.js",
+	"path" : "src/app/config/core/nls/fr/Titles.js",
+	"nbLines" : 4,
+	"nbComments" : 0,
+	"nbCloc" : 4,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/auth/nls/en/Errors.js",
+	"nbLines" : 2,
+	"nbComments" : 0,
+	"nbCloc" : 2,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/auth/nls/fr/Errors.js",
+	"nbLines" : 2,
+	"nbComments" : 0,
+	"nbCloc" : 2,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/common/nls/en/Errors.js",
+	"nbLines" : 19,
+	"nbComments" : 0,
+	"nbCloc" : 19,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/common/nls/fr/Errors.js",
+	"nbLines" : 19,
+	"nbComments" : 0,
+	"nbCloc" : 19,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "CopyPaste.js",
+	"path" : "src/app/service/common/widget/nls/CopyPaste.js",
+	"nbLines" : 39,
+	"nbComments" : 0,
+	"nbCloc" : 39,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "DateFilter.js",
+	"path" : "src/app/service/common/widget/nls/DateFilter.js",
+	"nbLines" : 23,
+	"nbComments" : 0,
+	"nbCloc" : 22,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ExportForm.js",
+	"path" : "src/app/service/common/widget/nls/ExportForm.js",
+	"nbLines" : 53,
+	"nbComments" : 0,
+	"nbCloc" : 52,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "GroupFilter.js",
+	"path" : "src/app/service/common/widget/nls/GroupFilter.js",
+	"nbLines" : 34,
+	"nbComments" : 0,
+	"nbCloc" : 33,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Header.js",
+	"path" : "src/app/service/common/widget/nls/Header.js",
+	"nbLines" : 13,
+	"nbComments" : 0,
+	"nbCloc" : 13,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Menu.js",
+	"path" : "src/app/service/common/widget/nls/Menu.js",
+	"nbLines" : 46,
+	"nbComments" : 0,
+	"nbCloc" : 46,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportGrid.js",
+	"path" : "src/app/service/common/widget/nls/ReportGrid.js",
+	"nbLines" : 25,
+	"nbComments" : 0,
+	"nbCloc" : 25,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/monitor/nls/en/Errors.js",
+	"nbLines" : 2,
+	"nbComments" : 0,
+	"nbCloc" : 2,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/monitor/nls/fr/Errors.js",
+	"nbLines" : 2,
+	"nbComments" : 0,
+	"nbCloc" : 2,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Home.js",
+	"path" : "src/app/service/monitor/view/nls/Home.js",
+	"nbLines" : 42,
+	"nbComments" : 0,
+	"nbCloc" : 42,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ParametersSumup.js",
+	"path" : "src/app/service/monitor/widget/nls/ParametersSumup.js",
+	"nbLines" : 27,
+	"nbComments" : 0,
+	"nbCloc" : 26,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportCard.js",
+	"path" : "src/app/service/monitor/widget/nls/ReportCard.js",
+	"nbLines" : 13,
+	"nbComments" : 0,
+	"nbCloc" : 13,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportChart.js",
+	"path" : "src/app/service/monitor/widget/nls/ReportChart.js",
+	"nbLines" : 11,
+	"nbComments" : 0,
+	"nbCloc" : 11,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportGrid.js",
+	"path" : "src/app/service/monitor/widget/nls/ReportGrid.js",
+	"nbLines" : 32,
+	"nbComments" : 0,
+	"nbCloc" : 32,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/operations/nls/en/Errors.js",
+	"nbLines" : 2,
+	"nbComments" : 0,
+	"nbCloc" : 2,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/operations/nls/fr/Errors.js",
+	"nbLines" : 2,
+	"nbComments" : 0,
+	"nbCloc" : 2,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageCustomers.js",
+	"path" : "src/app/service/operations/view/nls/ManageCustomers.js",
+	"nbLines" : 44,
+	"nbComments" : 0,
+	"nbCloc" : 44,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageJobs.js",
+	"path" : "src/app/service/operations/view/nls/ManageJobs.js",
+	"nbLines" : 104,
+	"nbComments" : 0,
+	"nbCloc" : 104,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "QualifyForm.js",
+	"path" : "src/app/service/operations/widget/nls/QualifyForm.js",
+	"nbLines" : 73,
+	"nbComments" : 0,
+	"nbCloc" : 72,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/reports/nls/en/Errors.js",
+	"nbLines" : 2,
+	"nbComments" : 0,
+	"nbCloc" : 2,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/reports/nls/fr/Errors.js",
+	"nbLines" : 2,
+	"nbComments" : 0,
+	"nbCloc" : 2,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "CreateReport.js",
+	"path" : "src/app/service/reports/view/nls/CreateReport.js",
+	"nbLines" : 24,
+	"nbComments" : 0,
+	"nbCloc" : 24,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportsList.js",
+	"path" : "src/app/service/reports/view/nls/ReportsList.js",
+	"nbLines" : 29,
+	"nbComments" : 0,
+	"nbCloc" : 29,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/settings/nls/en/Errors.js",
+	"nbLines" : 2,
+	"nbComments" : 0,
+	"nbCloc" : 2,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Errors.js",
+	"path" : "src/app/service/settings/nls/fr/Errors.js",
+	"nbLines" : 2,
+	"nbComments" : 0,
+	"nbCloc" : 2,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageGrids.js",
+	"path" : "src/app/service/settings/view/nls/ManageGrids.js",
+	"nbLines" : 57,
+	"nbComments" : 0,
+	"nbCloc" : 57,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageUsers.js",
+	"path" : "src/app/service/settings/view/nls/ManageUsers.js",
+	"nbLines" : 56,
+	"nbComments" : 0,
+	"nbCloc" : 56,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "CollectorForm.js",
+	"path" : "src/app/service/settings/widget/nls/CollectorForm.js",
+	"nbLines" : 40,
+	"nbComments" : 0,
+	"nbCloc" : 38,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "CopyPaste.js",
+	"path" : "src/app/service/common/widget/nls/en/CopyPaste.js",
+	"nbLines" : 34,
+	"nbComments" : 0,
+	"nbCloc" : 34,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "DateFilter.js",
+	"path" : "src/app/service/common/widget/nls/en/DateFilter.js",
+	"nbLines" : 16,
+	"nbComments" : 0,
+	"nbCloc" : 16,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ExportForm.js",
+	"path" : "src/app/service/common/widget/nls/en/ExportForm.js",
+	"nbLines" : 46,
+	"nbComments" : 0,
+	"nbCloc" : 46,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "GroupFilter.js",
+	"path" : "src/app/service/common/widget/nls/en/GroupFilter.js",
+	"nbLines" : 27,
+	"nbComments" : 0,
+	"nbCloc" : 27,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Header.js",
+	"path" : "src/app/service/common/widget/nls/en/Header.js",
+	"nbLines" : 10,
+	"nbComments" : 0,
+	"nbCloc" : 10,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Menu.js",
+	"path" : "src/app/service/common/widget/nls/en/Menu.js",
+	"nbLines" : 41,
+	"nbComments" : 0,
+	"nbCloc" : 41,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportGrid.js",
+	"path" : "src/app/service/common/widget/nls/en/ReportGrid.js",
+	"nbLines" : 20,
+	"nbComments" : 0,
+	"nbCloc" : 20,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "CopyPaste.js",
+	"path" : "src/app/service/common/widget/nls/fr/CopyPaste.js",
+	"nbLines" : 34,
+	"nbComments" : 0,
+	"nbCloc" : 34,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "DateFilter.js",
+	"path" : "src/app/service/common/widget/nls/fr/DateFilter.js",
+	"nbLines" : 17,
+	"nbComments" : 0,
+	"nbCloc" : 16,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ExportForm.js",
+	"path" : "src/app/service/common/widget/nls/fr/ExportForm.js",
+	"nbLines" : 46,
+	"nbComments" : 0,
+	"nbCloc" : 46,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "GroupFilter.js",
+	"path" : "src/app/service/common/widget/nls/fr/GroupFilter.js",
+	"nbLines" : 27,
+	"nbComments" : 0,
+	"nbCloc" : 27,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Header.js",
+	"path" : "src/app/service/common/widget/nls/fr/Header.js",
+	"nbLines" : 10,
+	"nbComments" : 0,
+	"nbCloc" : 10,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Menu.js",
+	"path" : "src/app/service/common/widget/nls/fr/Menu.js",
+	"nbLines" : 41,
+	"nbComments" : 0,
+	"nbCloc" : 41,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportGrid.js",
+	"path" : "src/app/service/common/widget/nls/fr/ReportGrid.js",
+	"nbLines" : 20,
+	"nbComments" : 0,
+	"nbCloc" : 20,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Home.js",
+	"path" : "src/app/service/monitor/view/nls/en/Home.js",
+	"nbLines" : 41,
+	"nbComments" : 0,
+	"nbCloc" : 41,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "Home.js",
+	"path" : "src/app/service/monitor/view/nls/fr/Home.js",
+	"nbLines" : 41,
+	"nbComments" : 0,
+	"nbCloc" : 41,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ParametersSumup.js",
+	"path" : "src/app/service/monitor/widget/nls/en/ParametersSumup.js",
+	"nbLines" : 20,
+	"nbComments" : 0,
+	"nbCloc" : 20,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportCard.js",
+	"path" : "src/app/service/monitor/widget/nls/en/ReportCard.js",
+	"nbLines" : 8,
+	"nbComments" : 0,
+	"nbCloc" : 8,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportChart.js",
+	"path" : "src/app/service/monitor/widget/nls/en/ReportChart.js",
+	"nbLines" : 6,
+	"nbComments" : 0,
+	"nbCloc" : 6,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportGrid.js",
+	"path" : "src/app/service/monitor/widget/nls/en/ReportGrid.js",
+	"nbLines" : 27,
+	"nbComments" : 0,
+	"nbCloc" : 27,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ParametersSumup.js",
+	"path" : "src/app/service/monitor/widget/nls/fr/ParametersSumup.js",
+	"nbLines" : 20,
+	"nbComments" : 0,
+	"nbCloc" : 20,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportCard.js",
+	"path" : "src/app/service/monitor/widget/nls/fr/ReportCard.js",
+	"nbLines" : 8,
+	"nbComments" : 0,
+	"nbCloc" : 8,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportChart.js",
+	"path" : "src/app/service/monitor/widget/nls/fr/ReportChart.js",
+	"nbLines" : 6,
+	"nbComments" : 0,
+	"nbCloc" : 6,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportGrid.js",
+	"path" : "src/app/service/monitor/widget/nls/fr/ReportGrid.js",
+	"nbLines" : 27,
+	"nbComments" : 0,
+	"nbCloc" : 27,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageCustomers.js",
+	"path" : "src/app/service/operations/view/nls/en/ManageCustomers.js",
+	"nbLines" : 40,
+	"nbComments" : 0,
+	"nbCloc" : 40,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageJobs.js",
+	"path" : "src/app/service/operations/view/nls/en/ManageJobs.js",
+	"nbLines" : 100,
+	"nbComments" : 0,
+	"nbCloc" : 100,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageCustomers.js",
+	"path" : "src/app/service/operations/view/nls/fr/ManageCustomers.js",
+	"nbLines" : 40,
+	"nbComments" : 0,
+	"nbCloc" : 40,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageJobs.js",
+	"path" : "src/app/service/operations/view/nls/fr/ManageJobs.js",
+	"nbLines" : 100,
+	"nbComments" : 0,
+	"nbCloc" : 100,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "QualifyForm.js",
+	"path" : "src/app/service/operations/widget/nls/en/QualifyForm.js",
+	"nbLines" : 66,
+	"nbComments" : 0,
+	"nbCloc" : 66,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "QualifyForm.js",
+	"path" : "src/app/service/operations/widget/nls/fr/QualifyForm.js",
+	"nbLines" : 66,
+	"nbComments" : 0,
+	"nbCloc" : 66,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "CreateReport.js",
+	"path" : "src/app/service/reports/view/nls/en/CreateReport.js",
+	"nbLines" : 20,
+	"nbComments" : 0,
+	"nbCloc" : 20,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportsList.js",
+	"path" : "src/app/service/reports/view/nls/en/ReportsList.js",
+	"nbLines" : 25,
+	"nbComments" : 0,
+	"nbCloc" : 25,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "CreateReport.js",
+	"path" : "src/app/service/reports/view/nls/fr/CreateReport.js",
+	"nbLines" : 20,
+	"nbComments" : 0,
+	"nbCloc" : 20,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ReportsList.js",
+	"path" : "src/app/service/reports/view/nls/fr/ReportsList.js",
+	"nbLines" : 25,
+	"nbComments" : 0,
+	"nbCloc" : 25,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageGrids.js",
+	"path" : "src/app/service/settings/view/nls/en/ManageGrids.js",
+	"nbLines" : 53,
+	"nbComments" : 0,
+	"nbCloc" : 53,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageUsers.js",
+	"path" : "src/app/service/settings/view/nls/en/ManageUsers.js",
+	"nbLines" : 52,
+	"nbComments" : 0,
+	"nbCloc" : 52,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageGrids.js",
+	"path" : "src/app/service/settings/view/nls/fr/ManageGrids.js",
+	"nbLines" : 53,
+	"nbComments" : 0,
+	"nbCloc" : 53,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "ManageUsers.js",
+	"path" : "src/app/service/settings/view/nls/fr/ManageUsers.js",
+	"nbLines" : 52,
+	"nbComments" : 0,
+	"nbCloc" : 52,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "CollectorForm.js",
+	"path" : "src/app/service/settings/widget/nls/en/CollectorForm.js",
+	"nbLines" : 32,
+	"nbComments" : 0,
+	"nbCloc" : 32,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}},
+	{
+	"name" : "CollectorForm.js",
+	"path" : "src/app/service/settings/widget/nls/fr/CollectorForm.js",
+	"nbLines" : 32,
+	"nbComments" : 0,
+	"nbCloc" : 32,
+	"issues" : [],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 0,
+		"minor" : 0,
+		"info" : 0
+	}}],
+"nbFiles" : 121,
+"nbLines" : 12063,
+"nbCloc" : 11655,
+"nbComments" : 0,
+"violations" : {
+	"blocker" : 0,
+	"critical" : 0,
+	"major" : 43,
+	"minor" : 0,
+	"info" : 0
+	}
+}

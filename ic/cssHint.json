@@ -1,0 +1,4927 @@
+{
+"language" : "html",
+"project" : "iBRT",
+"projectPath" : "/home/clegallo/.jenkins/workspace/iBRT_GUI/",
+"version" : "1.1.0",
+"files" : [	{
+	"name" : "app.css",
+	"path" : "themes/css/app.css",
+	"nbLines" : 2,
+	"nbComments" : 0,
+	"nbCloc" : 2,
+	"issues" : [{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The property -webkit-appearance is compatible with -moz-appearance and should be included as well.",
+		"description" : "Include all compatible vendor prefixes to reach a wider range of users.",
+		"rulekey" : "compatible-vendor-prefixes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Expected RBRACE at line 1, col 6098.",
+		"description" : "This rule looks for recoverable syntax errors.",
+		"rulekey" : "errors",
+		"severity" : "MAJOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Expected RBRACE at line 1, col 6106.",
+		"description" : "This rule looks for recoverable syntax errors.",
+		"rulekey" : "errors",
+		"severity" : "MAJOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Expected RBRACE at line 1, col 6163.",
+		"description" : "This rule looks for recoverable syntax errors.",
+		"rulekey" : "errors",
+		"severity" : "MAJOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The box-sizing property isn't supported in IE6 and IE7.",
+		"description" : "The box-sizing properties isn't supported in IE6 and IE7.",
+		"rulekey" : "box-sizing",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The property -webkit-box-sizing is compatible with -moz-box-sizing and should be included as well.",
+		"description" : "Include all compatible vendor prefixes to reach a wider range of users.",
+		"rulekey" : "compatible-vendor-prefixes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Standard property 'box-sizing' should come after vendor-prefixed property '-moz-box-sizing'.",
+		"description" : "When using a vendor-prefixed property, make sure to include the standard one.",
+		"rulekey" : "vendor-prefix",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Expected RBRACE at line 1, col 6433.",
+		"description" : "This rule looks for recoverable syntax errors.",
+		"rulekey" : "errors",
+		"severity" : "MAJOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "float can't be used with display: inline-block.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The universal selector (*) is known to be slow.",
+		"description" : "The universal selector (*) is known to be slow.",
+		"rulekey" : "universal-selector",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Expected RBRACE at line 1, col 9237.",
+		"description" : "This rule looks for recoverable syntax errors.",
+		"rulekey" : "errors",
+		"severity" : "MAJOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Expected RBRACE at line 1, col 10108.",
+		"description" : "This rule looks for recoverable syntax errors.",
+		"rulekey" : "errors",
+		"severity" : "MAJOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The universal selector (*) is known to be slow.",
+		"description" : "The universal selector (*) is known to be slow.",
+		"rulekey" : "universal-selector",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The universal selector (*) is known to be slow.",
+		"description" : "The universal selector (*) is known to be slow.",
+		"rulekey" : "universal-selector",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Expected RBRACE at line 1, col 10554.",
+		"description" : "This rule looks for recoverable syntax errors.",
+		"rulekey" : "errors",
+		"severity" : "MAJOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with border can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Expected RBRACE at line 1, col 10959.",
+		"description" : "This rule looks for recoverable syntax errors.",
+		"rulekey" : "errors",
+		"severity" : "MAJOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Outlines shouldn't be hidden unless other visual changes are made.",
+		"description" : "Use of outline: none or outline: 0 should be limited to :focus rules.",
+		"rulekey" : "outline-none",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Expected RBRACE at line 1, col 11702.",
+		"description" : "This rule looks for recoverable syntax errors.",
+		"rulekey" : "errors",
+		"severity" : "MAJOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Expected RBRACE at line 1, col 11728.",
+		"description" : "This rule looks for recoverable syntax errors.",
+		"rulekey" : "errors",
+		"severity" : "MAJOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Expected RBRACE at line 1, col 11760.",
+		"description" : "This rule looks for recoverable syntax errors.",
+		"rulekey" : "errors",
+		"severity" : "MAJOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Expected RBRACE at line 1, col 12737.",
+		"description" : "This rule looks for recoverable syntax errors.",
+		"rulekey" : "errors",
+		"severity" : "MAJOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property 'right' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Expected RBRACE at line 1, col 15182.",
+		"description" : "This rule looks for recoverable syntax errors.",
+		"rulekey" : "errors",
+		"severity" : "MAJOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The property -ms-transform is compatible with -moz-transform, -webkit-transform, -o-transform and should be included as well.",
+		"description" : "Include all compatible vendor prefixes to reach a wider range of users.",
+		"rulekey" : "compatible-vendor-prefixes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The property -ms-transform-origin is compatible with -moz-transform-origin, -webkit-transform-origin, -o-transform-origin and should be included as well.",
+		"description" : "Include all compatible vendor prefixes to reach a wider range of users.",
+		"rulekey" : "compatible-vendor-prefixes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The properties padding-top, padding-bottom, padding-left, padding-right can be replaced by padding.",
+		"description" : "Use shorthand properties where possible.",
+		"rulekey" : "shorthand",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with border-bottom can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with border-top can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with border-left can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with border-right can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The universal selector (*) is known to be slow.",
+		"description" : "The universal selector (*) is known to be slow.",
+		"rulekey" : "universal-selector",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Outlines should only be modified using :focus.",
+		"description" : "Use of outline: none or outline: 0 should be limited to :focus rules.",
+		"rulekey" : "outline-none",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The universal selector (*) is known to be slow.",
+		"description" : "The universal selector (*) is known to be slow.",
+		"rulekey" : "universal-selector",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Outlines shouldn't be hidden unless other visual changes are made.",
+		"description" : "Use of outline: none or outline: 0 should be limited to :focus rules.",
+		"rulekey" : "outline-none",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The universal selector (*) is known to be slow.",
+		"description" : "The universal selector (*) is known to be slow.",
+		"rulekey" : "universal-selector",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The universal selector (*) is known to be slow.",
+		"description" : "The universal selector (*) is known to be slow.",
+		"rulekey" : "universal-selector",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The universal selector (*) is known to be slow.",
+		"description" : "The universal selector (*) is known to be slow.",
+		"rulekey" : "universal-selector",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The universal selector (*) is known to be slow.",
+		"description" : "The universal selector (*) is known to be slow.",
+		"rulekey" : "universal-selector",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The universal selector (*) is known to be slow.",
+		"description" : "The universal selector (*) is known to be slow.",
+		"rulekey" : "universal-selector",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Expected RBRACE at line 1, col 27388.",
+		"description" : "This rule looks for recoverable syntax errors.",
+		"rulekey" : "errors",
+		"severity" : "MAJOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Expected RBRACE at line 1, col 27396.",
+		"description" : "This rule looks for recoverable syntax errors.",
+		"rulekey" : "errors",
+		"severity" : "MAJOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "vertical-align can't be used with display: block.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with border can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with border can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The universal selector (*) is known to be slow.",
+		"description" : "The universal selector (*) is known to be slow.",
+		"rulekey" : "universal-selector",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with border can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Unqualified attribute selectors are known to be slow.",
+		"description" : "Unqualified attribute selectors are known to be slow.",
+		"rulekey" : "unqualified-attributes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with padding can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Expected RPAREN at line 1, col 33591.",
+		"description" : "This rule looks for recoverable syntax errors.",
+		"rulekey" : "errors",
+		"severity" : "MAJOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The universal selector (*) is known to be slow.",
+		"description" : "The universal selector (*) is known to be slow.",
+		"rulekey" : "universal-selector",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The universal selector (*) is known to be slow.",
+		"description" : "The universal selector (*) is known to be slow.",
+		"rulekey" : "universal-selector",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The universal selector (*) is known to be slow.",
+		"description" : "The universal selector (*) is known to be slow.",
+		"rulekey" : "universal-selector",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The universal selector (*) is known to be slow.",
+		"description" : "The universal selector (*) is known to be slow.",
+		"rulekey" : "universal-selector",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The property -moz-user-select is compatible with -webkit-user-select and should be included as well.",
+		"description" : "Include all compatible vendor prefixes to reach a wider range of users.",
+		"rulekey" : "compatible-vendor-prefixes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The property -ms-user-select is compatible with -webkit-user-select and should be included as well.",
+		"description" : "Include all compatible vendor prefixes to reach a wider range of users.",
+		"rulekey" : "compatible-vendor-prefixes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Missing standard property 'user-select' to go along with '-webkit-user-select'.",
+		"description" : "When using a vendor-prefixed property, make sure to include the standard one.",
+		"rulekey" : "vendor-prefix",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Expected RBRACE at line 1, col 36499.",
+		"description" : "This rule looks for recoverable syntax errors.",
+		"rulekey" : "errors",
+		"severity" : "MAJOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The property -o-transition-property is compatible with -webkit-transition-property and -moz-transition-property and should be included as well.",
+		"description" : "Include all compatible vendor prefixes to reach a wider range of users.",
+		"rulekey" : "compatible-vendor-prefixes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The property -o-transition-duration is compatible with -webkit-transition-duration and -moz-transition-duration and should be included as well.",
+		"description" : "Include all compatible vendor prefixes to reach a wider range of users.",
+		"rulekey" : "compatible-vendor-prefixes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The property -o-transition-duration is compatible with -webkit-transition-duration and -moz-transition-duration and should be included as well.",
+		"description" : "Include all compatible vendor prefixes to reach a wider range of users.",
+		"rulekey" : "compatible-vendor-prefixes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Missing vendor-prefixed CSS gradients for Old Webkit (Safari 4+, Chrome).",
+		"description" : "When using a vendor-prefixed gradient, make sure to use them all.",
+		"rulekey" : "gradients",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The property -o-transition-duration is compatible with -webkit-transition-duration and -moz-transition-duration and should be included as well.",
+		"description" : "Include all compatible vendor prefixes to reach a wider range of users.",
+		"rulekey" : "compatible-vendor-prefixes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Missing vendor-prefixed CSS gradients for Old Webkit (Safari 4+, Chrome).",
+		"description" : "When using a vendor-prefixed gradient, make sure to use them all.",
+		"rulekey" : "gradients",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property 'background-image' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with underscore prefix found.",
+		"description" : "Checks for the underscore property hack (targets IE6)",
+		"rulekey" : "underscore-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Missing vendor-prefixed CSS gradients for Old Webkit (Safari 4+, Chrome).",
+		"description" : "When using a vendor-prefixed gradient, make sure to use them all.",
+		"rulekey" : "gradients",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property 'background-image' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with underscore prefix found.",
+		"description" : "Checks for the underscore property hack (targets IE6)",
+		"rulekey" : "underscore-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Missing vendor-prefixed CSS gradients for Old Webkit (Safari 4+, Chrome).",
+		"description" : "When using a vendor-prefixed gradient, make sure to use them all.",
+		"rulekey" : "gradients",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The property -o-transition-property is compatible with -webkit-transition-property and -moz-transition-property and should be included as well.",
+		"description" : "Include all compatible vendor prefixes to reach a wider range of users.",
+		"rulekey" : "compatible-vendor-prefixes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The property -o-transition-duration is compatible with -webkit-transition-duration and -moz-transition-duration and should be included as well.",
+		"description" : "Include all compatible vendor prefixes to reach a wider range of users.",
+		"rulekey" : "compatible-vendor-prefixes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with padding can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with padding can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Outlines should only be modified using :focus.",
+		"description" : "Use of outline: none or outline: 0 should be limited to :focus rules.",
+		"rulekey" : "outline-none",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Background image '../images/standardGradient.png' was used multiple times, first declared at line 1, col 41140.",
+		"description" : "Every background-image should be unique. Use a common class for e.g. sprites.",
+		"rulekey" : "duplicate-background-images",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property 'background-image' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with underscore prefix found.",
+		"description" : "Checks for the underscore property hack (targets IE6)",
+		"rulekey" : "underscore-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Missing vendor-prefixed CSS gradients for Old Webkit (Safari 4+, Chrome).",
+		"description" : "When using a vendor-prefixed gradient, make sure to use them all.",
+		"rulekey" : "gradients",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Missing vendor-prefixed CSS gradients for Old Webkit (Safari 4+, Chrome).",
+		"description" : "When using a vendor-prefixed gradient, make sure to use them all.",
+		"rulekey" : "gradients",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Background image '../images/activeGradient.png' was used multiple times, first declared at line 1, col 42014.",
+		"description" : "Every background-image should be unique. Use a common class for e.g. sprites.",
+		"rulekey" : "duplicate-background-images",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property 'background-image' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with underscore prefix found.",
+		"description" : "Checks for the underscore property hack (targets IE6)",
+		"rulekey" : "underscore-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Missing vendor-prefixed CSS gradients for Old Webkit (Safari 4+, Chrome).",
+		"description" : "When using a vendor-prefixed gradient, make sure to use them all.",
+		"rulekey" : "gradients",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property 'background-image' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with underscore prefix found.",
+		"description" : "Checks for the underscore property hack (targets IE6)",
+		"rulekey" : "underscore-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Missing vendor-prefixed CSS gradients for Old Webkit (Safari 4+, Chrome).",
+		"description" : "When using a vendor-prefixed gradient, make sure to use them all.",
+		"rulekey" : "gradients",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Fallback background-color (hex or RGB) should precede RGBA background-color.",
+		"description" : "For older browsers that don't support RGBA, HSL, or HSLA, provide a fallback color.",
+		"rulekey" : "fallback-colors",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The property -o-transition-property is compatible with -webkit-transition-property and -moz-transition-property and should be included as well.",
+		"description" : "Include all compatible vendor prefixes to reach a wider range of users.",
+		"rulekey" : "compatible-vendor-prefixes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The property -o-transition-duration is compatible with -webkit-transition-duration and -moz-transition-duration and should be included as well.",
+		"description" : "Include all compatible vendor prefixes to reach a wider range of users.",
+		"rulekey" : "compatible-vendor-prefixes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The property -o-transition-duration is compatible with -webkit-transition-duration and -moz-transition-duration and should be included as well.",
+		"description" : "Include all compatible vendor prefixes to reach a wider range of users.",
+		"rulekey" : "compatible-vendor-prefixes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "The property -o-transition-duration is compatible with -webkit-transition-duration and -moz-transition-duration and should be included as well.",
+		"description" : "Include all compatible vendor prefixes to reach a wider range of users.",
+		"rulekey" : "compatible-vendor-prefixes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Missing vendor-prefixed CSS gradients for Old Webkit (Safari 4+, Chrome).",
+		"description" : "When using a vendor-prefixed gradient, make sure to use them all.",
+		"rulekey" : "gradients",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Standard property 'border-bottom-right-radius' should come after vendor-prefixed property '-moz-border-radius-bottomright'.",
+		"description" : "When using a vendor-prefixed property, make sure to include the standard one.",
+		"rulekey" : "vendor-prefix",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Standard property 'border-bottom-left-radius' should come after vendor-prefixed property '-moz-border-radius-bottomleft'.",
+		"description" : "When using a vendor-prefixed property, make sure to include the standard one.",
+		"rulekey" : "vendor-prefix",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Background image 'images/standardGradient.png' was used multiple times, first declared at line 1, col 51476.",
+		"description" : "Every background-image should be unique. Use a common class for e.g. sprites.",
+		"rulekey" : "duplicate-background-images",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property 'background-image' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with underscore prefix found.",
+		"description" : "Checks for the underscore property hack (targets IE6)",
+		"rulekey" : "underscore-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Missing vendor-prefixed CSS gradients for Old Webkit (Safari 4+, Chrome).",
+		"description" : "When using a vendor-prefixed gradient, make sure to use them all.",
+		"rulekey" : "gradients",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Missing vendor-prefixed CSS gradients for Old Webkit (Safari 4+, Chrome).",
+		"description" : "When using a vendor-prefixed gradient, make sure to use them all.",
+		"rulekey" : "gradients",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with padding-left can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Outlines should only be modified using :focus.",
+		"description" : "Use of outline: none or outline: 0 should be limited to :focus rules.",
+		"rulekey" : "outline-none",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Outlines should only be modified using :focus.",
+		"description" : "Use of outline: none or outline: 0 should be limited to :focus rules.",
+		"rulekey" : "outline-none",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Background image '../images/orange/grid/grid_dx_gradient.gif' was used multiple times, first declared at line 1, col 67741.",
+		"description" : "Every background-image should be unique. Use a common class for e.g. sprites.",
+		"rulekey" : "duplicate-background-images",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property 'border-top' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "margin can't be used with display: table-cell.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Background image '../images/orange/grid/grid_dx_gradient.gif' was used multiple times, first declared at line 1, col 67741.",
+		"description" : "Every background-image should be unique. Use a common class for e.g. sprites.",
+		"rulekey" : "duplicate-background-images",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property 'height' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Outlines should only be modified using :focus.",
+		"description" : "Use of outline: none or outline: 0 should be limited to :focus rules.",
+		"rulekey" : "outline-none",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Outlines should only be modified using :focus.",
+		"description" : "Use of outline: none or outline: 0 should be limited to :focus rules.",
+		"rulekey" : "outline-none",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Background image '../images/orange/grid/row_back.png' was used multiple times, first declared at line 1, col 77311.",
+		"description" : "Every background-image should be unique. Use a common class for e.g. sprites.",
+		"rulekey" : "duplicate-background-images",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Background image '../images/orange/grid/row_back.png' was used multiple times, first declared at line 1, col 77311.",
+		"description" : "Every background-image should be unique. Use a common class for e.g. sprites.",
+		"rulekey" : "duplicate-background-images",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Background image '../images/orange/grid/td_button_down.png' was used multiple times, first declared at line 1, col 78526.",
+		"description" : "Every background-image should be unique. Use a common class for e.g. sprites.",
+		"rulekey" : "duplicate-background-images",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Use of !important",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with padding-bottom can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with padding can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with padding can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with padding-left can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with padding-right can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with padding-top can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with padding-bottom can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "display:inline has no effect on floated elements (but may be used to fix the IE6 double-margin bug).",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with padding can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with padding can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with padding-bottom can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with padding-left can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with padding-bottom can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with padding-bottom can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with border can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with border can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with border-bottom can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "display:inline has no effect on floated elements (but may be used to fix the IE6 double-margin bug).",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "display:inline has no effect on floated elements (but may be used to fix the IE6 double-margin bug).",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with padding can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with padding-left can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with padding-right can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with border can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with border can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*zoom' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Values of 0 shouldn't have units specified.",
+		"description" : "You don't need to specify units when a value is 0.",
+		"rulekey" : "zero-units",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with padding-left can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with padding-bottom can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with padding-left can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using height with padding-bottom can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with padding-left can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with padding-right can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with border can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with padding-right can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "display:inline has no effect on floated elements (but may be used to fix the IE6 double-margin bug).",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "display:inline has no effect on floated elements (but may be used to fix the IE6 double-margin bug).",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "display:inline has no effect on floated elements (but may be used to fix the IE6 double-margin bug).",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "display:inline has no effect on floated elements (but may be used to fix the IE6 double-margin bug).",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property 'margin-bottom' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "display:inline has no effect on floated elements (but may be used to fix the IE6 double-margin bug).",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "display:inline has no effect on floated elements (but may be used to fix the IE6 double-margin bug).",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "display:inline has no effect on floated elements (but may be used to fix the IE6 double-margin bug).",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Duplicate property '*display' found.",
+		"description" : "Duplicate properties must appear one after the other.",
+		"rulekey" : "duplicate-properties",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Property with star prefix found.",
+		"description" : "Checks for the star property hack (targets IE6/7)",
+		"rulekey" : "star-property-hack",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "height can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "width can't be used with display: inline.",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "display:inline has no effect on floated elements (but may be used to fix the IE6 double-margin bug).",
+		"description" : "Certain properties shouldn't be used with certain display property values.",
+		"rulekey" : "display-property-grouping",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with padding-right can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with border-left can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with border-right can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Using width with padding can sometimes make elements larger than you expect.",
+		"description" : "Don't use width or height when using padding or border.",
+		"rulekey" : "box-model",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Background image '../images/../images/orange/ajax-loader.gif' was used multiple times, first declared at line 1, col 74545.",
+		"description" : "Every background-image should be unique. Use a common class for e.g. sprites.",
+		"rulekey" : "duplicate-background-images",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Don't use adjoining classes.",
+		"description" : "Don't use adjoining classes.",
+		"rulekey" : "adjoining-classes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : 1,
+		"message" : "Element (td.dijitMenuArrowCell) is overqualified, just use .dijitMenuArrowCell without element name.",
+		"description" : "Don't use classes or IDs with elements (a.foo or a#foo).",
+		"rulekey" : "overqualified-elements",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : null,
+		"message" : "Too many !important declarations (139), try to use less than 10 to avoid specificity issues.",
+		"description" : "Be careful when using !important declaration",
+		"rulekey" : "important",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : null,
+		"message" : "Too many font-size declarations (72), abstraction needed.",
+		"description" : "Checks the number of font-size declarations.",
+		"rulekey" : "font-sizes",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		},{
+		"line" : null,
+		"message" : "Too many floats (68), you're probably using them for layout. Consider using a grid system instead.",
+		"description" : "This rule tests if the float property is used too many times",
+		"rulekey" : "floats",
+		"severity" : "MINOR",
+		"reporter" : "csslint",
+		"creationDate" : 1425803992162
+		}],
+	"violations" : {
+		"blocker" : 0,
+		"critical" : 0,
+		"major" : 17,
+		"minor" : 595,
+		"info" : 0
+	}}],
+"nbFiles" : 1,
+"nbLines" : 2,
+"nbCloc" : 2,
+"nbComments" : 0,
+"violations" : {
+	"blocker" : 0,
+	"critical" : 0,
+	"major" : 17,
+	"minor" : 595,
+	"info" : 0
+	}
+}
