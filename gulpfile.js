@@ -9,8 +9,6 @@ var runseq = require('run-sequence');
 var plato = require('plato');
 var $ = require('gulp-load-plugins')();
 var pkg = require('./package.json');
-var war = require('gulp-war');
-var zip = require('gulp-zip');
 var banner = [
   '/**', 
   ' * <%= pkg.name %> - Copyright (c) <%= new Date().getFullYear() %> SII Group.', 
@@ -138,12 +136,12 @@ gulp.task('watch', ['connect'], function() {
 });
 
 gulp.task('war', function() {
-  gulp.src(["app/**/*.*"])
-        .pipe(war({
+  gulp.src(["dist/**/*.*"])
+        .pipe($.war({
             welcome: 'index.html',
             displayName: 'devoxx 2015 front',
         }))
-        .pipe(zip('Devoxx2015.war'))
+        .pipe($.zip('Devoxx2015.war'))
         .pipe(gulp.dest("./dist"));
 });
 

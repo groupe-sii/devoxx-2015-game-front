@@ -8,7 +8,7 @@
 RPG.config({
 
 	'socket': {
-		'url': 'http://localhost:8080/game'
+		'url': 'http://localhost:8080/survival-game/game'
 	},
   
 	/**
