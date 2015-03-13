@@ -39,16 +39,20 @@ RPG.module('Gfx', function() {
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_JOINED, function(topic, data) {
       this.playerEntity = this.placeEntity(data, 'player');
       
-    //   debugger;
-    //   var enemy = null;
-    //   var nbEnemy = 5;
-    //   for (var i = nbEnemy - 1; i >= 0; i--) {
-    //     enemy = this.createEntity({
-    //       life: (Math.random() * 100),
-    //       position: generatePosition_(this.gridSize)
-    //     }, 'enemy');
-    //     this.placeEntity(enemy);
-      // };
+      var enemy = null;
+      var nbEnemy = 5;
+      for (var i = nbEnemy - 1; i >= 0; i--) {
+        enemy = this.placeEntity({
+          player: {
+            playerInfo: {
+              avatar: 'images/players-sprites/dvl1_fr1.gif.png',
+              name: 'Enemy '+i,
+              life: (Math.random() * 100)
+            }
+          },
+          newCell: this.generatePosition()
+        }, 'enemy');
+      };
       
     }.bind(this));
     
@@ -59,14 +63,23 @@ RPG.module('Gfx', function() {
     this.pubsub.subscribe(RPG.topics.SUB_OTHER_JOINED, function(topic, data) {});
     
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_MOVED, function(topic, data) {
-      var entity = this.playerEntity.setEntity(data);
-      this.moveTo(entity);
+      this.playerEntity.setAttribute('current-position-x', data.newCell.x);
+      this.playerEntity.setAttribute('current-position-y', data.newCell.y);
+      this.playerEntity.setAttribute('previous-position-x', data.oldCell.x);
+      this.playerEntity.setAttribute('previous-position-y', data.oldCell.y);
+      this.moveTo();
     }.bind(this));
 
     window.addEventListener('beforeunload', function() {
       this.pubsub.publish('/transport/close');
     }.bind(this));
 
+  };
+  Gfx.prototype.generatePosition = function() {
+    return {
+      x: ((Math.random() * this.gridSize) | 0),
+      y: ((Math.random() * this.gridSize) | 0)
+    };
   };
   Gfx.prototype.build = function() {
     var grid = '<table>';
@@ -196,7 +209,13 @@ RPG.module('Gfx', function() {
   Gfx.prototype.createEntity = function(obj, type) {
     var entity = document.createElement(this.itemElement);
     entity.setAttribute('type', type);
-    entity.setEntity(obj);
+    entity.setAttribute('life', obj.player.playerInfo.life);
+    entity.setAttribute('name', obj.player.playerInfo.name);
+    entity.setAttribute('avatar', obj.player.playerInfo.avatar);
+    entity.setAttribute('current-position-x', obj.newCell.x);
+    entity.setAttribute('current-position-y', obj.newCell.y);
+    entity.setAttribute('previous-position-x', (obj.oldCell && obj.oldCell.x) || 0);
+    entity.setAttribute('previous-position-y', (obj.oldCell && obj.oldCell.y) || 0);
     entity.addEventListener('click', function(e){
       this.selectEntity(e.target);
     }.bind(this), false);
@@ -223,7 +242,7 @@ RPG.module('Gfx', function() {
         this.selectPlayer(entity);
         break;
       case 'enemy':
-        this.selectedEnemy(entity);
+        this.selectEnemy(entity);
         break;
     }
   };
@@ -231,45 +250,38 @@ RPG.module('Gfx', function() {
     var container, life, name, avatar;
     if(player){
       container = document.querySelector('#rpg-selected-player');
-      life = '<span class="rpg-life"><i style="width:' + player.life + '%;"></i></span>';
-      name = '<span class="rpg-name">' + player.name + '</span>';
-      avatar = '<img src="' + player.avatar + '" width="32px" height="32px"/>';
+      life = '<span class="rpg-life"><i style="width:' + player.getAttribute('life') + '%;"></i></span>';
+      name = '<span class="rpg-name">' + player.getAttribute('name') + '</span>';
+      avatar = '<img src="' + player.getAttribute('avatar') + '" width="32px" height="32px"/>';
       container.innerHTML = avatar + name + life;
     }
   };
   Gfx.prototype.selectEnemy = function(enemy) {
     var container = document.querySelector('#rpg-selected-enemy');
-    var life = '<span class="rpg-life"><i style="width:' + enemy.getLife() + '%;"></i></span>';
-    var name = '<span class="rpg-name">' + enemy.getName() + '</span>';
-    var image = '<img src="' + enemy.getAvatar() + '" width="32px" height="32px"/>';
+    var life = '<span class="rpg-life"><i style="width:' + enemy.getAttribute('life') + '%;"></i></span>';
+    var name = '<span class="rpg-name">' + enemy.getAttribute('name') + '</span>';
+    var image = '<img src="' + enemy.getAttribute('avatar') + '" width="32px" height="32px"/>';
     container.innerHTML = image + name + life;
   };
   Gfx.prototype.moveTo = function(entity){
 
-    // var entity = this.boardContainer.querySelector(this.itemElement+'[data-x="' + data.position.current.x + '"][data-y="' + data.position.current.y + '"]');
     var oldCell, newCell;
+    entity = entity || this.playerEntity;
 
     if(entity){
 
-      oldCell = this.boardContainer.querySelector('td[data-x="' + entity.position.previous.x + '"][data-y="' + entity.position.previous.y + '"]');
+      oldCell = this.boardContainer.querySelector('td[data-x="' + entity.getAttribute('previous-position-x') + '"][data-y="' + entity.getAttribute('previous-position-y') + '"]');
       if(oldCell){
         oldCell.classList.remove('rpg-occupied');
       }
       
-      newCell = this.boardContainer.querySelector('td[data-x="' + entity.position.current.x + '"][data-y="' + entity.position.current.y + '"]');
+      newCell = this.boardContainer.querySelector('td[data-x="' + entity.getAttribute('current-position-x') + '"][data-y="' + entity.getAttribute('current-position-y') + '"]');
       if(newCell){
         newCell.classList.add('rpg-occupied');
-      }      
+      }
 
-      entity.moveTo({
-        // location: newCell.getBoundingClientRect(),
-        // location: newCell.getClientRects()[0],
-        location: {
-          top: newCell.offsetTop,
-          left: newCell.offsetLeft
-        },
-        position: entity.position
-      });
+      entity.style.top = (newCell.offsetTop + 17) + 'px';
+      entity.style.left = (newCell.offsetLeft + 53) + 'px';
 
     }
 
