@@ -11,7 +11,7 @@ Example:
 -->
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="rpg-entity" attributes="type">
+<polymer-element name="rpg-entity" attributes="type name life avatar current-position previous-position">
   <template>
 		<style>
 			:host {
@@ -99,34 +99,51 @@ Example:
 			}
 
 		</style>
-	  <div class="rpg-entity" data-x="{{entity.position.x}}" data-y="{{entity.position.y}}">
-	  	<span class="rpg-life"><i style="width:{{entity.life}%;"></i></span>
-	  	<span class="rpg-name">{{entity.name}}</span>
-	  	<img src="{{entity.avatar}}" width="32px" height="32px"/>
+	  <div class="rpg-entity">
+	  	<span class="rpg-life"><i style="width:{{life}%;"></i></span>
+	  	<span class="rpg-name">{{name}}</span>
+	  	<img src="{{avatar}}" width="32px" height="32px"/>
 	  </div>
 	</template>
   <script>
+  	var entity;
     Polymer({
     	publish : {
-    		type: 'player'
-    	},
-    	entity: {
-	    	name: '',
-	    	life: 100,
-	    	avatar: '',
-	    	position: {
-	    		current: {
-	    			x: 0,
-	    			y: 0
-	    		},
-	    		previous: {
-	    			x: 0,
-	    			y: 0
-	    		}
-	    	}
+    		type: 'player',
+    		'name': 'player', 
+    		'life': 100,
+    		'avatar': '',
+    		'current-position-x': 0,
+    		'current-position-y': 0,
+    		'previous-position-x': 0,
+    		'previous-position-y': 0
     	},
     	typeChanged: function(oldValue, newValue){
-    		this.domready();
+    		
+    	},
+    	lifeChanged: function(oldValue, newValue){
+    		entity.life = newValue;
+    	},
+    	currentPositionXChanged: function(oldValue, newValue){
+    		entity.position.current.x = newValue;
+    	},
+    	currentPositionYChanged: function(oldValue, newValue){
+    		entity.position.current.y = newValue;
+    	},
+    	previousPositionXChanged: function(oldValue, newValue){
+    		entity.position.previous.x = newValue;
+    	},
+    	previousPositionYChanged: function(oldValue, newValue){
+    		entity.position.previous.y = newValue;
+    	},
+    	nameChanged: function(oldValue, newValue){
+    		entity.name = oldValue;
+    	},
+    	lifeChanged: function(oldValue, newValue){
+    		entity.life = oldValue;
+    	},
+    	avatarChanged: function(oldValue, newValue){
+    		entity.avatar = oldValue;
     	},
     	collide: function(){
   		  this.classList.add('collide');
@@ -134,45 +151,14 @@ Example:
 		      this.classList.remove('collide');
 		    }.bind(this), 1000);
     	},
-    	transpose: function(loc){
-    		this.style.top = loc.top + 17 + 'px',
-    		this.style.left = (loc.left + 53) + 'px'
-    	},
-    	moveTo: function(cell){
-    		this.transpose(cell.location);
-    		this.entity.position = cell.position;
-    	},
-    	setEntity: function(data){
-
+    	created: function(){
     		try {
-    			this.entity.name = data.player.playerInfo.name;
-    			this.entity.avatar = data.player.playerInfo.avatar;
-    			this.entity.life = data.player.life;
-    			this.entity.position.previous = data.newCell;
-    			this.entity.position.current = data.newCell;
-    		}
-    		catch(e){
-    			// ignore missing properties, we took them from the parent prototype
-    		}
-
-    		this.dataset.x = this.entity.position.current.x;
-    		this.dataset.y = this.entity.position.current.y;
-
-    		return this;
-
-    	},
-    	domready: function(){
-    		try {
-					this.entity = RPG.Factory[this.type]();
+					entity = RPG.Factory[this.type]();
     		}
     		catch(e){
     			console.error('The entity type "'+this.type+'" is not valid. Here is the stack trace...');
     			console.trace();
     		}
-    	},
-    	ready: function(){
-    		// expose internal properties as attributes, so no need for setters/getters.
-    		Polymer.mixin(this, this.entity);
     	}
     });
   </script>
