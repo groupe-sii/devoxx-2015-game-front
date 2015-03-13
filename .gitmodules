@@ -1,3 +1,7 @@
 [submodule "documentation"]
 	path = documentation
 	url = https://github.com/groupe-sii/devoxx-2015-game-doc
+
+[submodule "ci"]
+	path = ci
+	url = https://github.com/groupe-sii/front-end-continuous-integration.git
