@@ -11,8 +11,11 @@ RPG.module('Transport', function() {
   function Transport(PubSub) {
     this.pubsub = PubSub;
     this.client = Stomp.over(new SockJS(RPG.socket.url));
-    this.client.connect({}, this.onConnection.bind(this));
+    this.client.debug = null;
   }
+  Transport.prototype.initialize = function(){
+    this.client.connect({}, this.onConnection.bind(this));
+  };
   Transport.prototype.close = function(){
   	this.client.disconnect();
   };
@@ -30,6 +33,8 @@ RPG.module('Transport', function() {
     this.pubsub.subscribe(RPG.topics.PUB_PLAYER_MOVE_UP, this.send.bind(this));
     this.pubsub.subscribe(RPG.topics.PUB_PLAYER_MOVE_LEFT, this.send.bind(this));
     this.pubsub.subscribe(RPG.topics.PUB_PLAYER_MOVE_RIGHT, this.send.bind(this));
+
+    this.pubsub.subscribe('/transport/close', this.close.bind(this));
   };
   Transport.prototype.subscribe = function(topic){
   	this.client.subscribe(topic, function(data) {

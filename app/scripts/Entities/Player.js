@@ -8,13 +8,21 @@
 RPG.entity('Player', function() {
   'use strict';
 
+  var id = 1;
+
   function Player() {
-    this.name = 'Player';
-    this.avatar = 'images/players-sprites/fake.gif';
+    this.name = 'Player_'+(id++);
+    this.avatar = '';
     this.life = 100;
     this.position = {
-      x: 0,
-      y: 0
+      current: {
+        x: 0,
+        y: 0
+      },
+      previous: {
+        x: 0,
+        y: 0
+      }
     };
     for (var property in this) {
       if (this.hasOwnProperty(property)) {
@@ -32,4 +40,5 @@ RPG.entity('Player', function() {
     };
   };
   return Player;
+
 });

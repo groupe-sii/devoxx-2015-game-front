@@ -10,8 +10,11 @@ RPG.run(function() {
   'use strict';
 
 
-  var game = RPG.Factory.game();
-  game.run();
+  var socket = RPG.Factory.transport();
+  socket.initialize();
+  
+  var gfx = RPG.Factory.gfx();
+  gfx.loop();
 
   // var enemy = null;
   // var nbEnemy = 0;

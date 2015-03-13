@@ -27,7 +27,7 @@ RPG.module('Factory', function() {
 			return constructors[target];
 		},
 		enemy: function() {
-			return di.invoke(Enemy);
+			return di.invoke(RPG.Enemy);
 		},
 		player: function(type) {
 			type = RPG[type] || RPG.Player;

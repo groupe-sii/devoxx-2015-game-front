@@ -124,6 +124,11 @@ h1, h2, h3, h4, a.btn {
     max-width: 730px;
   }
 
+  .container .jumbotron {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .header,
   .marketing,
   .footer {
@@ -145,7 +150,7 @@ h1, h2, h3, h4, a.btn {
 }
 .rpg-grid table {
   background-image: url(../images/hay_block_top.png);
-  margin: 10px auto;
+  margin: 0px auto;
   border-radius: 4px;
   background-color: white;
   table-layout: fixed;
@@ -211,9 +216,9 @@ b.text-danger {
 .rpg-player-info {
   border-radius: 5px;
   height: 48px;
-  padding: 10px;
+  padding: 2px;
   margin-bottom: 30px;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(0,0,0, 0.3);
 }
 .rpg-player-info > div {
   width: 150px;
@@ -222,13 +227,16 @@ b.text-danger {
   text-align: left;
 }
 .rpg-player-info > div#rpg-selected-player {
-  
+  float: left;
 }
 .rpg-player-info > div#rpg-selected-enemy {
   float: right;
 }
 .rpg-player-info .rpg-name {
   display: inline-block;
+  margin-top: 10px;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
 }
 .rpg-player-info img {
   border: 1px solid green;
@@ -240,14 +248,14 @@ b.text-danger {
 .rpg-player-info .rpg-life {
   border: 1px solid;
   display: inline-block;
-  width: 110px;
+  width: 60px;
   height: 8px;
   border-radius: 4px;
   overflow: hidden;
   position: absolute;
-  background-color: white;
-  bottom: -15px;
-  left: 0;
+  background-color: rgb(255, 255, 255);
+  left: 40px;
+  top: 9px;
 }
 .rpg-player-info .rpg-life i {
   background-color: lime;

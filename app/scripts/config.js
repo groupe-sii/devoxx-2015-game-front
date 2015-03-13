@@ -6,15 +6,13 @@
  * @author Wassim Chegham
  */
 RPG.config({
-
-	'socket': {
-		'url': 'http://localhost:8080/survival-game/game'
-	},
-  
-	/**
-	 * Topics list mapping
-	 * @type {Object}
-	 */
+  'socket': {
+    'url': 'http://localhost:8080/game'
+  },
+  /**
+   * Topics list mapping
+   * @type {Object}
+   */
   'topics': {
     'PUB_PLAYER_JOIN': '/topic/game/player/join',
     'PUB_PLAYER_LEAVE': '/topic/game/player/quit',

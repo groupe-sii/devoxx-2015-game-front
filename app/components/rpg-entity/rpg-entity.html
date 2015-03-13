@@ -1,6 +1,17 @@
+<!--
+`rpg-entity` is the custom element that represents a playable entity.
+
+Example:
+    <rpg-entity tyle="player"></rpg-entity>
+
+
+@element rpg-entity
+@blurb This is the custom element that represents a playable entity.
+@author Wassim Chegham
+-->
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="rpg-entity">
+<polymer-element name="rpg-entity" attributes="type">
   <template>
 		<style>
 			:host {
@@ -88,37 +99,80 @@
 			}
 
 		</style>
-	  <div class="rpg-entity" data-x="{{position.x}}" data-y="{{position.y}}">
-	  	<span class="rpg-life"><i style="width:{{life}%;"></i></span>
-	  	<span class="rpg-name">{{name}}</span>
-	  	<img src="{{avatar}}" width="32px" height="32px"/>
-	  	<content></content>
+	  <div class="rpg-entity" data-x="{{entity.position.x}}" data-y="{{entity.position.y}}">
+	  	<span class="rpg-life"><i style="width:{{entity.life}%;"></i></span>
+	  	<span class="rpg-name">{{entity.name}}</span>
+	  	<img src="{{entity.avatar}}" width="32px" height="32px"/>
 	  </div>
 	</template>
   <script>
     Polymer({
-    	name: '',
-    	life: 100,
-    	avatar: '',
-    	position: {x:0,y:0},
+    	publish : {
+    		type: 'player'
+    	},
+    	entity: {
+	    	name: '',
+	    	life: 100,
+	    	avatar: '',
+	    	position: {
+	    		current: {
+	    			x: 0,
+	    			y: 0
+	    		},
+	    		previous: {
+	    			x: 0,
+	    			y: 0
+	    		}
+	    	}
+    	},
+    	typeChanged: function(oldValue, newValue){
+    		this.domready();
+    	},
     	collide: function(){
   		  this.classList.add('collide');
 		    setTimeout(function() {
 		      this.classList.remove('collide');
 		    }.bind(this), 1000);
     	},
-    	transpose: function(location){
-    		this.style.top = location.top + 15 + 'px',
-    		this.style.left = location.left + 15 + 'px'
+    	transpose: function(loc){
+    		this.style.top = loc.top + 17 + 'px',
+    		this.style.left = (loc.left + 53) + 'px'
     	},
-    	set: function(data){
-    		data.name && (this.name = data.name);
-    		data.life && (this.life = data.life);
-    		data.avatar && (this.avatar = data.avatar);
-    		data.position && (this.position = data.position);
+    	moveTo: function(cell){
+    		this.transpose(cell.location);
+    		this.entity.position = cell.position;
+    	},
+    	setEntity: function(data){
 
-    		this.dataset.x = this.position.x;
-    		this.dataset.y = this.position.y;
+    		try {
+    			this.entity.name = data.player.playerInfo.name;
+    			this.entity.avatar = data.player.playerInfo.avatar;
+    			this.entity.life = data.player.life;
+    			this.entity.position.previous = data.newCell;
+    			this.entity.position.current = data.newCell;
+    		}
+    		catch(e){
+    			// ignore missing properties, we took them from the parent prototype
+    		}
+
+    		this.dataset.x = this.entity.position.current.x;
+    		this.dataset.y = this.entity.position.current.y;
+
+    		return this;
+
+    	},
+    	domready: function(){
+    		try {
+					this.entity = RPG.Factory[this.type]();
+    		}
+    		catch(e){
+    			console.error('The entity type "'+this.type+'" is not valid. Here is the stack trace...');
+    			console.trace();
+    		}
+    	},
+    	ready: function(){
+    		// expose internal properties as attributes, so no need for setters/getters.
+    		Polymer.mixin(this, this.entity);
     	}
     });
   </script>

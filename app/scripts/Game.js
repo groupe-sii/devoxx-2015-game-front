@@ -35,18 +35,18 @@ RPG.module('Game', function() {
     }
     return this;
   };
-  Game.prototype.addPlayer = function(player) {
-    this.player = player;
-    this.place(player);
-  };
+  // Game.prototype.addPlayer = function(player) {
+  //   this.player = player;
+  //   this.place(player);
+  // };
   Game.prototype.removePlayer = function(position) {
     this.gfx.remove(position).removePlayer(position);
   };
-  Game.prototype.addEnemy = function(player) {
-    player.setPosition(generatePosition_(this.gfx.gridSize));
-    this.place(player);
-    this.players.push(player);
-  };
+  // Game.prototype.addEnemy = function(player) {
+  //   player.position = (generatePosition_(this.gfx.gridSize));
+  //   this.place(player);
+  //   this.players.push(player);
+  // };
   Game.prototype.run = function() {
 
     this.pubsub.subscribe('/gfx/cell/click', function( /*topic, data*/ ) {});
@@ -54,11 +54,20 @@ RPG.module('Game', function() {
     this.pubsub.subscribe('/gfx/item/place', function() {});
     
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_JOINED, function(topic, data) {
-      var player = RPG.Factory.player();
-      player.setName(data.player.playerInfo.name);
-      player.setAvatar(data.player.playerInfo.avatar);
-      player.setPosition(data.newCell);
-      this.addPlayer(player);
+      
+      this.gfx.placeEntity(data, 'player');
+      
+    //   debugger;
+    //   var enemy = null;
+    //   var nbEnemy = 5;
+    //   for (var i = nbEnemy - 1; i >= 0; i--) {
+    //     enemy = this.gfx.createEntity({
+    //       life: (Math.random() * 100),
+    //       position: generatePosition_(this.gfx.gridSize)
+    //     }, 'enemy');
+    //     this.gfx.placeEntity(enemy);
+		  // };
+		  
     }.bind(this));
     
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_LEFT, function(topic, data) {
@@ -72,19 +81,12 @@ RPG.module('Game', function() {
     }.bind(this));
     
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_MOVED, function(topic, data) {
-      var position = this.gfx.move({
-        x: data.oldCell.x,
-        y: data.oldCell.y
-      }, {
-        x: data.newCell.x,
-        y: data.newCell.y
-      });
-      this.player.setPosition(position);
+      this.gfx.moveTo(data);
     }.bind(this));
   };
-  Game.prototype.place = function(player) {
-    return this.gfx.place(player);
-  };
+  // Game.prototype.place = function(player) {
+  //   return this.gfx.place(player);
+  // };
   Game.prototype.bots = function(state) {
     if (state) {
       this.botsInterval = setInterval(function() {

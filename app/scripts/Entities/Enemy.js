@@ -11,7 +11,13 @@ RPG.entity('Enemy', 'Player', function() {
 
   function Enemy() {
     this.name = 'Enemy ' + ((Math.random() * 10) | 0);
-    this.avatar = 'images/players-sprites/dvl1_fr1.gif';
+    this.avatar = 'images/players-sprites/dvl1_fr1.gif.png';
+
+    for (var property in this) {
+      if (this.hasOwnProperty(property)) {
+        this.autoSetterGetter(property);
+      }
+    }
   }
   return Enemy;
 
