@@ -50,8 +50,12 @@
         -->
         <div id="avatar-container">
           <h2>Welcome to Devoxx 2015</h2>
+          <hr class="soften">
+          <a class="btn btn-lg btn-success" role="button" data-action="spectator" href="#">Enter Spectator Mode</a>
+          <hr class="soften">
           <br>
-          <h4>Choose your avatar to enter the game</h4>
+          <h4>Or</h4>
+          <h4>Choose your avatar and join game</h4>
           <img class="avatar img-circle" data-name="amg2_fr2" src="images/players-sprites/amg2_fr2.gif.png" alt="">
           <img class="avatar img-circle" data-name="avt2_fr1" src="images/players-sprites/avt2_fr1.gif.png" alt="">
           <img class="avatar img-circle" data-name="bmg3_fr2" src="images/players-sprites/bmg3_fr2.gif.png" alt="">
@@ -63,11 +67,11 @@
           <img class="avatar img-circle" data-name="wmn2_fr2" src="images/players-sprites/wmn2_fr2.gif.png" alt="">
         </div>
         <div class="form-group center-block">
-          <input placeholder="Enter your username" type="text" class="form-control input-sm" id="username" placeholder="Enter email">
+          <input maxlength="10" placeholder="Enter your username" type="text" class="form-control input-sm" id="username" placeholder="Enter email">
+          <a class="btn btn-primary" disabled="disabled" role="button" data-action="join" href="#">Join</a>
         </div>
-        <p id="action-buttons" class="action-buttons">
-        <a class="btn btn-lg btn-primary" disabled="disabled" role="button" data-action="join" href="#">Join</a>
-        <a class="btn btn-lg btn-danger hidden" disabled="disabled" role="button" data-action="quit" href="#">Leave...</a>
+        <p class="action-buttons">
+          <a class="btn btn-lg btn-danger hidden" disabled="disabled" role="button" data-action="quit" href="#">Leave...</a>
         </p>
       </div>
     </div>

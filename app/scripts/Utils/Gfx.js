@@ -17,12 +17,21 @@ RPG.module('Gfx', function() {
     this.playerEntity = null;
     this.joystick = document.querySelector('#rpg-joystick');
     this.boardContainer = document.querySelector('#rpg-grid');
-    this.buttons = document.querySelector('#action-buttons');
+    this.joinBtn = document.querySelector('[data-action="join"]');
+    this.spectatorBtn = document.querySelector('[data-action="spectator"]');
     this.upperButtons = document.querySelector('#upper-buttons');
     this.avatars = document.querySelector('#avatar-container');
     this.avatars.selected = this.avatars.querySelector('img.selected').dataset.name;
     this.username = document.querySelector('#username');
-    [this.boardContainer, this.joystick, this.buttons, this.avatars, this.username, this.upperButtons].forEach(function(el) {
+    [
+      this.boardContainer, 
+      this.joystick, 
+      this.joinBtn, 
+      this.spectatorBtn, 
+      this.avatars, 
+      this.username, 
+      this.upperButtons
+    ].forEach(function(el) {
       if (el) {
         el.on = function(eventName, fn) {
           el.addEventListener(eventName, fn.bind(this), false);
@@ -102,6 +111,10 @@ RPG.module('Gfx', function() {
     this.attachEvents();
   };
   Gfx.prototype.attachEvents = function() {
+    var quitBtn = document.querySelector('[data-action="leave"]');
+    var menuContainer = document.querySelector('.menu');
+    var board = document.querySelector('.jumbotron.blur');
+
     this.boardContainer.on('click', function(e) {
       var cell = e.target;
       if (cell && cell.nodeName === 'TD' && !cell.classList.contains('rpg-occupied')) {
@@ -122,26 +135,16 @@ RPG.module('Gfx', function() {
         }
       });
     }
-    this.buttons.on('click', function(e) {
-      e.preventDefault();
-      var action = e.target;
-      if (action && action.nodeName === 'A') {
-        switch (action.dataset.action) {
-          case 'join':
-            this.pubsub.publish(RPG.topics.PUB_PLAYER_JOIN, {
-              name: this.username.value,
-              avatar: this.avatars.selected
-            });
-            break;
-        }
-      }
+    this.joinBtn.on('click', function(e) {
+      this.pubsub.publish(RPG.topics.PUB_PLAYER_JOIN, {
+        name: this.username.value,
+        avatar: this.avatars.selected
+      });
     });
-    var menuContainer = document.querySelector('.menu');
-    var board = document.querySelector('.jumbotron.blur');
-    var btnQuit = document.querySelector('[data-action="leave"]');
+    
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_JOINED, function() {
       board.classList.remove('blur');
-      btnQuit.classList.remove('hidden');
+      quitBtn.classList.remove('hidden');
       menuContainer.classList.add('move-top');
     });
     this.upperButtons.on('click', function(e) {
@@ -150,7 +153,7 @@ RPG.module('Gfx', function() {
       if (action && action.nodeName === 'BUTTON') {
         switch (action.dataset.action) {
           case 'leave':
-            btnQuit.classList.add('hidden');
+            quitBtn.classList.add('hidden');
             menuContainer.classList.remove('move-top');
             board.classList.add('blur');
             this.pubsub.publish(RPG.topics.PUB_PLAYER_LEAVE);
@@ -167,13 +170,17 @@ RPG.module('Gfx', function() {
         this.avatars.selected = action.dataset.name;
       }
     });
-    var btnJoin = this.buttons.querySelector('[data-action="join"]');
+    this.spectatorBtn.on('click', function(e) {
+      board.classList.remove('blur');
+      quitBtn.classList.remove('hidden');
+      menuContainer.classList.add('move-top');
+    });
     this.username.on('keyup', function(e) {
       var value = e.target.value;
       if (value === '') {
-        btnJoin.setAttribute('disabled', true);
+        this.joinBtn.setAttribute('disabled', true);
       } else {
-        btnJoin.removeAttribute('disabled');
+        this.joinBtn.removeAttribute('disabled');
         this.username.value = value;
       }
     });
@@ -249,12 +256,6 @@ RPG.module('Gfx', function() {
   Gfx.prototype.selectEnemy = function(enemy) {
     document.querySelector('#rpg-selected-enemy').setEntity(enemy);
   };
-  Gfx.prototype.infoTemplate = function(entity){
-    var life = '<span class="rpg-life"><i style="width:' + entity.getAttribute('life') + '%;"></i></span>';
-    var name = '<span class="rpg-name">' + entity.getAttribute('name') + '</span>';
-    var image = '<img src="images/players-sprites/'+ entity.getAttribute('avatar') +'.gif.png" width="32px" height="32px"/>';
-    return image + name + life;
-  }
   Gfx.prototype.moveTo = function(entity) {
     var oldCell, newCell;
     entity = entity ||  this.playerEntity;
