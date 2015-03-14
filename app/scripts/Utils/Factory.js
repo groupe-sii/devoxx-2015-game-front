@@ -14,6 +14,7 @@ RPG.module('Factory', function() {
 	var player = null;
 	var ia = null;
 	var transport = null;
+	var pubsub = null;
 	var constructors = {};
 	var di = RPG.Injector;
 
@@ -58,6 +59,12 @@ RPG.module('Factory', function() {
 				transport = di.invoke(RPG.Transport);
 			}
 			return transport;
+		},
+		pubsub: function(){
+			if(!pubsub){
+				pubsub = di.invoke(RPG.PubSub);
+			}
+			return pubsub;
 		},
 		ia: function() {
 			if(!ia){
