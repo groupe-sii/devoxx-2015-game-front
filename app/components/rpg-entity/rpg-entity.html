@@ -204,6 +204,9 @@ Example:
     	explode: function() {
     		this.animation.__start.call(this, 'explode');
     	},
+    	destroy: function(){
+				this.parentNode.removeChild(this);
+    	},
     	animation: {
     		__start: function(name){
     			this.$['entity-template'].addEventListener('webkitAnimationEnd', this.animation.__end.bind(this), false);
@@ -212,7 +215,7 @@ Example:
     		__end: function(name){
 		      this.$['entity-template'].removeEventListener('webkitAnimationEnd', this[name], false);
 		      this.$['entity-template'].classList.remove('explode');
-		      this.parentNode.removeChild(this);
+		      this.destroy();
     		}
     	},
     	created: function(){

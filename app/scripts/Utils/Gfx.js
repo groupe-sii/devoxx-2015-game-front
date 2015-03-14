@@ -53,7 +53,9 @@ RPG.module('Gfx', function() {
       };
     }.bind(this));
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_LEFT, function(topic, data) {
-      this.removePlayer(data.oldCell);
+      if(this.playerEntity){
+        this.playerEntity.destroy();
+      }
     }.bind(this));
     this.pubsub.subscribe(RPG.topics.SUB_OTHER_JOINED, function(topic, data) {});
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_MOVED, function(topic, data) {
@@ -64,9 +66,8 @@ RPG.module('Gfx', function() {
       this.moveTo();
     }.bind(this));
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_DIED, function(topic, data) {
-      var entity = this.playerEntity; // this.findEntity(data.newCell);
-      if(entity){
-        entity.explode();
+      if(this.playerEntity){
+        this.playerEntity.explode();
       }
     }.bind(this));
     window.addEventListener('beforeunload', function() {
@@ -280,12 +281,6 @@ RPG.module('Gfx', function() {
     cell.innerHTML = '';
     this.pubsub.publish('/gfx/item/removed', obj);
     return this;
-  };
-  Gfx.prototype.removePlayer = function(obj) {
-    var item = this.findEntity(obj);
-    if (item) {
-      item.parentNode.removeChild(item);
-    }
   };
   Gfx.prototype.findEntity = function(position){
     return this.boardContainer.querySelector(this.entityTag+'[data-x="' + position.x + '"][data-y="' + position.y + '"]');
