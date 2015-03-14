@@ -54,6 +54,7 @@ hr.soften {
   border-bottom: 1px solid #e5e5e5;
   padding-left: 0;
   padding-right: 0;
+  transition: all 0.5s;
 }
 .jumbotron .btn {
   font-size: 21px;
@@ -246,6 +247,6 @@ b.text-danger {
 }
 
 .blur {
-  -webkit-filter: blur(5px);
+  -webkit-filter: blur(10px);
 }
 
