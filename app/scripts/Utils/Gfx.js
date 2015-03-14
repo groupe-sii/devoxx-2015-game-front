@@ -20,7 +20,7 @@ RPG.module('Gfx', function() {
     this.buttons = document.querySelector('#action-buttons');
     this.upperButtons = document.querySelector('#upper-buttons');
     this.avatars = document.querySelector('#avatar-container');
-    this.avatars.selected = this.avatars.querySelector('img.selected').src;
+    this.avatars.selected = this.avatars.querySelector('img.selected').dataset.name;
     this.username = document.querySelector('#username');
     [this.boardContainer, this.joystick, this.buttons, this.avatars, this.username, this.upperButtons].forEach(function(el) {
       if (el) {
@@ -36,7 +36,6 @@ RPG.module('Gfx', function() {
     this.pubsub.subscribe('/gfx/item/place', function() {});
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_JOINED, function(topic, data) {
       this.playerEntity = this.placeEntity(data, 'player');
-      this.selectPlayer(this.playerEntity);
       
       var enemy = null;
       var nbEnemy = 5;
@@ -45,14 +44,20 @@ RPG.module('Gfx', function() {
         enemy = this.placeEntity({
           player: {
             playerInfo: {
-              avatar: 'images/players-sprites/dvl1_fr1.gif.png',
+              avatar: 'dvl1_fr1',
               name: 'Enemy ' + i,
-              life: (Math.random() * 100)
+              life: {
+                current: (Math.random() * 100),
+                max: 100
+              }
             }
           },
           newCell: this.generateRandomPosition()
         }, 'enemy');
       };
+
+      this.selectPlayer(this.playerEntity);
+
     }.bind(this));
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_LEFT, function(topic, data) {
       if(this.playerEntity){
@@ -159,7 +164,7 @@ RPG.module('Gfx', function() {
       if (action && action.nodeName === 'IMG') {
         action.parentElement.querySelector('.selected').classList.remove('selected');
         action.classList.add('selected');
-        this.avatars.selected = action.src;
+        this.avatars.selected = action.dataset.name;
       }
     });
     var btnJoin = this.buttons.querySelector('[data-action="join"]');
@@ -209,7 +214,7 @@ RPG.module('Gfx', function() {
   Gfx.prototype.createEntity = function(obj, type) {
     var entity = document.createElement(this.entityTag);
     entity.setAttribute('type', type);
-    entity.setAttribute('life', obj.player.playerInfo.life);
+    entity.setAttribute('life', obj.player.life);
     entity.setAttribute('name', obj.player.playerInfo.name);
     entity.setAttribute('avatar', obj.player.playerInfo.avatar);
     entity.setAttribute('current-position-x', obj.newCell.x);
@@ -247,7 +252,7 @@ RPG.module('Gfx', function() {
   Gfx.prototype.infoTemplate = function(entity){
     var life = '<span class="rpg-life"><i style="width:' + entity.getAttribute('life') + '%;"></i></span>';
     var name = '<span class="rpg-name">' + entity.getAttribute('name') + '</span>';
-    var image = '<img src="' + entity.getAttribute('avatar') + '" width="32px" height="32px"/>';
+    var image = '<img src="images/players-sprites/'+ entity.getAttribute('avatar') +'.gif.png" width="32px" height="32px"/>';
     return image + name + life;
   }
   Gfx.prototype.moveTo = function(entity) {

@@ -86,8 +86,11 @@ Example:
 			  animation-iteration-count: 2;
 			}
 					
-			.vanish {
-			  -webkit-animation: vanish 1s linear 1;
+			.vanish-in {
+			  -webkit-animation: vanish-in 1s linear 1;
+			}
+			.vanish-out {
+			  -webkit-animation: vanish-out 1s linear 1;
 			}
 
 			.collide {
@@ -117,8 +120,14 @@ Example:
 			  to { background-position: -600px -6px; }
 			}
 
-			@-webkit-keyframes vanish {
+			@-webkit-keyframes vanish-in {
 			  to { -webkit-transform: scale(0); }
+			}
+			@-webkit-keyframes vanish-out {
+			  to { 
+			  	-webkit-transform: scale(100);
+			  	opacity: 0;
+			  }
 			}
 
 			@-webkit-keyframes highlight {
@@ -150,9 +159,9 @@ Example:
 			}
 		</style>
 	  <div class="rpg-entity" id="entity-template">
-	  	<span class="rpg-life"><i style="width:{{life}%;"></i></span>
+	  	<span class="rpg-life"><i style="width:{{life.current}%;"></i></span>
 	  	<span class="rpg-name">{{name}}</span>
-	  	<img src="{{avatar}}" width="32px" height="32px"/>
+	  	<img src="images/players-sprites/{{avatar}}.gif.png" width="32px" height="32px"/>
 	  </div>
 	</template>
   <script>
@@ -187,13 +196,13 @@ Example:
     		entity.position.previous.y = newValue;
     	},
     	nameChanged: function(oldValue, newValue){
-    		entity.name = oldValue;
+    		entity.name = newValue;
     	},
     	lifeChanged: function(oldValue, newValue){
-    		entity.life = oldValue;
+    		entity.life = newValue;
     	},
     	avatarChanged: function(oldValue, newValue){
-    		entity.avatar = oldValue;
+    		entity.avatar = newValue;
     	},
     	collide: function() {
   		  this.classList.add('collide');
