@@ -45,11 +45,11 @@ RPG.module('Gfx', function() {
           player: {
             playerInfo: {
               avatar: 'dvl1_fr1',
-              name: 'Enemy ' + i,
-              life: {
-                current: (Math.random() * 100),
-                max: 100
-              }
+              name: 'Enemy ' + i
+            },
+            life: {
+              current: (Math.random() * 100)|0,
+              max: 100
             }
           },
           newCell: this.generateRandomPosition()
@@ -214,7 +214,7 @@ RPG.module('Gfx', function() {
   Gfx.prototype.createEntity = function(obj, type) {
     var entity = document.createElement(this.entityTag);
     entity.setAttribute('type', type);
-    entity.setAttribute('life', obj.player.life);
+    entity.setAttribute('life', obj.player.life.current);
     entity.setAttribute('name', obj.player.playerInfo.name);
     entity.setAttribute('avatar', obj.player.playerInfo.avatar);
     entity.setAttribute('current-position-x', obj.newCell.x);
@@ -244,10 +244,10 @@ RPG.module('Gfx', function() {
     }
   };
   Gfx.prototype.selectPlayer = function(player) {
-    document.querySelector('#rpg-selected-player').innerHTML = this.infoTemplate(player);
+    document.querySelector('#rpg-selected-player').setEntity(player);
   };
   Gfx.prototype.selectEnemy = function(enemy) {
-    document.querySelector('#rpg-selected-enemy').innerHTML = this.infoTemplate(enemy);
+    document.querySelector('#rpg-selected-enemy').setEntity(enemy);
   };
   Gfx.prototype.infoTemplate = function(entity){
     var life = '<span class="rpg-life"><i style="width:' + entity.getAttribute('life') + '%;"></i></span>';
