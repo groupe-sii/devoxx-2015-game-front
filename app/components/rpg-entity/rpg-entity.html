@@ -31,7 +31,7 @@ Example:
 			  height: 32px;
 			}
 			:host .rpg-entity span {
-			  opacity: 0.1;
+			  opacity: 0;
 			  transition: opacity 0.1s linear;
 			  position: relative;
 		    margin-left: -14px;
@@ -85,21 +85,71 @@ Example:
 			  animation-duration: 0.1s;
 			  animation-iteration-count: 2;
 			}
+					
+			.vanish {
+			  -webkit-animation: vanish 1s linear 1;
+			}
 
-			@keyframes collide {
+			.collide {
+			  -webkit-animation-name: collide;
+			  -webkit-animation-duration: 0.1s;
+			  -webkit-animation-iteration-count: 2;
+			}
+
+			.explode {
+			  -webkit-animation: explode .5s steps(22) 1;
+			  background: transparent url('../../images/explosion_22.png') no-repeat -100px -100px;
+			}
+
+			.explode img {
+			  opacity: 0;
+			}
+
+			@-webkit-keyframes blink {
+			  from { -webkit-transform: scale(0.8); }
+			  50% { -webkit-transform: scale(1); }
+			  to { -webkit-transform: scale(0.8); }
+			}
+
+
+			@-webkit-keyframes explode {
+			  from { background-position: 2px -6px; }
+			  to { background-position: -600px -6px; }
+			}
+
+			@-webkit-keyframes vanish {
+			  to { -webkit-transform: scale(0); }
+			}
+
+			@-webkit-keyframes highlight {
+			  0% {
+			    box-shadow: 0 0 30px yellow;
+			  }
+
+			  50% {
+			    box-shadow: 0 0 10px #ffc800;
+			  }
+
+			  100% {
+			    box-shadow: 0 0 30px yellow;
+			  }
+			}
+
+			@-webkit-keyframes collide {
 			  0% {
 			    margin-left: 5px;
 			  }
+
 			  50% {
 			    margin-left: -5px;
 			  }
+
 			  100% {
 			    margin-left: 0;
 			  }
 			}
-
 		</style>
-	  <div class="rpg-entity">
+	  <div class="rpg-entity" id="entity-template">
 	  	<span class="rpg-life"><i style="width:{{life}%;"></i></span>
 	  	<span class="rpg-name">{{name}}</span>
 	  	<img src="{{avatar}}" width="32px" height="32px"/>
@@ -145,11 +195,25 @@ Example:
     	avatarChanged: function(oldValue, newValue){
     		entity.avatar = oldValue;
     	},
-    	collide: function(){
+    	collide: function() {
   		  this.classList.add('collide');
 		    setTimeout(function() {
 		      this.classList.remove('collide');
 		    }.bind(this), 1000);
+    	},
+    	explode: function() {
+    		this.animation.__start.call(this, 'explode');
+    	},
+    	animation: {
+    		__start: function(name){
+    			this.$['entity-template'].addEventListener('webkitAnimationEnd', this.animation.__end.bind(this), false);
+    			this.$['entity-template'].classList.add(name);
+    		},
+    		__end: function(name){
+		      this.$['entity-template'].removeEventListener('webkitAnimationEnd', this[name], false);
+		      this.$['entity-template'].classList.remove('explode');
+		      this.parentNode.removeChild(this);
+    		}
     	},
     	created: function(){
     		try {
