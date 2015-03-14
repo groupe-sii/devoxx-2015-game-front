@@ -2,7 +2,16 @@
 `rpg-entity` is the custom element that represents a playable entity.
 
 Example:
-    <rpg-entity tyle="player"></rpg-entity>
+    <rpg-entity 
+    	type="player" 
+    	name="Player 1" 
+    	life="89" 
+    	avatar="avt2_fr1" 
+    	current-position-x="2"
+    	current-position-y="8"
+    	previous-position-x="2"
+    	previous-position-y="7">
+  	</rpg-entity>
 
 
 @element rpg-entity
@@ -11,7 +20,7 @@ Example:
 -->
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="rpg-entity" attributes="type name life avatar current-position previous-position">
+<polymer-element name="rpg-entity">
   <template>
 		<style>
 			:host {
@@ -108,6 +117,19 @@ Example:
 			  opacity: 0;
 			}
 
+			.is-moving {
+			  background-repeat: no-repeat;
+			  background-size: cover;
+			  display: inline-block;
+			  padding-left: 32px;
+			  box-sizing: border-box;
+			  width: 32px;
+			  height: 32px;
+				-webkit-animation: is-moving .5s infinite;
+			}
+		</style>
+		<style>
+			
 			@-webkit-keyframes blink {
 			  from { -webkit-transform: scale(0.8); }
 			  50% { -webkit-transform: scale(1); }
@@ -159,7 +181,7 @@ Example:
 			}
 		</style>
 	  <div class="rpg-entity" id="entity-template">
-	  	<span class="rpg-life"><i style="width:{{life.current}%;"></i></span>
+	  	<span class="rpg-life"><i style="width:{{life}}%;"></i></span>
 	  	<span class="rpg-name">{{name}}</span>
 	  	<img src="images/players-sprites/{{avatar}}.gif.png" width="32px" height="32px"/>
 	  </div>
@@ -180,9 +202,6 @@ Example:
     	typeChanged: function(oldValue, newValue){
     		
     	},
-    	lifeChanged: function(oldValue, newValue){
-    		entity.life = newValue;
-    	},
     	currentPositionXChanged: function(oldValue, newValue){
     		entity.position.current.x = newValue;
     	},
@@ -198,11 +217,11 @@ Example:
     	nameChanged: function(oldValue, newValue){
     		entity.name = newValue;
     	},
-    	lifeChanged: function(oldValue, newValue){
-    		entity.life = newValue;
-    	},
     	avatarChanged: function(oldValue, newValue){
     		entity.avatar = newValue;
+    	},
+    	lifeChanged: function(oldValue, newValue){
+    		entity.life = newValue;
     	},
     	collide: function() {
   		  this.classList.add('collide');
