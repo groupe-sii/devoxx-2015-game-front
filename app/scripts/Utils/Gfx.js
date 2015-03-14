@@ -36,6 +36,8 @@ RPG.module('Gfx', function() {
     this.pubsub.subscribe('/gfx/item/place', function() {});
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_JOINED, function(topic, data) {
       this.playerEntity = this.placeEntity(data, 'player');
+      this.selectPlayer(this.playerEntity);
+      
       var enemy = null;
       var nbEnemy = 5;
       for (var i = nbEnemy - 1; i >= 0; i--) {
@@ -237,22 +239,17 @@ RPG.module('Gfx', function() {
     }
   };
   Gfx.prototype.selectPlayer = function(player) {
-    var container, life, name, avatar;
-    if (player) {
-      container = document.querySelector('#rpg-selected-player');
-      life = '<span class="rpg-life"><i style="width:' + player.getAttribute('life') + '%;"></i></span>';
-      name = '<span class="rpg-name">' + player.getAttribute('name') + '</span>';
-      avatar = '<img src="' + player.getAttribute('avatar') + '" width="32px" height="32px"/>';
-      container.innerHTML = avatar + name + life;
-    }
+    document.querySelector('#rpg-selected-player').innerHTML = this.infoTemplate(player);
   };
   Gfx.prototype.selectEnemy = function(enemy) {
-    var container = document.querySelector('#rpg-selected-enemy');
-    var life = '<span class="rpg-life"><i style="width:' + enemy.getAttribute('life') + '%;"></i></span>';
-    var name = '<span class="rpg-name">' + enemy.getAttribute('name') + '</span>';
-    var image = '<img src="' + enemy.getAttribute('avatar') + '" width="32px" height="32px"/>';
-    container.innerHTML = image + name + life;
+    document.querySelector('#rpg-selected-enemy').innerHTML = this.infoTemplate(enemy);
   };
+  Gfx.prototype.infoTemplate = function(entity){
+    var life = '<span class="rpg-life"><i style="width:' + entity.getAttribute('life') + '%;"></i></span>';
+    var name = '<span class="rpg-name">' + entity.getAttribute('name') + '</span>';
+    var image = '<img src="' + entity.getAttribute('avatar') + '" width="32px" height="32px"/>';
+    return image + name + life;
+  }
   Gfx.prototype.moveTo = function(entity) {
     var oldCell, newCell;
     entity = entity ||  this.playerEntity;
@@ -287,16 +284,6 @@ RPG.module('Gfx', function() {
   };
   Gfx.prototype.findCell = function(position){
     return this.boardContainer.querySelector('td[data-x="' + position.x + '"][data-y="' + position.y + '"]');
-  };
-  Gfx.prototype.hit = function(amout) {
-    this.selectedEnemy.hit(amout);
-    var pos = this.selectedEnemy.getPosition();
-    var life = this.selectedEnemy.getLife();
-    this.update({
-      x: pos.x,
-      y: pos.y,
-      life: life
-    });
   };
   return Gfx;
 });
