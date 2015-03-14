@@ -5,7 +5,7 @@ Example:
     <rpg-player-info></rpg-player-info>
 
 
-@element rpg-entity
+@element rpg-player-info
 @blurb This is the custom element that shows the current selected entity.
 @author Wassim Chegham
 -->
@@ -77,17 +77,24 @@ Example:
 			  transition: width 1s;
 			}
 		</style>
-		<div hidden?="{{!entity}}">
-	    <img src="images/players-sprites/{{ entity.avatar }}.gif.png" width="32px" height="32px"/>
-			<span class="rpg-life"><i style="width:{{ entity.life }}%;"></i></span>
-	    <span class="rpg-name">{{ entity.name }}</span>
+		<div hidden?="{{!model.name}}">
+	    <img src="images/players-sprites/{{ model.avatar }}.gif.png" width="32px" height="32px"/>
+			<span class="rpg-life"><i style="width:{{ model.life }}%;"></i></span>
+	    <span class="rpg-name">{{ model.name }}</span>
 		</div>
   </template>
 	<script>
 	Polymer({
 		setEntity: function(ent){
-			this.entity = ent;
-		}
+			this.model = ent;
+		},
+		created: function() {
+      this.model = {
+        name: '',
+        life: 0,
+        avatar: 'dvl1_fr1'
+      }
+    }
 	})
 	</script>
 </polymer-element>
