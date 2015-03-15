@@ -119,7 +119,7 @@ RPG.module('Gfx', function() {
       var cell = e.target;
       if (cell && cell.nodeName === 'TD' && !cell.classList.contains('rpg-occupied')) {
         cell.classList.toggle('rpg-selected');
-        cell.classList.toggle('rpg-occupied');
+        cell.classList.toggle('rpg-obstacle');
         this.pubsub.publish('/gfx/cell/click', {
           x: cell.dataset.x,
           y: cell.dataset.y
