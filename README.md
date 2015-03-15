@@ -19,7 +19,12 @@ Game development challenge for devoxx 2015
 
 1) Clone this repo and cd into it:
 
-```git clone --recursive https://github.com/groupe-sii/devoxx-2015-game-front && cd devoxx-2015-game-front```
+```git clone --recursive https://github.com/groupe-sii/devoxx-2015-game-front && cd devoxx-2015-game-front && git submodule foreach --recursive git checkout master```
+
+This command does three things:
+- It clones this repo
+- change directory to devoxx-2015-game-front
+- Git checkout master branch of all submodules
 
 2) Fist, you need to install Gulp and Bower, using NPM:
 
