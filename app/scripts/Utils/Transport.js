@@ -11,7 +11,7 @@ RPG.module('Transport', function() {
   function Transport(PubSub) {
     this.pubsub = PubSub;
     this.client = Stomp.over(new SockJS(RPG.socket.url));
-    // this.client.debug = null;
+    this.client.debug = null;
   }
   Transport.prototype.initialize = function(){
     this.client.connect({}, this.onConnection.bind(this));
@@ -49,7 +49,7 @@ RPG.module('Transport', function() {
   Transport.prototype.subscribe = function(topic, callback){
     this.client.subscribe(topic, callback || function(data) {
       data = JSON.parse(data.body || data);
-
+      topic = this.uncomputeTopic(topic);
       if(Transport.prototype[topic]){
         Transport.prototype[topic].call(this, data);
       }
@@ -77,9 +77,7 @@ RPG.module('Transport', function() {
   };
 
   // // topics implementation 
-  Transport.prototype[RPG.topics.SUB_ME_JOINED_GAME] = function(/*data*/) {
-    debugger;
-  };
+  Transport.prototype[RPG.topics.SUB_ME_JOINED_GAME] = function(/*data*/) {};
   Transport.prototype[RPG.topics.SUB_PLAYER_MOVED] = function(/*data*/) {};
   Transport.prototype[RPG.topics.SUB_PLAYER_CREATED] = function(/*data*/) {};
   Transport.prototype[RPG.topics.SUB_PLAYER_HIT] = function(/*data*/) {};
