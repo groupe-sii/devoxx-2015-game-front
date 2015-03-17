@@ -39,10 +39,14 @@ RPG.run(function() {
     },
     "amount": 100
   };
-  setInterval(function() {
+  
+  document.querySelector('a[data-action="hit"]').addEventListener('click', function(e){
+  	e.preventDefault();
     ps.publish(RPG.topics.SUB_PLAYER_HIT, hit);
-  }, 2000);
-  setTimeout(function() {
+  });
+  document.querySelector('a[data-action="kill"]').addEventListener('click', function(e){
+  	e.preventDefault();
     ps.publish(RPG.topics.SUB_PLAYER_DIED, died);
-  }, 10000);
+  });
+
 });
