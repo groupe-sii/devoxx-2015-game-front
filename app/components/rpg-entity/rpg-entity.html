@@ -181,7 +181,7 @@ Example:
 			}
 		</style>
 	  <div class="rpg-entity" id="entity-template">
-	  	<span class="rpg-life"><i style="width:{{life}}%;"></i></span>
+	  	<span class="rpg-life"><i style="width:{{life-current/life-max}}%;"></i></span>
 	  	<span class="rpg-name">{{name}}</span>
 	  	<img src="images/players-sprites/{{avatar}}.gif.png" width="32px" height="32px"/>
 	  </div>
@@ -192,7 +192,8 @@ Example:
     	publish : {
     		type: 'player',
     		'name': 'player', 
-    		'life': 100,
+    		'life-current': 100,
+    		'life-max': 100,
     		'avatar': '',
     		'current-position-x': 0,
     		'current-position-y': 0,
@@ -220,7 +221,7 @@ Example:
     	avatarChanged: function(oldValue, newValue){
     		entity.avatar = newValue;
     	},
-    	lifeChanged: function(oldValue, newValue){
+    	lifeCurrentChanged: function(oldValue, newValue){
     		entity.life = newValue;
     	},
     	collide: function() {
@@ -233,7 +234,9 @@ Example:
     		this.animation.__start.call(this, 'explode');
     	},
     	destroy: function(){
-				this.parentNode.removeChild(this);
+				if(this.parentNode){
+					this.parentNode.removeChild(this);
+				}
     	},
     	animation: {
     		__start: function(name){
@@ -243,7 +246,6 @@ Example:
     		__end: function(name){
 		      this.$['entity-template'].removeEventListener('webkitAnimationEnd', this[name], false);
 		      this.$['entity-template'].classList.remove('explode');
-		      this.destroy();
     		}
     	},
     	created: function(){

@@ -43,49 +43,41 @@ RPG.module('Gfx', function() {
   Gfx.prototype.loop = function() {
     this.pubsub.subscribe('/gfx/cell/click', function( /*topic, data*/ ) {});
     this.pubsub.subscribe('/gfx/item/place', function() {});
-    this.pubsub.subscribe(RPG.topics.SUB_PLAYER_JOINED, function(topic, data) {
-      this.playerEntity = this.placeEntity(data, 'player');
-      
-      var enemy = null;
-      var nbEnemy = 5;
-      for (var i = nbEnemy - 1; i >= 0; i--) {
-        //@todo create enemies accordingly to server
-        enemy = this.placeEntity({
-          player: {
-            playerInfo: {
-              avatar: 'dvl1_fr1',
-              name: 'Enemy ' + i
-            },
-            life: {
-              current: (Math.random() * 100)|0,
-              max: 100
-            }
-          },
-          newCell: this.generateRandomPosition()
-        }, 'enemy');
-      };
-
-      this.selectPlayer(this.playerEntity);
-
+    this.pubsub.subscribe(RPG.topics.SUB_PLAYER_CREATED, function(topic, data) {
+      debugger;
+      var entity = this.placeEntity(data, 'player');
+      this.selectPlayer(entity);
     }.bind(this));
-    this.pubsub.subscribe(RPG.topics.SUB_PLAYER_LEFT, function(topic, data) {
-      if(this.playerEntity){
-        this.playerEntity.destroy();
+    this.pubsub.subscribe(RPG.topics.SUB_PLAYER_LEFT_GAME, function(topic, data) {
+      debugger;
+      var entity = this.findEntity(data.player.id);
+      if(entity){
+        entity.destroy();
       }
     }.bind(this));
-    this.pubsub.subscribe(RPG.topics.SUB_OTHER_JOINED, function(topic, data) {});
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_MOVED, function(topic, data) {
-      this.playerEntity.setAttribute('current-position-x', data.newCell.x);
-      this.playerEntity.setAttribute('current-position-y', data.newCell.y);
-      this.playerEntity.setAttribute('previous-position-x', data.oldCell.x);
-      this.playerEntity.setAttribute('previous-position-y', data.oldCell.y);
-      this.moveTo();
+      var entity = this.findEntity(data.player.id);
+      if(entity){
+        entity.setAttribute('current-position-x', data.newCell.x);
+        entity.setAttribute('current-position-y', data.newCell.y);
+        entity.setAttribute('previous-position-x', data.oldCell.x);
+        entity.setAttribute('previous-position-y', data.oldCell.y);
+        this.moveTo(entity);
+      }
     }.bind(this));
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_DIED, function(topic, data) {
-      if(this.playerEntity){
-        this.playerEntity.explode();
+      var entity = this.findEntity(data.player.id);
+      if(entity){
+        entity.explode();
       }
     }.bind(this));
+    this.pubsub.subscribe(RPG.topics.SUB_PLAYER_HIT, function(topic, data) {
+      var entity = this.findEntity(data.player.id);
+      if(entity){
+        entity.setAttribute('life-current', data.player.life.current);
+      }
+    }.bind(this));
+
     window.addEventListener('beforeunload', function() {
       this.pubsub.publish('/transport/close');
     }.bind(this));
@@ -126,6 +118,7 @@ RPG.module('Gfx', function() {
         });
       }
     });
+
     if (this.joystick) {
       this.joystick.on('click', function(e) {
         e.preventDefault();
@@ -135,18 +128,22 @@ RPG.module('Gfx', function() {
         }
       });
     }
+    
     this.joinBtn.on('click', function(e) {
-      this.pubsub.publish(RPG.topics.PUB_PLAYER_JOIN, {
+      e.preventDefault();
+      this.pubsub.publish(RPG.topics.PUB_GAME_JOIN, {
         name: this.username.value,
         avatar: this.avatars.selected
       });
     });
     
-    this.pubsub.subscribe(RPG.topics.SUB_PLAYER_JOINED, function() {
+    this.pubsub.subscribe(RPG.topics.SUB_ME_JOINED_GAME, function() {
+      debugger;
       board.classList.remove('blur');
       quitBtn.classList.remove('hidden');
       menuContainer.classList.add('move-top');
     });
+
     this.upperButtons.on('click', function(e) {
       e.preventDefault();
       var action = e.target;
@@ -161,6 +158,7 @@ RPG.module('Gfx', function() {
         }
       }
     });
+
     this.avatars.on('click', function(e) {
       e.preventDefault();
       var action = e.target;
@@ -170,11 +168,13 @@ RPG.module('Gfx', function() {
         this.avatars.selected = action.dataset.name;
       }
     });
+
     this.spectatorBtn.on('click', function(e) {
       board.classList.remove('blur');
       quitBtn.classList.remove('hidden');
       menuContainer.classList.add('move-top');
     });
+
     this.username.on('keyup', function(e) {
       var value = e.target.value;
       if (value === '') {
@@ -184,6 +184,7 @@ RPG.module('Gfx', function() {
         this.username.value = value;
       }
     });
+
     document.addEventListener('keydown', function(e) {
       var topic = '';
       switch (e.which) {
@@ -219,9 +220,12 @@ RPG.module('Gfx', function() {
     });
   };
   Gfx.prototype.createEntity = function(obj, type) {
+    debugger;
     var entity = document.createElement(this.entityTag);
+    entity.setAttribute('id', obj.player.id);
     entity.setAttribute('type', type);
-    entity.setAttribute('life', obj.player.life.current);
+    entity.setAttribute('life-current', obj.player.life.current);
+    entity.setAttribute('life-max', obj.player.life.max);
     entity.setAttribute('name', obj.player.playerInfo.name);
     entity.setAttribute('avatar', obj.player.playerInfo.avatar);
     entity.setAttribute('current-position-x', obj.newCell.x);
@@ -285,8 +289,9 @@ RPG.module('Gfx', function() {
     this.pubsub.publish('/gfx/item/removed', obj);
     return this;
   };
-  Gfx.prototype.findEntity = function(position){
-    return this.boardContainer.querySelector(this.entityTag+'[data-x="' + position.x + '"][data-y="' + position.y + '"]');
+  Gfx.prototype.findEntity = function(id){
+    return this.boardContainer.querySelector('#'+id);
+    // return this.boardContainer.querySelector(this.entityTag+'[data-x="' + position.x + '"][data-y="' + position.y + '"]');
   };
   Gfx.prototype.findCell = function(position){
     return this.boardContainer.querySelector('td[data-x="' + position.x + '"][data-y="' + position.y + '"]');
