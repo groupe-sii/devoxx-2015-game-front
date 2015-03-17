@@ -107,13 +107,13 @@ gulp.task('connect', function() {
     // paths to bower_components should be relative to the current file
     // e.g. in app/index.html you should use ../bower_components
     .use('/bower_components', serveStatic('bower_components')).use(serveIndex('app'));
-  require('http').createServer(app).listen(9000).on('listening', function() {
-    console.log('Started connect web server on http://localhost:9000');
+  require('http').createServer(app).listen(1337).on('listening', function() {
+    console.log('Started connect web server on http://localhost:1337');
   });
 });
 
-gulp.task('serve', ['connect', 'watch'], function() {
-  require('opn')('http://localhost:9000');
+gulp.task('serve', ['watch'], function() {
+  require('opn')('http://localhost:1337');
 });
 // inject bower components
 gulp.task('wiredep', function() {
