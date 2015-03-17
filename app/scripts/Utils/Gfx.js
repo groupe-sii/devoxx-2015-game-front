@@ -128,12 +128,15 @@ RPG.module('Gfx', function() {
         }
       });
     }
-    
+
     this.joinBtn.on('click', function(e) {
       e.preventDefault();
       this.pubsub.publish(RPG.topics.PUB_GAME_JOIN, {
         name: this.username.value,
-        avatar: this.avatars.selected
+        avatar: {
+          '@c': '.ClientImage',
+          name: this.avatars.selected
+        }
       });
     });
     
