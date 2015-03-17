@@ -44,12 +44,10 @@ RPG.module('Gfx', function() {
     this.pubsub.subscribe('/gfx/cell/click', function( /*topic, data*/ ) {});
     this.pubsub.subscribe('/gfx/item/place', function() {});
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_CREATED, function(topic, data) {
-      debugger;
-      var entity = this.placeEntity(data, 'player');
+      var entity = this.placeEntity(data, data.player.id.indexOf('Enemy') !== -1 ? 'enemy' : 'player');
       this.selectPlayer(entity);
     }.bind(this));
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_LEFT_GAME, function(topic, data) {
-      debugger;
       var entity = this.findEntity(data.player.id);
       if(entity){
         entity.destroy();
@@ -58,10 +56,10 @@ RPG.module('Gfx', function() {
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_MOVED, function(topic, data) {
       var entity = this.findEntity(data.player.id);
       if(entity){
-        entity.setAttribute('current-position-x', data.newCell.x);
-        entity.setAttribute('current-position-y', data.newCell.y);
-        entity.setAttribute('previous-position-x', data.oldCell.x);
-        entity.setAttribute('previous-position-y', data.oldCell.y);
+        entity.position = {
+          current: data.newCell,
+          previous: data.oldCell
+        };
         this.moveTo(entity);
       }
     }.bind(this));
@@ -74,7 +72,7 @@ RPG.module('Gfx', function() {
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_HIT, function(topic, data) {
       var entity = this.findEntity(data.player.id);
       if(entity){
-        entity.setAttribute('life-current', data.player.life.current);
+        entity.hit(data.amount);
       }
     }.bind(this));
 
@@ -141,7 +139,6 @@ RPG.module('Gfx', function() {
     });
     
     this.pubsub.subscribe(RPG.topics.SUB_ME_JOINED_GAME, function() {
-      debugger;
       board.classList.remove('blur');
       quitBtn.classList.remove('hidden');
       menuContainer.classList.add('move-top');
@@ -223,18 +220,16 @@ RPG.module('Gfx', function() {
     });
   };
   Gfx.prototype.createEntity = function(obj, type) {
-    debugger;
     var entity = document.createElement(this.entityTag);
     entity.setAttribute('id', obj.player.id);
     entity.setAttribute('type', type);
-    entity.setAttribute('life-current', obj.player.life.current);
-    entity.setAttribute('life-max', obj.player.life.max);
-    entity.setAttribute('name', obj.player.playerInfo.name);
-    entity.setAttribute('avatar', obj.player.playerInfo.avatar);
-    entity.setAttribute('current-position-x', obj.newCell.x);
-    entity.setAttribute('current-position-y', obj.newCell.y);
-    entity.setAttribute('previous-position-x', (obj.oldCell && obj.oldCell.x) || 0);
-    entity.setAttribute('previous-position-y', (obj.oldCell && obj.oldCell.y) || 0);
+    entity.life = obj.player.life;
+    entity.name = obj.player.playerInfo.name;
+    entity.avatar = obj.player.playerInfo.avatar;
+    entity.position = {
+      current: obj.newCell,
+      previous: obj.oldCell
+    };
     entity.addEventListener('click', function(e) {
       this.selectEntity(e.target);
     }.bind(this), false);
@@ -267,17 +262,11 @@ RPG.module('Gfx', function() {
     var oldCell, newCell;
     entity = entity ||  this.playerEntity;
     if (entity) {
-      oldCell = this.findCell({
-        x: entity.getAttribute('previous-position-x'),
-        y: entity.getAttribute('previous-position-y')
-      });
+      oldCell = this.findCell(entity.position.previous);
       if (oldCell) {
         oldCell.classList.remove('rpg-occupied');
       }
-      newCell = this.findCell({
-        x: entity.getAttribute('current-position-x'),
-        y: entity.getAttribute('current-position-y')
-      });
+      newCell = this.findCell(entity.position.current);
       if (newCell) {
         newCell.classList.add('rpg-occupied');
       }
@@ -287,17 +276,23 @@ RPG.module('Gfx', function() {
   };
   Gfx.prototype.remove = function(obj) {
     var cell =  this.findCell(obj);
-    cell.classList.remove('rpg-occupied');
-    cell.innerHTML = '';
-    this.pubsub.publish('/gfx/item/removed', obj);
+    if(cell){
+      cell.classList.remove('rpg-occupied');
+      cell.innerHTML = '';
+      this.pubsub.publish('/gfx/item/removed', obj);
+    }
     return this;
   };
   Gfx.prototype.findEntity = function(id){
+    if(id.indexOf('SimpleWizard') !== -1){
+     return this.boardContainer.querySelector('rpg-entity[type="player"]'); 
+    }
     return this.boardContainer.querySelector('#'+id);
-    // return this.boardContainer.querySelector(this.entityTag+'[data-x="' + position.x + '"][data-y="' + position.y + '"]');
   };
   Gfx.prototype.findCell = function(position){
-    return this.boardContainer.querySelector('td[data-x="' + position.x + '"][data-y="' + position.y + '"]');
+    if(position){
+      return this.boardContainer.querySelector('td[data-x="' + position.x + '"][data-y="' + position.y + '"]');
+    }
   };
   return Gfx;
 });

@@ -94,6 +94,19 @@ Example:
 			  animation-duration: 0.1s;
 			  animation-iteration-count: 2;
 			}
+			:host .rpg-entity .hit {
+			  position: absolute;
+			  color: rgb(255, 255, 255);
+			  margin-top: -47px;
+			  margin-left: -22px;
+			  opacity: 1;
+			  transform: scale(0.3);
+			  visibility: hidden;			
+			}
+			
+			:host .rpg-entity.hit-animate .hit {
+				-webkit-animation: hit 1s linear 1;
+			}
 					
 			.vanish-in {
 			  -webkit-animation: vanish-in 1s linear 1;
@@ -130,6 +143,16 @@ Example:
 		</style>
 		<style>
 			
+			@-webkit-keyframes hit {
+			  to {
+				  margin-top: -107px;
+				  margin-left: -27px;
+				  opacity: 0;
+				  transform: scale(1.3);
+				  visibility: visible;		   
+				}
+			}
+
 			@-webkit-keyframes blink {
 			  from { -webkit-transform: scale(0.8); }
 			  50% { -webkit-transform: scale(1); }
@@ -181,39 +204,35 @@ Example:
 			}
 		</style>
 	  <div class="rpg-entity" id="entity-template">
-	  	<span class="rpg-life"><i style="width:{{life-current/life-max}}%;"></i></span>
+	  	<span class="rpg-life"><i style="width:{{life.current/100}}%;"></i></span>
 	  	<span class="rpg-name">{{name}}</span>
-	  	<img src="images/players-sprites/{{avatar}}.gif.png" width="32px" height="32px"/>
+	  	<img src="images/players-sprites/{{avatar.name}}.gif.png" width="32px" height="32px"/>
+	  	<span class="hit">-{{amount}}</span>
 	  </div>
 	</template>
   <script>
   	var entity;
     Polymer({
     	publish : {
-    		type: 'player',
+    		'type': 'player',
     		'name': 'player', 
-    		'life-current': 100,
-    		'life-max': 100,
-    		'avatar': '',
-    		'current-position-x': 0,
-    		'current-position-y': 0,
-    		'previous-position-x': 0,
-    		'previous-position-y': 0
+    		'life': {
+    			current: 1000,
+    			max: 1000
+    		},
+    		'avatar': {
+    			name: ''
+    		},
+    		'position': {
+    			current: {x:0, y:0},
+    			previous: {x:0, y:0},
+    		}
     	},
     	typeChanged: function(oldValue, newValue){
     		
     	},
-    	currentPositionXChanged: function(oldValue, newValue){
+    	positionChanged: function(oldValue, newValue){
     		entity.position.current.x = newValue;
-    	},
-    	currentPositionYChanged: function(oldValue, newValue){
-    		entity.position.current.y = newValue;
-    	},
-    	previousPositionXChanged: function(oldValue, newValue){
-    		entity.position.previous.x = newValue;
-    	},
-    	previousPositionYChanged: function(oldValue, newValue){
-    		entity.position.previous.y = newValue;
     	},
     	nameChanged: function(oldValue, newValue){
     		entity.name = newValue;
@@ -221,7 +240,7 @@ Example:
     	avatarChanged: function(oldValue, newValue){
     		entity.avatar = newValue;
     	},
-    	lifeCurrentChanged: function(oldValue, newValue){
+    	lifeChanged: function(oldValue, newValue){
     		entity.life = newValue;
     	},
     	collide: function() {
@@ -238,14 +257,23 @@ Example:
 					this.parentNode.removeChild(this);
 				}
     	},
+    	hit: function(amount){
+    		if(this.life.current > 0){
+    			this.life.current -= amount;
+	    		this.amount = amount;
+	    		this.animation.__start.call(this, 'hit-animate');
+    		}
+    	},
     	animation: {
     		__start: function(name){
-    			this.$['entity-template'].addEventListener('webkitAnimationEnd', this.animation.__end.bind(this), false);
+    			this.$['entity-template'].addEventListener('webkitAnimationEnd', function(){
+    				this.animation.__end.call(this, name);
+    			}.bind(this), false);
     			this.$['entity-template'].classList.add(name);
     		},
     		__end: function(name){
-		      this.$['entity-template'].removeEventListener('webkitAnimationEnd', this[name], false);
-		      this.$['entity-template'].classList.remove('explode');
+		      this.$['entity-template'].removeEventListener('webkitAnimationEnd', this.animation.__end.bind(this), false);
+		      this.$['entity-template'].classList.remove(name);
     		}
     	},
     	created: function(){
