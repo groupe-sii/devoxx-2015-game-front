@@ -8,14 +8,14 @@
 RPG.module('GfxCore', function() {
   'use strict';
 
-  function GfxCore(GfxDom, GfxSubscriber){
+  function GfxCore(GfxDom, GfxEventManager){
   	this.dom = GfxDom;
-  	this.subscriber = GfxSubscriber;
+  	this.eventManager = GfxEventManager;
   }
 
   GfxCore.prototype.initialize = function(){
   	this.dom.initialize();
-  	this.subscriber.initialize(this.dom);
+  	this.eventManager.initialize(this.dom);
   };
 
   return GfxCore;

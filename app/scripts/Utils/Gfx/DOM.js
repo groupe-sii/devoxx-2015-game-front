@@ -9,10 +9,10 @@ RPG.module('GfxDom', function() {
   'use strict';
 
 
-  function GfxDom(GfxSubscriber){
+  function GfxDom(GfxEventManager){
   	this.entityTag = 'rpg-entity';
   	this.gridSize = 10;
-  	this.subscriber = GfxSubscriber;
+  	this.eventManager = GfxEventManager;
   }
   GfxDom.prototype.initialize = function(){
   	var self = this;
@@ -34,7 +34,7 @@ RPG.module('GfxDom', function() {
     		elements[el].on = (function(current_element){
     			// closure FTW!!!!
     			return function(eventName, fn) {
-					  current_element.addEventListener(eventName, fn.bind(self.subscriber), false);
+					  current_element.addEventListener(eventName, fn.bind(self.eventManager), false);
 					};
     		}(elements[el]));
     		self[el] = elements[el];
