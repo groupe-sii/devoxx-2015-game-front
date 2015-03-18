@@ -67,7 +67,7 @@
           <img class="avatar img-circle" data-name="wmn2_fr2" src="images/players-sprites/wmn2_fr2.gif.png" alt="">
         </div>
         <div class="form-group center-block">
-          <input maxlength="10" placeholder="Enter your username" type="text" class="form-control input-sm" id="username" placeholder="Enter email">
+          <input maxlength="10" placeholder="Enter your username" type="text" class="form-control input-sm" id="username" placeholder="Enter email"/>
           <a class="btn btn-primary" disabled="disabled" role="button" data-action="join" href="#">Join</a>
         </div>
         <p class="action-buttons">
@@ -96,11 +96,12 @@
   <!-- build:js({app,.tmp}) scripts/main.js -->
   <script src="scripts/Utils/Module.js"></script>
   <script src="scripts/config.js"></script>
-  <script src="scripts/Utils/AI.js"></script>
   <script src="scripts/Utils/Injector.js"></script>
   <script src="scripts/Utils/Factory.js"></script>
   <script src="scripts/Utils/PubSub.js"></script>
-  <script src="scripts/Utils/Gfx.js"></script>
+  <script src="scripts/Utils/Gfx/Subscriber.js"></script>
+  <script src="scripts/Utils/Gfx/Dom.js"></script>
+  <script src="scripts/Utils/Gfx/Core.js"></script>
   <script src="scripts/Utils/Transport.js"></script>
   <script src="scripts/Entities/Player.js"></script>
   <script src="scripts/Entities/Enemy.js"></script>

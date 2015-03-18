@@ -12,6 +12,6 @@ RPG.run(function() {
   socket.initialize();
 
   var gfx = RPG.Factory.gfx();
-  gfx.loop();
+  gfx.initialize();
 
 });

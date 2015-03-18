@@ -10,6 +10,7 @@ RPG.config({
     // 'url': 'http://10.6.192.222:8080/survival-game/game'
     // 'url': 'http://192.168.1.17:8080/survival-game/game'
     'url': 'http://localhost:8080/game'
+    // 'url': 'http://10.6.192.98:8080/game'
   },
   /**
    * Topics list mapping

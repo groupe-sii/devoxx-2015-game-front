@@ -59,6 +59,7 @@ var RPG = (function() {
     /**
      * Defines a entity.
      * @param  {String}   name     The entity name.
+     * @param  {String}   inherit     The entity name to inherit from.
      * @param  {Function} callback The entity definition.
      */
     entity: function entity(name, inherit, callback) {
@@ -76,9 +77,6 @@ var RPG = (function() {
         inherited = RPG.__entities__[inherit];
         if (!inherited){
           throw 'Inherited entity "'+inherit+'" was not found.';
-        }
-        else {
-          
         }
       }
 

@@ -44,13 +44,13 @@ RPG.module('Factory', function() {
 		},
 		gfx: function() {
 			if (!gfx) {
-				gfx = di.invoke(RPG.Gfx);
+				gfx = di.invoke(RPG.GfxCore);
 			}
 			return gfx;
 		},
 		game: function() {
 			if (!game) {
-				game = di.inject(RPG.Gfx).invoke(RPG.Game);
+				game = di.invoke(RPG.Game);
 			}
 			return game;
 		},

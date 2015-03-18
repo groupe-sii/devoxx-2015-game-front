@@ -38,6 +38,7 @@ RPG.module('Transport', function() {
 
     // publishes
     this.pubsub.subscribe(RPG.topics.PUB_GAME_JOIN, this.send.bind(this));
+    this.pubsub.subscribe(RPG.topics.PUB_GAME_LEAVE, this.send.bind(this));
     this.pubsub.subscribe(RPG.topics.PUB_PLAYER_MOVE_DOWN, this.send.bind(this));
     this.pubsub.subscribe(RPG.topics.PUB_PLAYER_MOVE_UP, this.send.bind(this));
     this.pubsub.subscribe(RPG.topics.PUB_PLAYER_MOVE_LEFT, this.send.bind(this));
@@ -76,7 +77,7 @@ RPG.module('Transport', function() {
     return topic;
   };
 
-  // // topics implementation 
+  // // topics implementation
   Transport.prototype[RPG.topics.SUB_ME_JOINED_GAME] = function(/*data*/) {};
   Transport.prototype[RPG.topics.SUB_PLAYER_MOVED] = function(/*data*/) {};
   Transport.prototype[RPG.topics.SUB_PLAYER_CREATED] = function(/*data*/) {};
