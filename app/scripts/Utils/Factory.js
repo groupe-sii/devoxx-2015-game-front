@@ -10,6 +10,7 @@ RPG.module('Factory', function() {
   'use strict';
 
 	var gfx = null;
+	var fx = null;
 	var game = null;
 	var player = null;
 	var ia = null;
@@ -47,6 +48,12 @@ RPG.module('Factory', function() {
 				gfx = di.invoke(RPG.GfxCore);
 			}
 			return gfx;
+		},
+		fx: function() {
+			if (!fx) {
+				fx = di.invoke(RPG.AudioManager);
+			}
+			return fx;
 		},
 		game: function() {
 			if (!game) {

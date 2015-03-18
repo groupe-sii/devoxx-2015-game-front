@@ -11,6 +11,9 @@ RPG.run(function() {
   var socket = RPG.Factory.transport();
   socket.initialize();
 
+  var fx = RPG.Factory.fx();
+  fx.enable();
+
   var gfx = RPG.Factory.gfx();
   gfx.initialize();
 
