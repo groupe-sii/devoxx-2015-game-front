@@ -206,7 +206,7 @@ Example:
 	  <div class="rpg-entity" id="entity-template">
 	  	<span class="rpg-life"><i style="width:{{life.current/100}}%;"></i></span>
 	  	<span class="rpg-name">{{name}}</span>
-	  	<img src="images/players-sprites/{{avatar.name}}.gif.png" width="32px" height="32px"/>
+	  	<img src="{{avatar_content}}" width="32px" height="32px"/>
 	  	<span class="hit">-{{amount}}</span>
 	  </div>
 	</template>
@@ -228,6 +228,7 @@ Example:
     			previous: {x:0, y:0},
     		}
     	},
+    	avatar_content: null,
     	typeChanged: function(oldValue, newValue){
     		
     	},
@@ -238,7 +239,11 @@ Example:
     		entity.name = newValue;
     	},
     	avatarChanged: function(oldValue, newValue){
-    		entity.avatar = newValue;
+    		this.avatar_content = 'images/players-sprites/'+newValue.name+'.gif.png';
+    		if(newValue['@c'].indexOf('ServerImage') !== -1){
+    			this.avatar_content = 'data:image/png;base64,'+this.avatar_content.content;
+    		}
+    		entity.avatar = this.avatar_content;
     	},
     	lifeChanged: function(oldValue, newValue){
     		entity.life = newValue;
@@ -249,8 +254,8 @@ Example:
 		      this.classList.remove('collide');
 		    }.bind(this), 1000);
     	},
-    	explode: function() {
-    		this.animation.__start.call(this, 'explode');
+    	explode: function(autoDestroy) {
+    		this.animation.__start.call(this, 'explode', autoDestroy);
     	},
     	destroy: function(){
 				if(this.parentNode){
@@ -265,15 +270,18 @@ Example:
     		}
     	},
     	animation: {
-    		__start: function(name){
+    		__start: function(name, destroyAfterAnimationEnd){
     			this.$['entity-template'].addEventListener('webkitAnimationEnd', function(){
-    				this.animation.__end.call(this, name);
+    				this.animation.__end.call(this, name, destroyAfterAnimationEnd);
     			}.bind(this), false);
     			this.$['entity-template'].classList.add(name);
     		},
-    		__end: function(name){
+    		__end: function(name, destroyAfterAnimationEnd){
 		      this.$['entity-template'].removeEventListener('webkitAnimationEnd', this.animation.__end.bind(this), false);
 		      this.$['entity-template'].classList.remove(name);
+		      if(destroyAfterAnimationEnd){
+		      	this.destroy();
+		      }
     		}
     	},
     	created: function(){
