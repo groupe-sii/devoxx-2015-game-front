@@ -116,6 +116,7 @@ RPG.module('GfxEventManager', function() {
             dom.quitBtn.classList.add('hidden');
             dom.menuContainer.classList.remove('move-top');
             dom.board.classList.add('blur');
+            dom.selectPlayer(null);
             this.pubsub.publish(RPG.topics.PUB_GAME_LEAVE);
             break;
         }

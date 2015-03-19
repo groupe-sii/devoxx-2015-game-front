@@ -84,18 +84,19 @@ Example:
 		</div>
   </template>
 	<script>
+	var default_model = {
+    name: '',
+    life: 0,
+    avatar: {
+    	name: 'dvl1_fr1'
+    }
+  };
 	Polymer({
 		setEntity: function(ent){
-			this.model = ent;
+			this.model = ent || default_model;
 		},
 		created: function() {
-      this.model = {
-        name: '',
-        life: 0,
-        avatar: {
-        	name: 'dvl1_fr1'
-        }
-      }
+      this.model = default_model;
     }
 	})
 	</script>
