@@ -28,6 +28,7 @@ RPG.module('GfxDom', function() {
     elements.avatars = document.querySelector('#avatar-container');
     elements.avatars.selected = elements.avatars.querySelector('img.selected').dataset.name;
     elements.username = document.querySelector('#username');
+    elements.debugBtn = document.querySelector('#debug');
     
     for(var el in elements){
     	if(elements.hasOwnProperty(el) && elements[el]){
@@ -125,6 +126,9 @@ RPG.module('GfxDom', function() {
       return this.boardContainer.querySelector('#'+id);
     }
     return this.boardContainer.querySelector('rpg-entity[type="my-player"]');
+  };
+  GfxDom.prototype.findEntities = function() {
+    return [].slice.call(this.boardContainer.querySelectorAll('rpg-entity'));
   };
   GfxDom.prototype.findCell = function(position){
     if(position){

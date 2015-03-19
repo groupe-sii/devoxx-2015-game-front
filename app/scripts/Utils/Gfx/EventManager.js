@@ -34,6 +34,13 @@ RPG.module('GfxEventManager', function() {
     this.bindEvents(dom);
   };
   GfxEventManager.prototype.bindTopics = function(dom) {
+    dom.debugBtn.on('change', function(e) {
+    	var debug = e.target.checked;
+      var entities = dom.findEntities();
+      entities.forEach(function(entity) {
+        entity.debug = debug;
+      });
+    }.bind(this));
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_CREATED, function(topic, data) {
       dom.placeEntity(data);
     }.bind(this));
@@ -139,9 +146,9 @@ RPG.module('GfxEventManager', function() {
       }
     });
     document.addEventListener('keydown', function(e) {
-      if(keyCodes[e.which]){
-	      e.preventDefault();
-	      this.pubsub.publish(keyCodes[e.which].topic);
+      if (keyCodes[e.which]) {
+        e.preventDefault();
+        this.pubsub.publish(keyCodes[e.which].topic);
       }
     }.bind(this));
   }

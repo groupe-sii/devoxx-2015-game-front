@@ -46,6 +46,23 @@ Example:
 		    margin-left: -14px;
   			margin-top: 14px;
 			}
+			:host .rpg-entity .debug-info {
+			  opacity: 1;
+			  font-size: 10px;
+			  line-height: 15px;
+			  width: 55px;
+			  text-align: left;
+			  background: rgba(0, 0, 0, 0.8);
+			  color: rgb(255, 255, 255);
+			  padding: 5px;
+			  margin-left: -12px;
+			  margin-top: 0px;
+			  border-radius: 5px;
+			  display: none;
+			}
+			:host .rpg-entity .debug-info.show-debug {
+			  display: block;
+			}
 			:host .rpg-entity img {
 			  vertical-align: top;
 			  transition: transform 0.1s linear;
@@ -208,6 +225,11 @@ Example:
 	  	<span class="rpg-name">{{name}}</span>
 	  	<img src="{{avatar_content}}" width="32px" height="32px"/>
 	  	<span class="hit">-{{amount}}</span>
+	  	<span class="debug-info" id="debug-info">
+				life: {{life.current}}<br>
+				p1: {{position.current.x}},{{position.current.y}}<br>
+				p2: {{position.previous.x}},{{position.previous.y}}<br>
+	  	</span>
 	  </div>
 	</template>
   <script>
@@ -226,9 +248,13 @@ Example:
     		'position': {
     			current: {x:0, y:0},
     			previous: {x:0, y:0},
-    		}
+    		},
+	    	debug: false
     	},
     	avatar_content: null,
+    	debugChanged: function(oldValue, newValue){
+    		this.$['debug-info'].classList.toggle('show-debug');
+    	},
     	typeChanged: function(oldValue, newValue){
     		
     	},
@@ -240,8 +266,8 @@ Example:
     	},
     	avatarChanged: function(oldValue, newValue){
     		this.avatar_content = 'images/players-sprites/'+newValue.name+'.gif.png';
-    		if(newValue['@c'].indexOf('ServerImage') !== -1){
-    			this.avatar_content = 'data:image/png;base64,'+this.avatar_content.content;
+    		if(typeof newValue.content === 'string'){
+    			this.avatar_content = 'data:image/png;base64,'+newValue.content;
     		}
     		entity.avatar = this.avatar_content;
     	},
@@ -285,6 +311,7 @@ Example:
     		}
     	},
     	created: function(){
+    		this.debug = false;
     		try {
 					entity = RPG.Factory[this.type]();
     		}

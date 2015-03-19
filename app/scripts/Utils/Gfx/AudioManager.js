@@ -87,26 +87,4 @@ RPG.module('AudioManager', function() {
   };
 
   return AudioManager;
-  // pubsub.subscribe('/item/add', function(topic) {
-  //   playSound('Jump-4');
-  // });
-  // pubsub.subscribe('/item/remove', function(topic) {
-  //   playSound('Explosion');
-  // });
-  // pubsub.subscribe('/player/dead', function(topic) {
-  //   playSound('gameOver');
-  // });
-  // pubsub.subscribe('/enemy/dead', function(topic) {
-  //   playSound('Explosion');
-  // });
-  // pubsub.subscribe('/gameOver', function(topic) {
-  //   stopSound('bg');
-  //   playSound('gameOver');
-  // });
-  // pubsub.subscribe('/gfx/player/selected', function(topic) {});
-  // pubsub.subscribe('/gfx/player/attack', function(topic) {});
-  // pubsub.subscribe('/gfx/player/spell', function(topic) {});
-  // pubsub.subscribe('/gfx/player/move', function(topic) {
-  //   playSound('Jump-2');
-  // });
 });
