@@ -11,7 +11,7 @@ RPG.run(function() {
   var died = {
     player: {
       "@c": "string",
-      "id": "SimpleWizard-35",
+      "id": null,
       "life": {
         "current": 0,
         "max": 0
@@ -26,7 +26,7 @@ RPG.run(function() {
   var hit = {
     "player": {
       "@c": "string",
-      "id": "SimpleWizard-35",
+      "id": null,
       "life": {
         "current": 700,
         "max": 0
