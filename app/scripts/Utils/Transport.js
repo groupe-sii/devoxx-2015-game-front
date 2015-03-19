@@ -52,7 +52,7 @@ RPG.module('Transport', function() {
       data = JSON.parse(data.body || data);
       topic = this.uncomputeTopic(topic);
       if(Transport.prototype[topic]){
-        Transport.prototype[topic].call(this, data);
+        Transport.prototype[topic].call(this, this.computeTopic(topic), data);
       }
       else {
         console.error('Transport: ', topic, ' is not defined.');
@@ -61,6 +61,7 @@ RPG.module('Transport', function() {
     }.bind(this));
   };
   Transport.prototype.send = function(topic, data) {
+    console.log('Transport', 'sent', this.computeTopic(topic));
     topic = this.computeTopic(topic);
     this.client.send(topic, {}, JSON.stringify(data));
   };
@@ -78,16 +79,21 @@ RPG.module('Transport', function() {
   };
 
   // // topics implementation
-  Transport.prototype[RPG.topics.SUB_ME_JOINED_GAME] = function(/*data*/) {};
-  Transport.prototype[RPG.topics.SUB_PLAYER_MOVED] = function(/*data*/) {};
-  Transport.prototype[RPG.topics.SUB_PLAYER_CREATED] = function(/*data*/) {};
-  Transport.prototype[RPG.topics.SUB_PLAYER_HIT] = function(/*data*/) {};
-  
-  Transport.prototype[RPG.topics.SUB_ME_ERROR_LOCAL] = function(data) {
-    console.log('SUB_ME_ERROR_LOCAL', data);
+  Transport.prototype[RPG.topics.SUB_PLAYER_MOVED] = function(/*topic, data*/) {};
+  Transport.prototype[RPG.topics.SUB_ME_JOINED_GAME] = function(topic, data) {
+    console.log('Transport', 'received', topic);
   };
-  Transport.prototype[RPG.topics.SUB_MESSAGE_GLOBAL] = function(data) {
-    console.log('SUB_MESSAGE_GLOBAL', data);
+  Transport.prototype[RPG.topics.SUB_PLAYER_CREATED] = function(topic, data) {
+    console.log('Transport', 'received', topic);
+  };
+  Transport.prototype[RPG.topics.SUB_PLAYER_HIT] = function(topic, data) {
+    console.log('Transport', 'received', topic);
+  };
+  Transport.prototype[RPG.topics.SUB_ME_ERROR_LOCAL] = function(topic, data) {
+    console.log('Transport', 'received', topic);
+  };
+  Transport.prototype[RPG.topics.SUB_MESSAGE_GLOBAL] = function(topic, data) {
+    console.log('Transport', 'received', topic);
   };
   return Transport;
 });
