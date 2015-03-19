@@ -52,16 +52,15 @@ RPG.module('GfxEventManager', function() {
     }.bind(this));
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_MOVED, function(topic, data) {
       var entity = dom.findEntity(data.player.id);
+      if(!entity){
+      	entity = dom.placeEntity(data);
+      }
       entity.avatar = data.player.playerInfo.avatar;
       entity.position = {
     		  current: data.newCell,
     		  previous: data.oldCell
       };
-      if (!entity) {
-        entity = dom.placeEntity(data);
-      } else {
-        dom.moveTo(entity);
-      }
+      dom.moveTo(entity);
     }.bind(this));
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_DIED, function(topic, data) {
       var entity = dom.findEntity(data.player.id);
