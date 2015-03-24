@@ -2,16 +2,7 @@
 `rpg-entity` is the custom element that represents a playable entity.
 
 Example:
-    <rpg-entity 
-    	type="player" 
-    	name="Player 1" 
-    	life="89" 
-    	avatar="avt2_fr1" 
-    	current-position-x="2"
-    	current-position-y="8"
-    	previous-position-x="2"
-    	previous-position-y="7">
-  	</rpg-entity>
+    <rpg-entity type="player"></rpg-entity>
 
 
 @element rpg-entity
@@ -26,7 +17,7 @@ Example:
 			:host {
 			  position: absolute;
 			  cursor: pointer;
-			  transition: left 0.5s linear,top 0.5s linear;
+			  transition: left 0.5s ease-in-out,top 0.5s ease-in-out;
 		    transform: translateZ(0);
 			}
 			:host .rpg-entity:hover img {
@@ -221,7 +212,7 @@ Example:
 			}
 		</style>
 	  <div class="rpg-entity" id="entity-template">
-	  	<span class="rpg-life"><i style="width:{{life.current/100}}%;"></i></span>
+	  	<span class="rpg-life"><i style="width:{{life.current/10}}%;"></i></span>
 	  	<span class="rpg-name">{{name}}</span>
 	  	<img src="{{avatar_content}}" width="32px" height="32px"/>
 	  	<span class="hit">-{{amount}}</span>
@@ -297,10 +288,12 @@ Example:
     	},
     	animation: {
     		__start: function(name, destroyAfterAnimationEnd){
-    			this.$['entity-template'].addEventListener('webkitAnimationEnd', function(){
-    				this.animation.__end.call(this, name, destroyAfterAnimationEnd);
-    			}.bind(this), false);
-    			this.$['entity-template'].classList.add(name);
+    			this.async(function() {
+	    			this.$['entity-template'].addEventListener('webkitAnimationEnd', function(){
+	  					this.animation.__end.call(this, name, destroyAfterAnimationEnd);
+	    			}.bind(this), false);
+	    			this.$['entity-template'].classList.add(name);
+					}, null, 0);
     		},
     		__end: function(name, destroyAfterAnimationEnd){
 		      this.$['entity-template'].removeEventListener('webkitAnimationEnd', this.animation.__end.bind(this), false);
