@@ -152,6 +152,10 @@ hr.soften {
   transform: scale(1);
 }
 
+label[for="debug"] {
+  float: right;
+}
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
