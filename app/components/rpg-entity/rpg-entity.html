@@ -111,6 +111,9 @@ Example:
 			  transform: scale(0.3);
 			  visibility: hidden;			
 			}
+			:host .rpg-entity .dead {
+				-webkit-filter: grayscale(100%);
+			}
 			
 			:host .rpg-entity.hit-animate .hit {
 				-webkit-animation: hit 1s linear 1;
@@ -270,14 +273,22 @@ Example:
 		    setTimeout(function() {
 		      this.classList.remove('collide');
 		    }.bind(this), 1000);
+		    return this;
     	},
     	explode: function(autoDestroy) {
     		this.animation.__start.call(this, 'explode', autoDestroy);
+    		return this;
     	},
     	destroy: function(){
 				if(this.parentNode){
 					this.parentNode.removeChild(this);
 				}
+    	},
+    	heal: function(amount){
+    		if((this.life.current + amount) <= this.life.max){
+    			this.life.current += amount;
+    		}
+    		return this;
     	},
     	hit: function(amount){
     		if(this.life.current > 0){
@@ -285,6 +296,18 @@ Example:
 	    		this.amount = amount;
 	    		this.animation.__start.call(this, 'hit-animate');
     		}
+    		return this;
+    	},
+    	setDead: function(){
+    		this.classList.add('dead');
+    		return this;
+    	},
+    	revive: function(info){
+    		this.classList.remove('dead');
+		    this.life = info.life;
+		    this.name = info.playerInfo.name;
+		    this.avatar = info.playerInfo.avatar;
+    		return this;
     	},
     	animation: {
     		__start: function(name, destroyAfterAnimationEnd){
