@@ -9,7 +9,7 @@ RPG.run(function() {
   'use strict';
   var ps = RPG.Factory.pubsub();
   var died = {
-    player: {
+    "player": {
       "@c": "string",
       "id": null,
       "life": {
@@ -46,7 +46,11 @@ RPG.run(function() {
   });
   document.querySelector('a[data-action="kill"]').addEventListener('click', function(e){
   	e.preventDefault();
-    ps.publish(RPG.topics.SUB_PLAYER_DIED, died);
+    ps.publish(RPG.topics.SUB_PLAYER_DIED, died.player);
+  });
+  document.querySelector('a[data-action="revive"]').addEventListener('click', function(e){
+  	e.preventDefault();
+    ps.publish(RPG.topics.SUB_PLAYER_REVIVED, hit.player);
   });
 
 });

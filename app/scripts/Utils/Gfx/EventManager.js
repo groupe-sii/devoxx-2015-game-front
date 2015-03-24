@@ -68,7 +68,7 @@ RPG.module('GfxEventManager', function() {
         entity.explode().setDead();
       }
     });
-    this.s(RPG.topics.SUB_PLAYER_REVIVED, function() {
+    this.s(RPG.topics.SUB_PLAYER_REVIVED, function(topic, data) {
       var entity = dom.findEntity(data.id);
       if (entity) {
         entity.revive(data);
