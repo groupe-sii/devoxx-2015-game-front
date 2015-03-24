@@ -68,6 +68,32 @@ hr.soften {
   margin-top: 28px;
 }
 
+#modal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#message {
+  position: fixed;
+  z-index: 999;
+  font-size: 18px;
+  text-align: center;
+  padding: 11px;
+  background: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 700px;
+  top: 20px;
+  left: 0;
+  right: 0;
+}
+
 .menu {
   position: absolute;
   top: 0;

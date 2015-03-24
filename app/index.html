@@ -24,7 +24,9 @@
   <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-  <div class="container">
+  <div id="modal" class="hidden"></div>
+  <p id="message" class="hidden"></p>
+  <div class="container" id="container">
     <div class="header">
       <ul class="nav pull-right" id="upper-buttons">
         <li><button class="btn btn-lg btn-danger hidden" role="button" data-action="leave" href="#">Leave the game</button></li>
@@ -85,7 +87,7 @@
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
   <script src="bower_components/sockjs/sockjs.js"></script>
-  <script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
+  <script src="bower_components/stomp-websocket/lib/stomp.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:js({app,.tmp}) scripts/main.js -->

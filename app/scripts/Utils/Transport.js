@@ -8,20 +8,29 @@
 RPG.module('Transport', function() {
   'use strict';
 
-  function Transport(PubSub) {
-    this.pubsub = PubSub;
-    this.client = Stomp.over(new SockJS(RPG.socket.url));
-    this.client.debug = null;
+  var socket = null;
+  var topics = {};
+
+  function onClose(){
+    this.client.disconnect();
+    this.pubsub.publish('/transport/close');
   }
-  Transport.prototype.initialize = function(){
-    this.client.connect({}, this.onConnection.bind(this));
-  };
-  Transport.prototype.close = function(){
-  	this.client.disconnect();
-  };
-  Transport.prototype.onConnection = function() {
+
+  function onConnect() {
     this.subscribe(RPG.topics.SUB_ME_GAME_SELECTED, this.onGameSelected.bind(this));
     this.send(RPG.topics.PUB_GAME_SELECT);
+  }
+
+  function Transport(PubSub) {
+    this.pubsub = PubSub;
+    socket = new SockJS(RPG.socket.url);
+    this.client = Stomp.over(socket);
+    this.client.onclose = onClose.bind(this);
+    this.client.onerror = onClose.bind(this);
+    // this.client.debug = null;
+  }
+  Transport.prototype.initialize = function(){
+    this.client.connect({}, onConnect.bind(this), onClose.bind(this));
   };
   Transport.prototype.onGameSelected = function(data) {
     data = JSON.parse(data.body || data);
@@ -29,34 +38,36 @@ RPG.module('Transport', function() {
     this.game = data;
 
     // subscriptions
-    for (var topic in Transport.prototype) {
-      if (topic && topic[0] === '/' && Transport.prototype.hasOwnProperty(topic)) {
-        topic = this.computeTopic(topic);
-        this.subscribe(topic);
+    Object.keys(RPG.topics).forEach(function(topic, index){
+      var serverTopic = RPG.topics[topic];
+      if (topic.startsWith('SUB_')) {
+        this.subscribe(serverTopic);
       }
-    }
+      else if(topic.startsWith('PUB_')){
+        this.pubsub.subscribe(serverTopic, this.send.bind(this));
+      }
+    }.bind(this));
 
     // publishes
-    this.pubsub.subscribe(RPG.topics.PUB_GAME_JOIN, this.send.bind(this));
-    this.pubsub.subscribe(RPG.topics.PUB_GAME_LEAVE, this.send.bind(this));
-    this.pubsub.subscribe(RPG.topics.PUB_PLAYER_MOVE_DOWN, this.send.bind(this));
-    this.pubsub.subscribe(RPG.topics.PUB_PLAYER_MOVE_UP, this.send.bind(this));
-    this.pubsub.subscribe(RPG.topics.PUB_PLAYER_MOVE_LEFT, this.send.bind(this));
-    this.pubsub.subscribe(RPG.topics.PUB_PLAYER_MOVE_RIGHT, this.send.bind(this));
+    // this.pubsub.subscribe(RPG.topics.PUB_GAME_JOIN, this.send.bind(this));
+    // this.pubsub.subscribe(RPG.topics.PUB_GAME_LEAVE, this.send.bind(this));
+    // this.pubsub.subscribe(RPG.topics.PUB_PLAYER_MOVE_DOWN, this.send.bind(this));
+    // this.pubsub.subscribe(RPG.topics.PUB_PLAYER_MOVE_UP, this.send.bind(this));
+    // this.pubsub.subscribe(RPG.topics.PUB_PLAYER_MOVE_LEFT, this.send.bind(this));
+    // this.pubsub.subscribe(RPG.topics.PUB_PLAYER_MOVE_RIGHT, this.send.bind(this));
     // this.pubsub.subscribe(RPG.topics.PUB_PLAYER_LEAVE, this.send.bind(this));
 
-    // this.pubsub.subscribe('/transport/close', this.close.bind(this));
   };
   Transport.prototype.subscribe = function(topic, callback){
     this.client.subscribe(topic, callback || function(data) {
       data = JSON.parse(data.body || data);
       topic = this.uncomputeTopic(topic);
-      if(Transport.prototype[topic]){
-        Transport.prototype[topic].call(this, this.computeTopic(topic), data);
-      }
-      else {
-        console.error('Transport: ', topic, ' is not defined.');
-      }
+      // if(topics[topic]){
+      //   topics[topic].call(this, this.computeTopic(topic), data);
+      // }
+      // else {
+      //   console.error('Transport: ', topic, ' is not defined. Did you forget to implement it?');
+      // }
       this.pubsub.publish(topic, data);
     }.bind(this));
   };
@@ -67,7 +78,7 @@ RPG.module('Transport', function() {
   };
   Transport.prototype.uncomputeTopic = function(topic){
     if(topic.indexOf('game-') !== -1){
-      topic = topic.replace(/game-\d/, '{gameId}');
+      topic = topic.replace(/game-\d+/, '{gameId}');
     }
     return topic;
   };
@@ -78,22 +89,51 @@ RPG.module('Transport', function() {
     return topic;
   };
 
-  // // topics implementation
-  Transport.prototype[RPG.topics.SUB_PLAYER_MOVED] = function(/*topic, data*/) {};
-  Transport.prototype[RPG.topics.SUB_ME_JOINED_GAME] = function(topic, data) {
+  // topics implementations
+
+  // Player topics
+  topics[RPG.topics.SUB_ME_GAME_CREATED] = function(topic, data) {
     console.log('Transport', 'received', topic);
   };
-  Transport.prototype[RPG.topics.SUB_PLAYER_CREATED] = function(topic, data) {
+  topics[RPG.topics.SUB_ME_JOINED_GAME] = function(topic, data) {
     console.log('Transport', 'received', topic);
   };
-  Transport.prototype[RPG.topics.SUB_PLAYER_HIT] = function(topic, data) {
+  topics[RPG.topics.SUB_PLAYER_HIT] = function(topic, data) {
     console.log('Transport', 'received', topic);
   };
-  Transport.prototype[RPG.topics.SUB_ME_ERROR_LOCAL] = function(topic, data) {
+  topics[RPG.topics.SUB_PLAYER_CREATED] = function(topic, data) {
     console.log('Transport', 'received', topic);
   };
-  Transport.prototype[RPG.topics.SUB_MESSAGE_GLOBAL] = function(topic, data) {
+  topics[RPG.topics.SUB_PLAYER_MOVED] = function(topic, data) {
+    //console.log('Transport', 'received', topic);
+  };
+  topics[RPG.topics.SUB_PLAYER_DIED] = function(topic, data) {
     console.log('Transport', 'received', topic);
   };
+  topics[RPG.topics.SUB_PLAYER_REVIVED] = function(topic, data){
+    console.log('Transport', 'received', topic);
+  };
+  topics[RPG.topics.SUB_PLAYER_HIT] = function(topic, data){
+    console.log('Transport', 'received', topic);
+  };
+  topics[RPG.topics.SUB_PLAYER_HEALED] = function(topic, data){
+    console.log('Transport', 'received', topic);
+  };
+  topics[RPG.topics.SUB_PLAYER_STATES] = function(topic, data){
+    console.log('Transport', 'received', topic);
+  };
+  topics[RPG.topics.SUB_PLAYER_LIFE_LEVEL] = function(topic, data){
+    console.log('Transport', 'received', topic);
+  };
+
+  // Errors topics
+
+  topics[RPG.topics.SUB_ME_ERROR_LOCAL] = function(topic, data) {
+    console.log('Transport', 'received', topic);
+  };
+  topics[RPG.topics.SUB_MESSAGE_GLOBAL] = function(topic, data) {
+    console.log('Transport', 'received', topic);
+  };
+
   return Transport;
 });

@@ -63,7 +63,7 @@ RPG.module('GfxEventManager', function() {
       dom.moveTo(entity);
     }.bind(this));
     this.pubsub.subscribe(RPG.topics.SUB_PLAYER_DIED, function(topic, data) {
-      var entity = dom.findEntity(data.player.id);
+      var entity = dom.findEntity(data.id);
       if (entity) {
         entity.explode();
       }
@@ -80,9 +80,12 @@ RPG.module('GfxEventManager', function() {
         entity.explode(true);
       }
     }.bind(this));
+    this.pubsub.subscribe('/transport/close', function(){
+    	dom.showMessage('Connecting to server...');
+    });
     window.addEventListener('beforeunload', function() {
       this.pubsub.publish('/transport/close');
-    }.bind(this))
+    }.bind(this));
   };
   GfxEventManager.prototype.bindEvents = function(dom) {
     dom.boardContainer.on('click', function(e) {

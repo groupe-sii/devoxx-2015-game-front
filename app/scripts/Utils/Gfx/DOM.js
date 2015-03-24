@@ -17,6 +17,8 @@ RPG.module('GfxDom', function() {
   GfxDom.prototype.initialize = function(){
   	var self = this;
   	var elements = {};
+    elements.modal = document.querySelector('#modal');
+    elements.container = document.querySelector('#container');
   	elements.quitBtn = document.querySelector('[data-action="leave"]');
     elements.menuContainer = document.querySelector('.menu');
     elements.board = document.querySelector('.jumbotron.blur');
@@ -29,6 +31,7 @@ RPG.module('GfxDom', function() {
     elements.avatars.selected = elements.avatars.querySelector('img.selected').dataset.name;
     elements.username = document.querySelector('#username');
     elements.debugBtn = document.querySelector('#debug');
+    elements.connectionMsg = document.querySelector('#message');
     
     for(var el in elements){
     	if(elements.hasOwnProperty(el) && elements[el]){
@@ -162,6 +165,20 @@ RPG.module('GfxDom', function() {
     }
     return this;
   };
+  GfxDom.prototype.showMessage = function(msg, hide){
+    if(hide){
+      this.container.classList.remove('blur');
+      this.connectionMsg.classList.add('hidden');
+      this.modal.classList.add('hidden');
+      this.connectionMsg.innerHTML = '';
+    }
+    else {
+      this.container.classList.add('blur');
+      this.connectionMsg.classList.remove('hidden');
+      this.modal.classList.remove('show');
+      this.connectionMsg.innerHTML = msg;
+    }
+  }
 
   return GfxDom;
 
