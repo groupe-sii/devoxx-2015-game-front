@@ -34,6 +34,7 @@ RPG.config({
     'SUB_PLAYER_DESTROYED': '/topic/game/{gameId}/player/removed',
     'SUB_PLAYER_JOINED_GAME': '/topic/game/{gameId}/player/joined',
     'SUB_PLAYER_CREATED': '/topic/game/{gameId}/player/added',
+    'SUB_ME_LEFT_GAME': '/user/topic/game/left',
     'SUB_ME_JOINED_GAME': '/user/topic/game/joined',
 
     'PUB_PLAYER_MOVE_UP': '/topic/game/player/move/up',
