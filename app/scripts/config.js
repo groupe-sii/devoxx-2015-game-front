@@ -6,6 +6,7 @@
  * @author Wassim Chegham
  */
 RPG.config({
+  'audio': false,
   'socket': {
     // 'url': 'http://10.6.192.222:8080/survival-game/game'
     // 'url': 'http://192.168.1.17:8080/survival-game/game'
