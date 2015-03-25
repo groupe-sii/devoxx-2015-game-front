@@ -78,7 +78,7 @@ Example:
 			}
 		</style>
 		<div hidden?="{{!model.name}}">
-	    <img src="images/players-sprites/{{ model.avatar.name }}.gif.png" width="32px" height="32px"/>
+	    <img src="{{model.avatar_content}}" width="32px" height="32px"/>
 			<span class="rpg-life"><i style="width:{{ model.life.current/10 }}%;"></i></span>
 	    <span class="rpg-name">{{ model.name }}</span>
 		</div>
