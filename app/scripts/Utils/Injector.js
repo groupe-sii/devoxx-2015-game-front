@@ -6,15 +6,14 @@
  * @author Wassim Chegham
  */
 RPG.module('Injector', function() {
-  
   'use strict';
 
-	var dependencies_ = {};
+	var dependencies = {};
 
-	function getDependencies_(args) {
-		return args.map(function(value) {
-			return RPG.Injector.invoke(RPG[trim(value)]);
-			// return RPG.Injector.invoke(dependencies_[trim(value.toLowerCase())]);
+	function getDependencies(args) {
+		//@todo there is a recursive call bug here!!! It needs to be fixed.
+		return args.map(function(constructorName) {
+			return RPG.Injector.invoke(RPG[constructorName]);
 		});
 	}
 
@@ -22,24 +21,32 @@ RPG.module('Injector', function() {
 		return str.replace(' ', '', 'g');
 	}
 
+	function functionName(fn){
+		return trim(fn.name || fn.toString().match(/function\s*([a-zA-Z_]+)/)[1]);
+	}
+
+	function functionArgs(fn){
+		return fn.toString().match(/^function\s*[^\(]*\(\s*([^\)]*)\)/m)[1].split(',').map(trim);
+	}
+
 	return {
 		inject: function(dependency) {
 			if(typeof dependency === 'function'){
-				var name = dependency.toString().match(/function\s*([a-zA-Z_]+)/)[1];
-				dependencies_[trim(name.toLowerCase())] = dependency;
+				dependencies[ functionName(dependency) ] = dependency;
 			}
 			return this;
 		},
-		invoke: function(target) {
-			if(typeof target === 'function'){
-				var args = target.toString().match(/^function\s*[^\(]*\(\s*([^\)]*)\)/m)[1];
-				args = args === '' ? [] : getDependencies_(args.split(','));
+		invoke: function(dependency) {
+			if(typeof dependency === 'function'){
+				var name = functionName(dependency);
+				var args = functionArgs(dependency);
+				args = args === '' ? [] : getDependencies(args);
 				var Constructor = function() {
-					return target.apply(this, args);
+					return dependency.apply(this, args);
 				};
-				return RPG.Factory.instance(Constructor, target);
+				return RPG.Factory.instance(Constructor, dependency);
 			}
-			return target;
+			return dependency;
 		}
 	};
 
