@@ -42,7 +42,7 @@ RPG.config({
     'PUB_PLAYER_MOVE_DOWN': '/topic/game/player/move/down',
     'PUB_PLAYER_MOVE_LEFT': '/topic/game/player/move/left',
     'PUB_PLAYER_MOVE_RIGHT': '/topic/game/player/move/right',
-    'PUB_ACTION': '/topic/game/action',
+    'PUB_GAME_ACTION': '/topic/game/action',
 
     'SUB_ME_GAME_SELECTED': '/user/topic/game/selected',
     'SUB_ME_GAME_CREATED': '/user/topic/game/created',

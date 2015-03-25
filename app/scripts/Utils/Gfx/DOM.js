@@ -11,7 +11,6 @@ RPG.module('GfxDom', function() {
 
   function GfxDom(GfxEventManager){
   	this.entityTag = 'rpg-entity';
-  	this.gridSize = 10;
   	this.eventManager = GfxEventManager;
   }
   GfxDom.prototype.initialize = function(){
@@ -32,6 +31,7 @@ RPG.module('GfxDom', function() {
     elements.username = document.querySelector('#username');
     elements.debugBtn = document.querySelector('#debug');
     elements.connectionMsg = document.querySelector('#message');
+    elements.actionsList = document.querySelector('#actions-list');
     
     for(var el in elements){
     	if(elements.hasOwnProperty(el) && elements[el]){
@@ -44,22 +44,34 @@ RPG.module('GfxDom', function() {
     		self[el] = elements[el];
     	}
     }
-
-    this.build();
-
   };
-  GfxDom.prototype.build = function(){
-		var grid = '<table>';
-    for (var i = 0; i < this.gridSize; i += 1) {
-      grid += '<tr>';
-      for (var j = 0; j < this.gridSize; j += 1) {
-        grid += '<td data-y="' + i + '" data-x="' + j + '">';
-        grid += '';
-        grid += '</td>';
+  GfxDom.prototype.build = function(info){
+    var frag, table, tr, td, x, y;
+    frag = document.createDocumentFragment();
+    table = document.createElement('table');
+    table.setAttribute('id', info.id);
+    for (x = 0; x < info.board.height; x += 1) {
+      tr = document.createElement('tr');
+      tr.dataset.x = x;
+      for (y = 0; y < info.board.width; y += 1) {
+        td = document.createElement('td');
+        td.dataset.x = y;
+        td.dataset.y = x;
+        tr.appendChild(td);
       }
-      grid += '</tr>';
+      table.appendChild(tr);
     }
-    this.boardContainer.innerHTML = grid;
+    frag.appendChild(table);
+    this.boardContainer.appendChild(frag.cloneNode(true));
+  };
+  GfxDom.prototype.drawActionsPanel = function(actionsList){
+    var frag = document.createDocumentFragment();
+    actionsList.forEach(function(element, index){
+      var span = document.createElement('span');
+      span.innerHTML += (index+1)+': '+element+' ';
+      frag.appendChild(span);
+    }.bind(this));
+    this.actionsList.appendChild(frag);
   };
   GfxDom.prototype.createEntity = function(obj, type) {
     var entity = document.createElement(this.entityTag);
@@ -121,7 +133,7 @@ RPG.module('GfxDom', function() {
         newCell.classList.add('rpg-occupied');
       }
       entity.style.top = (newCell.offsetTop + 17) + 'px';
-      entity.style.left = (newCell.offsetLeft + 53) + 'px';
+      entity.style.left = (newCell.offsetLeft + 65) + 'px';
     }
   };
   GfxDom.prototype.findEntity = function(id){
@@ -140,21 +152,9 @@ RPG.module('GfxDom', function() {
   };
   GfxDom.prototype.generateRandomPosition = function() {
     return {
-      x: ((Math.random() * this.gridSize) | 0),
-      y: ((Math.random() * this.gridSize) | 0)
+      x: ((Math.random() * RPG.game.board.width) | 0),
+      y: ((Math.random() * RPG.game.board.height) | 0)
     };
-  };
-  GfxDom.prototype.itemSelected = function(e) {
-    var item = e.target.parentElement;
-    var previousSelection = document.querySelector('.rpg-item.selected');
-    if (previousSelection) {
-      previousSelection.classList.remove('selected');
-    }
-    item.classList.add('selected');
-    this.pubsub.publish('/gfx/item/selected', {
-      x: +item.dataset.x,
-      y: +item.dataset.y
-    });
   };
   GfxDom.prototype.remove = function(obj) {
     var cell =  this.findCell(obj);
