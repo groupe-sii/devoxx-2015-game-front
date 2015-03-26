@@ -66,12 +66,19 @@ RPG.module('GfxDom', function() {
   };
   GfxDom.prototype.drawActionsPanel = function(actionsList){
     var frag = document.createDocumentFragment();
-    actionsList.forEach(function(element, index){
+    actionsList.forEach(function(action, index){
       var span = document.createElement('span');
-      span.innerHTML += (index+1)+': '+element+' ';
+      ['btn', 'btn-lg', 'btn-success'].forEach(function(cssClass){
+        span.classList.add(cssClass);
+      });
+      span.dataset.index = index;
+      span.innerHTML += (index+1)+': '+action.name+' ';
       frag.appendChild(span);
     }.bind(this));
     this.actionsList.appendChild(frag);
+    this.actionsList.addEventListener('click', function(e){
+      actionsList[+e.target.dataset.index].action();
+    });
   };
   GfxDom.prototype.createEntity = function(obj, type) {
     var entity = document.createElement(this.entityTag);

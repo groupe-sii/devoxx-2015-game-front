@@ -16,6 +16,9 @@ RPG.run(function() {
 	  fx.enable();
   }
 
+  var action = RPG.Factory.action();
+  action.initialize();
+
   var gfx = RPG.Factory.gfx();
   gfx.initialize();
 
