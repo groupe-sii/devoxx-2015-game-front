@@ -186,6 +186,12 @@ RPG.module('GfxDom', function() {
       this.connectionMsg.innerHTML = msg;
     }
   }
+  GfxDom.prototype.createStyleTag = function(id, css) {
+    var styleContainer = document.createElement('div');
+    styleContainer.id = id;
+    styleContainer.innerHTML = '<style>'+css+'</style>';
+    document.querySelector('body').appendChild(styleContainer);
+  };
 
   return GfxDom;
 

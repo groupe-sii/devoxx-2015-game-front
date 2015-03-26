@@ -16,7 +16,9 @@ RPG.module('Transport', function() {
   }
 
   function onGameSelected(topic, data) {
+
     RPG.game = data;
+
     // auto subscriptions
     Object.keys(RPG.topics).forEach(function(topic, index) {
       var serverTopic = RPG.topics[topic];
@@ -28,6 +30,7 @@ RPG.module('Transport', function() {
       }
     }.bind(this));
     handleServerErrors.call(this);
+    handleAnimationTopics.call(this);
   }
 
   function onConnect() {
@@ -51,8 +54,19 @@ RPG.module('Transport', function() {
 
   function handleServerErrors() {
     this.subscribe(RPG.topics.SUB_ERROR_GLOBAL, function(topic, data) {
-      console.error('Transport::ServerError', JSON.stringify(data));
+      console.error('Transport::SUB_ERROR_GLOBAL', JSON.stringify(data));
     });
+    this.subscribe(RPG.topics.SUB_ME_ERROR_LOCAL, function(topic, data) {
+      console.error('Transport::SUB_ME_ERROR_LOCAL', JSON.stringify(data));
+    });
+    this.subscribe(RPG.topics.SUB_MESSAGE_GLOBAL, function(topic, data) {
+      console.error('Transport::SUB_MESSAGE_GLOBAL', JSON.stringify(data));
+    });
+  }
+
+  function handleAnimationTopics(){
+    this.subscribe(RPG.topics.SUB_ANIMATION_ALL);
+    this.send(RPG.topics.PUB_ANIMATION_ALL);
   }
 
   function noop(topic, data) {}
@@ -70,12 +84,19 @@ RPG.module('Transport', function() {
   };
   Transport.prototype.subscribe = function(topic, callback) {
     this.client.subscribe(topic, function(data) {
-      data = JSON.parse(data.body || data);
-      topic = uncomputeTopic(topic);
-      this.pubsub.publish(topic, data);
-      if (callback && callback.call) {
-        callback(topic, data);
+      
+      try{
+        data = JSON.parse(data.body || data);
+        topic = uncomputeTopic(topic);
+        this.pubsub.publish(topic, data);
+        if (callback && callback.call) {
+          callback(topic, data);
+        }
       }
+      catch(e){
+        console.error('Transport::ParseError', 'can not parse server message', data);
+      }
+
     }.bind(this));
   };
   Transport.prototype.send = function(topic, data) {

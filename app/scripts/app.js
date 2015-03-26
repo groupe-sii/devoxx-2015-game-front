@@ -19,6 +19,9 @@ RPG.run(function() {
   var action = RPG.Factory.action();
   action.initialize();
 
+  var animation = RPG.Factory.animation();
+  animation.initialize();
+
   var gfx = RPG.Factory.gfx();
   gfx.initialize();
 

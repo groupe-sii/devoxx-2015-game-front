@@ -7,6 +7,9 @@
  */
 RPG.config({
   'audio': false,
+  'server': {
+    'host': 'http://localhost:8080'
+  },
   'socket': {
     // 'url': 'http://10.6.192.222:8080/survival-game/game'
     // 'url': 'http://192.168.1.17:8080/survival-game/game'
@@ -49,7 +52,10 @@ RPG.config({
     'SUB_ACTION_IMAGE_MOVED': '/topic/game/{gameId}/action/image/moved',
     'SUB_ERROR_GLOBAL': '/topic/game/message/error',
     'SUB_MESSAGE_GLOBAL': '/topic/game/message',
-    'SUB_ME_ERROR_LOCAL': '/user/queue/errors'
+    'SUB_ME_ERROR_LOCAL': '/user/queue/errors',
+
+    'SUB_ANIMATION_ALL': '/user/topic/game/animation/all',
+    'PUB_ANIMATION_ALL': '/topic/game/animation/all'
 
   }
 });
