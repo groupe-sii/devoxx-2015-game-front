@@ -30,7 +30,7 @@ RPG.module('Transport', function() {
       }
     }.bind(this));
     handleServerErrors.call(this);
-    handleAnimationTopics.call(this);
+    // handleAnimationTopics.call(this);
   }
 
   function onConnect() {
@@ -87,14 +87,15 @@ RPG.module('Transport', function() {
       
       try{
         data = JSON.parse(data.body || data);
-        topic = uncomputeTopic(topic);
-        this.pubsub.publish(topic, data);
-        if (callback && callback.call) {
-          callback(topic, data);
-        }
       }
       catch(e){
         console.error('Transport::ParseError', 'can not parse server message', data);
+      }
+      
+      topic = uncomputeTopic(topic);
+      this.pubsub.publish(topic, data);
+      if (callback && callback.call) {
+        callback(topic, data);
       }
 
     }.bind(this));

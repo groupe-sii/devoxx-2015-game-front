@@ -22,13 +22,13 @@ RPG.module('AnimationManager', function() {
   };
   AnimationManager.prototype.buildKeyFrames = function(animationObject) {
     var animation = this.parseAnimation(animationObject);
-    this.dom.createStyleTag(animation.id, animation.content);
+    // this.dom.createStyleTag(animation.id, animation.content);
   };
   AnimationManager.prototype.parseAnimation = function(animationObject) {
     var content = [
 	    '@-webkit-keyframes #name { #frames }',
 	    '  ',
-	    '.#name {',
+	    'rpg-entity /deep/ .#name {',
 	    '-webkit-animation-fill-mode: none;',
 	    '-webkit-animation-direction: #options.direction;',
 	    '-webkit-animation-iteration-count: #options.count;',

@@ -44,6 +44,17 @@ RPG.module('GfxEventManager', function() {
         entity.debug = debug;
       });
     }.bind(this));
+    this.s(RPG.topics.SUB_PLAYER_STATES, function(topic, data){
+      var entity = dom.findEntity(data.player.id);
+      if(entity){
+        if(data.changes && data.changes.length > 0){
+          data.changes.forEach(function(change){
+            var state = change.state.toLowerCase();
+            entity[change.change === 'ADD' ? 'addState':'removeState'](state);
+          });
+        }
+      }
+    });
     this.s(RPG.topics.SUB_ME_GAME_SELECTED, function(topic, data){
     	dom.build(data);
     });

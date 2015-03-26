@@ -140,7 +140,7 @@ RPG.module('GfxDom', function() {
         newCell.classList.add('rpg-occupied');
       }
       entity.style.top = (newCell.offsetTop + 17) + 'px';
-      entity.style.left = (newCell.offsetLeft + 65) + 'px';
+      entity.style.left = (newCell.offsetLeft + 53) + 'px';
     }
   };
   GfxDom.prototype.findEntity = function(id){
