@@ -81,3 +81,28 @@
   left: 0;
   transition: width 1s;
 }
+span.hit-amount {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  margin-top: -47px;
+  margin-left: -10px;
+  opacity: 1;
+  visibility: hidden;
+  transform: scale(0.3);
+}
+.hit .hit-amount {
+  -webkit-animation: hit 1s linear 1;
+}
+.dead {
+  /*-webkit-filter: grayscale(100%);*/
+}
+
+@-webkit-keyframes hit {
+  to {
+    margin-top: -107px;
+    margin-left: -27px;
+    opacity: 0;
+    visibility: visible;
+    transform: scale(1.3);
+  }
+}

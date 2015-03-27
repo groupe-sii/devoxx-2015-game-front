@@ -14,7 +14,6 @@ Example:
 
 <polymer-element name="rpg-entity">
   <template>
-	  <link rel="stylesheet" href="../../styles/animations/animations.css">
 	  <link rel="stylesheet" href="rpg-entity.css">
 	  <div class="entity-template" id="entity-template">
 	  	<span class="rpg-life"><i style="width:{{life.current/10}}%;"></i></span>
@@ -84,7 +83,11 @@ Example:
 		   //  return this;
     	// },
     	explode: function(autoDestroy) {
-    		this.$.animationLayers.play('explode');
+    		this.$.animationLayers.play('explosion', function(){
+    			if(autoDestroy){
+    				this.destroy();
+    			}
+    		}.bind(this));
     		return this;
     	},
     	destroy: function(){
@@ -94,7 +97,7 @@ Example:
     	},
     	heal: function(amount){
   			this.life.current += amount;
-  			this.$.animationLayers.play('heal');
+  			this.$.animationLayers.play('healing');
     		return this;
     	},
     	hit: function(amount){
@@ -136,8 +139,8 @@ Example:
     		}
     	},
     	ready: function(){
-    		this.$.animationLayers.register('explode');
-    		this.$.animationLayers.register('heal');
+    		this.$.animationLayers.register('explosion');
+    		this.$.animationLayers.register('healing');
     		this.$.animationLayers.register('immobilized');
     	}
     });
