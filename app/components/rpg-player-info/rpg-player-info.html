@@ -10,75 +10,13 @@ Example:
 @author Wassim Chegham
 -->
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../rpg-avatar/rpg-avatar.html">
 
 <polymer-element name="rpg-player-info">
   <template>
-		<style>
-			:host > div {
-			  width: 150px;
-			  display: inline-block;
-			  position: relative;
-			  text-align: left;
-			}
-			:host .rpg-name {
-			  display: inline-block;
-			  margin-top: 10px;
-			  font-size: 15px;
-			  color: rgb(255, 255, 255);
-			}
-			:host img {
-		    border: 1px solid rgb(0, 128, 0);
-			  border-radius: 50%;
-			  padding: 2px;
-			  width: 40px;
-			  height: 40px;
-			  background: rgb(255, 255, 255);
-			  float: left;
-			  margin-right: 4px;
-			}
-			:host .rpg-life {
-			  border: 1px solid;
-			  display: inline-block;
-			  width: 60px;
-			  height: 8px;
-			  border-radius: 4px;
-			  overflow: hidden;
-			  position: absolute;
-			  background-color: rgb(255, 255, 255);
-			  left: 40px;
-			  top: 9px;
-			}
-			:host .rpg-life i {
-			  background-color: lime;
-			  width: 100%;
-			  height: 8px;
-			  display: inline-block;
-			  margin: 0;
-			  padding: 0;
-			  position: absolute;
-			  top: 0;
-			  left: 0;
-			  transition: width 1s;
-			}
-			:host.selected > span {
-			  opacity: 1;
-			  left: 0;
-			}
-			:host.selected > span i {
-			  background-color: lime;
-			  width: 100%;
-			  height: 8px;
-			  display: inline-block;
-			  margin: 0;
-			  padding: 0;
-			  position: absolute;
-			  top: 0;
-			  left: 0;
-			  transition: width 1s;
-			}
-		</style>
+		<link rel="stylesheet" href="rpg-player-info.css">
 		<div hidden?="{{!model.name}}">
-	    <img src="{{model.avatar_content}}" width="32px" height="32px"/>
+			<rpg-avatar avatar="{{model.avatar_content}}" is-uri="{{model.avatar_is_uri}}"></rpg-avatar>
 			<span class="rpg-life"><i style="width:{{ model.life.current/10 }}%;"></i></span>
 	    <span class="rpg-name">{{ model.name }}</span>
 		</div>
@@ -88,7 +26,7 @@ Example:
     name: '',
     life: 0,
     avatar: {
-    	name: 'dvl1_fr1'
+    	name: ''
     }
   };
 	Polymer({
