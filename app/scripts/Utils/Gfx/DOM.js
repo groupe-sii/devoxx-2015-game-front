@@ -8,7 +8,6 @@
 RPG.module('GfxDom', function() {
   'use strict';
 
-
   function GfxDom(GfxEventManager){
   	this.entityTag = 'rpg-entity';
   	this.eventManager = GfxEventManager;
@@ -27,7 +26,7 @@ RPG.module('GfxDom', function() {
     elements.spectatorBtn = document.querySelector('[data-action="spectator"]');
     elements.upperButtons = document.querySelector('#upper-buttons');
     elements.avatars = document.querySelector('#avatar-container');
-    elements.avatars.selected = elements.avatars.querySelector('img.selected').dataset.name;
+    elements.avatars.selected = elements.avatars.querySelector('.selected').dataset.name;
     elements.username = document.querySelector('#username');
     elements.debugBtn = document.querySelector('#debug');
     elements.connectionMsg = document.querySelector('#message');
@@ -68,7 +67,7 @@ RPG.module('GfxDom', function() {
     var frag = document.createDocumentFragment();
     actionsList.forEach(function(action, index){
       var span = document.createElement('span');
-      ['btn', 'btn-lg', 'btn-success'].forEach(function(cssClass){
+      ['btn', 'btn-lg', 'btn-info'].forEach(function(cssClass){
         span.classList.add(cssClass);
       });
       span.dataset.index = index;

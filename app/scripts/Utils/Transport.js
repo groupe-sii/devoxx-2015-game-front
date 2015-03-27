@@ -30,7 +30,7 @@ RPG.module('Transport', function() {
       }
     }.bind(this));
     handleServerErrors.call(this);
-    // handleAnimationTopics.call(this);
+    handleAnimationTopics.call(this);
   }
 
   function onConnect() {

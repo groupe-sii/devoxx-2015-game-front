@@ -175,7 +175,7 @@ RPG.module('GfxEventManager', function() {
       dom.avatars.on('click', function(e) {
         e.preventDefault();
         var action = e.target;
-        if (action && action.nodeName === 'IMG') {
+        if (action && action.classList.contains('avatar')) {
           action.parentElement.querySelector('.selected').classList.remove('selected');
           action.classList.add('selected');
           dom.avatars.selected = action.dataset.name;

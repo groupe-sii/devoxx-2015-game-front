@@ -18,11 +18,10 @@ RPG.module('AnimationManager', function() {
   			this.buildKeyFrames(animationObject);
   		}.bind(this));
   	}.bind(this));
-    
   };
   AnimationManager.prototype.buildKeyFrames = function(animationObject) {
     var animation = this.parseAnimation(animationObject);
-    // this.dom.createStyleTag(animation.id, animation.content);
+    this.dom.createStyleTag(animation.id, animation.content);
   };
   AnimationManager.prototype.parseAnimation = function(animationObject) {
     var content = [

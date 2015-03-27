@@ -1,0 +1,20 @@
+.effects-sprite-explosion {
+  background: url(../../images/sprites/explosion.png) no-repeat 48px center;
+  display: block;
+  width: 48px;
+  height: 48px;
+  -webkit-animation-fill-mode: none;
+  -webkit-animation-direction: normal;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 0.9s;
+  -webkit-animation-delay: 0;
+  -webkit-animation-timing-function: steps(12);
+}
+@-webkit-keyframes explode {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -696px;
+  }
+}
