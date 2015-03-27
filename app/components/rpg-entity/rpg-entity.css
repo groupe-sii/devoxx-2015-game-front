@@ -1,0 +1,92 @@
+:host {
+  position: absolute;
+  cursor: pointer;
+  transition: left 0.5s ease-in-out, top 0.5s ease-in-out;
+  transform: translateZ(0);
+}
+:host .entity-template:hover .avatar {
+  transform: scale(1.2);
+}
+:host .entity-template:hover span {
+  opacity: 1;
+}
+:host .entity-template {
+  width: 32px;
+  height: 32px;
+}
+:host span {
+  opacity: 0;
+  transition: opacity 0.1s linear;
+  position: relative;
+  margin-left: -14px;
+  margin-top: 14px;
+}
+:host .entity-template .debug-info {
+  opacity: 1;
+  font-size: 10px;
+  line-height: 10px;
+  width: 55px;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.8);
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  margin-left: -12px;
+  margin-top: 8px;
+  border-radius: 5px;
+  display: none;
+}
+:host .entity-template .debug-info.show-debug {
+  display: block;
+}
+:host .entity-template .avatar {
+  vertical-align: top;
+  transition: transform 0.1s linear;
+  cursor: pointer;
+}
+:host .entity-template .rpg-name {
+  z-index: 10;
+  font-weight: bolder;
+  font-size: 10px;
+  display: inline-block;
+  width: 60px;
+  border: 1px solid;
+  background-color: white;
+  border-radius: 4px;
+  top: -40px;
+  left: 0;
+  position: absolute;
+}
+:host .entity-template .rpg-life {
+  z-index: 10;
+  border: 1px solid;
+  display: inline-block;
+  width: 60px;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: absolute;
+  background-color: white;
+  left: 0;
+  bottom: -15px;
+}
+:host .entity-template .rpg-life i {
+  background-color: lime;
+  width: 100%;
+  height: 8px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 1s;
+}
+:host #states-container {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  margin: 0;
+  margin-top: -40px;
+  margin-left: -11px;
+}
