@@ -1,0 +1,33 @@
+<!--
+`rpg-avatar` is the custom element that represents an entity avatar.
+
+Example:
+    <rpg-avatar avatar="amg1_fr1" is-uri="true"></rpg-avatar>
+
+
+@element rpg-avatar
+@blurb This is the custom element that represents an entity avatar.
+@author Wassim Chegham
+-->
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="rpg-avatar" attributes="avatar is-uri">
+  <template>
+		<link rel="stylesheet" href="../../styles/sprites/players.css">
+		<template if="{{isUri}}">
+			<img class="avatar" src="{{avatar}}" width="32px" height="32px"/>
+		</template>
+		<template if="{{!isUri}}">
+		 	<i class="avatar players-sprite players-sprite-{{avatar}}" ></i>
+		</template>
+
+	</template>
+	<script>
+	Polymer({
+		publish: {
+			isUri: false,
+			avatar: ''
+		}
+	});
+	</script>
+</polymer-element>
