@@ -1,4 +1,4 @@
-.effects-sprite-explosion {
+.sprite-explosion {
   background: url(../../images/sprites/explosion.png) no-repeat 48px center;
   display: block;
   width: 48px;
@@ -10,7 +10,7 @@
   -webkit-animation-delay: 0;
   -webkit-animation-timing-function: steps(12);
 }
-@-webkit-keyframes explode {
+@-webkit-keyframes exploding {
   from {
     background-position: 0;
   }

@@ -14,18 +14,17 @@ Example:
 
 <polymer-element name="rpg-entity">
   <template>
-	  <link rel="stylesheet" href="../../styles/sprites/explosion.css">
 	  <link rel="stylesheet" href="../../styles/animations/animations.css">
-	  <link rel="stylesheet" href="http://localhost:1337/styles/animations/remote-animations.css">
 	  <link rel="stylesheet" href="rpg-entity.css">
 	  <div class="entity-template" id="entity-template">
 	  	<span class="rpg-life"><i style="width:{{life.current/10}}%;"></i></span>
 	  	<span class="rpg-name">{{name}}</span>
 	  	
-	  	<rpg-avatar class="avatar" avatar="{{avatar_content}}" is-uri="{{avatar_is_uri}}"></rpg-avatar>
+	  	<rpg-animation-layers id="animationLayers"></rpg-animation-layers>
+			<rpg-avatar class="avatar" avatar="{{avatar_content}}" is-uri="{{avatar_is_uri}}"></rpg-avatar>
 	  	
-	  	<span id="states-container" class="effects-sprite-explosion"></span>
-	  	<span class="hit">-{{amount}}</span>
+	  	<span class="hit-amount">-{{amount}}</span>
+
 	  	<span class="debug-info" id="debug-info">
 				life: {{life.current}}<br>
 				p1: {{position.current.x}},{{position.current.y}}<br>
@@ -77,16 +76,15 @@ Example:
     	lifeChanged: function(oldValue, newValue){
     		entity.life = newValue;
     	},
-    	collide: function() {
-  		  this.classList.add('collide');
-		    setTimeout(function() {
-		      this.classList.remove('collide');
-		    }.bind(this), 1000);
-		    return this;
-    	},
+    	// collide: function() {
+  		 //  this.classList.add('collide');
+		   //  setTimeout(function() {
+		   //    this.classList.remove('collide');
+		   //  }.bind(this), 1000);
+		   //  return this;
+    	// },
     	explode: function(autoDestroy) {
-    		this.life.current = 0;
-    		this.animation.__start.call(this, 'explode', autoDestroy);
+    		this.$.animationLayers.play('explode');
     		return this;
     	},
     	destroy: function(){
@@ -95,17 +93,17 @@ Example:
 				}
     	},
     	heal: function(amount){
-    		if((this.life.current + amount) <= this.life.max){
-    			this.life.current += amount;
-    		}
+  			this.life.current += amount;
+  			this.$.animationLayers.play('heal');
     		return this;
     	},
     	hit: function(amount){
-    		if(this.life.current > 0){
-    			this.life.current -= amount;
-	    		this.amount = amount;
-	    		this.animation.__start.call(this, 'hit-animate');
-    		}
+    		this.life.current -= amount;
+    		this.amount = amount;
+    		this.$['entity-template'].classList.add('hit');
+    		this.async(function(){
+    			this.$['entity-template'].classList.remove('hit');
+    		}, null, 900);
     		return this;
     	},
     	setDead: function(){
@@ -121,30 +119,10 @@ Example:
     		return this;
     	},
     	addState: function(state){
-    		// this.$['states-container'].classList.add(state);
+    		this.$.animationLayers.play(state);
     	},
     	removeState: function(state){
-    		// this.$['states-container'].classList.remove(state);
-    	},
-    	animation: {
-    		__start: function(name, destroyAfterAnimationEnd, callback){
-    			this.async(function() {
-	    			this.$['states-container'].addEventListener('webkitAnimationEnd', function(){
-	  					this.animation.__end.call(this, name, destroyAfterAnimationEnd, callback);
-	    			}.bind(this), false);
-	    			this.$['states-container'].classList.add(name);
-					}, null, 0);
-    		},
-    		__end: function(name, destroyAfterAnimationEnd, callback){
-		      this.$['states-container'].removeEventListener('webkitAnimationEnd', this.animation.__end.bind(this), false);
-		      this.$['states-container'].classList.remove(name);
-		      if(destroyAfterAnimationEnd){
-		      	this.destroy();
-		      }
-		      if(callback && callback.call){
-		      	callback.call(this);
-		      }
-    		}
+    		this.$.animationLayers.stop(state);
     	},
     	created: function(){
     		this.debug = false;
@@ -156,6 +134,11 @@ Example:
     			console.error('The entity type "'+this.type+'" is not valid. Here is the stack trace...');
     			console.trace();
     		}
+    	},
+    	ready: function(){
+    		this.$.animationLayers.register('explode');
+    		this.$.animationLayers.register('heal');
+    		this.$.animationLayers.register('immobilized');
     	}
     });
   </script>

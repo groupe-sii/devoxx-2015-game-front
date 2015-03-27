@@ -1,0 +1,78 @@
+<!--
+`rpg-animation-layers` is the custom element that handles the animations.
+
+Example:
+    <rpg-animation-layers type="player"></rpg-animation-layers>
+
+
+@element rpg-animation-layers
+@blurb This is the custom element that handles the animations.
+@author Wassim Chegham
+-->
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<polymer-element name="rpg-animation-layers">
+  <template>
+	  <link rel="stylesheet" href="../../styles/sprites/explosion.css">
+	  <link rel="stylesheet" href="../../styles/sprites/healing.css">
+	  <link rel="stylesheet" href="http://localhost:1337/styles/animations/remote-animations.css">
+	  <style>
+	  	:host {
+	  		position: absolute;
+			  width: 32px;
+			  height: 32px;
+			  margin-left: -16px;
+	  	}
+			:host #states-container span {
+			  position: absolute;
+			  background-color: rgba(0, 0, 0, 0);
+			  opacity: 1;
+			  display: block;
+			}
+		</style>
+		<div id="states-container">
+			<content></content>	
+			<template repeat="{{animation in animations}}">
+		    <span class="sprite-{{animation}}"></span>
+		  </template>
+		</div>
+  </template>
+  <script>
+  Polymer({
+  	register: function(name){
+  		this.animations.push(name);
+  	},
+  	play: function(name, autoDestroy){
+  		// this.$['states-container'].classList.add(name);
+  		this.animationManager.start.call(this, name, '', autoDestroy);
+  	},
+  	stop: function(name){
+  		this.$['states-container'].classList.remove(name);
+  	},
+  	animationManager: {
+  		start: function(name, selector, destroyAfterAnimationEnd, callback){
+  			this.async(function() {
+    			this.$[ selector || 'states-container' ].addEventListener('webkitAnimationEnd', function(){
+  					this.animationManager.__end.call(this, name, selector, destroyAfterAnimationEnd, callback);
+    			}.bind(this), false);
+    			this.$[ selector || 'states-container' ].classList.add(name);
+				}, null, 0);
+  		},
+  		__end: function(name, selector, destroyAfterAnimationEnd, callback){
+	      this.$[selector || 'states-container' ].removeEventListener('webkitAnimationEnd', this.animationManager.__end.bind(this), false);
+	      this.$[ selector || 'states-container' ].classList.remove(name);
+	      if(destroyAfterAnimationEnd){
+	      	this.destroy();
+	      }
+	      if(callback && callback.call){
+	      	callback.call(this);
+	      }
+  		}
+  	},
+  	created: function(){
+  		this.animations = [];
+  	}
+  })
+  </script>
+
+</polymer-element>

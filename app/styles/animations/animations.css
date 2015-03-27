@@ -1,26 +1,26 @@
-:host span.hit {
+span.hit-amount {
   position: absolute;
   color: rgb(255, 255, 255);
   margin-top: -47px;
   margin-left: -10px;
   opacity: 1;
-  transform: scale(0.3);
   visibility: hidden;
+  transform: scale(0.3);
 }
-:host .dead {
-  -webkit-filter: grayscale(100%);
-}
-:host .hit-animate .hit {
+.hit .hit-amount {
   -webkit-animation: hit 1s linear 1;
 }
-:host .explode {
-  -webkit-animation-name: explode;
+.dead {
+  /*-webkit-filter: grayscale(100%);*/
 }
-:host .explode .avatar {
+.explode {
+  -webkit-animation-name: exploding;
+}
+.explode .avatar {
   visibility: hidden;
 }
-:host .heal {
-  -webkit-animation: heal .5s 1;
+.heal {
+  -webkit-animation-name: healing;
 }
 
 /* animations definition */
@@ -31,17 +31,5 @@
     opacity: 0;
     visibility: visible;
     transform: scale(1.3);
-  }
-}
-@-webkit-keyframes heal {
-  from {
-    width: 36px;
-    height: 34px;
-    background-position: -5px -5px;
-  }
-  to {
-    width: 36px;
-    height: 34px;
-    background-position: -181px -5px;
   }
 }
