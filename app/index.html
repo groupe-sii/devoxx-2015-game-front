@@ -74,9 +74,12 @@
     <div id="actions-list"></div>
     <div class="row marketing">
       <p class="action-buttons">
-        <a class="btn btn-lg btn-success" role="button" hidden="true" data-action="hit" href="#">Hit me!</a>
-        <a class="btn btn-lg btn-success" role="button" hidden="true" data-action="kill" href="#">Kill me!</a>
-        <a class="btn btn-lg btn-success" role="button" hidden="true" data-action="revive" href="#">Revive me!</a>
+        <div class="debug-buttons" hidden="true">
+          <a class="btn btn-lg btn-success" role="button" data-action="hit" href="#">Hit!</a>
+          <a class="btn btn-lg btn-success" role="button" data-action="heal" href="#">Heal!</a>
+          <a class="btn btn-lg btn-success" role="button" data-action="kill" href="#">Kill!</a>
+          <a class="btn btn-lg btn-success" role="button" data-action="revive" href="#">Revive!</a>
+        </div>
         <label for="debug">
           <input type="checkbox" class="form-control" name="debug" id="debug">
         </label>
