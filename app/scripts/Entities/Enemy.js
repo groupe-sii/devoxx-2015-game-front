@@ -9,15 +9,10 @@ RPG.entity('Enemy', 'Player', function() {
   
   'use strict';
 
-  function Enemy() {
-    this.name = 'Enemy ' + ((Math.random() * 10) | 0);
-    this.avatar = 'images/players-sprites/dvl1_fr1.gif.png';
+  var id = 1;
 
-    for (var property in this) {
-      if (this.hasOwnProperty(property)) {
-        this.autoSetterGetter(property);
-      }
-    }
+  function Enemy() {
+    this.name = 'Enemy_'+(id++);
   }
   return Enemy;
 

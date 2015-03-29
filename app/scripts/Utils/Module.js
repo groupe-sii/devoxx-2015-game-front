@@ -86,7 +86,7 @@ var RPG = (function() {
 
       if(inherited){
         ent = RPG.__entities__[name];
-        ent.prototype = Object.create(inherited.prototype);
+        ent.prototype = new inherited();
         ent.prototype.constructor = ent;
       }
 
