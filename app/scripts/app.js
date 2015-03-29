@@ -1,23 +1,18 @@
 /* jshint devel:true */
 /* globals RPG */
 /**
- * The main game loop
+ * The main game bootstrap
  * @type {Function}
  * @author Wassim Chegham
  */
 RPG.run(function() {
   'use strict';
+
+  var fx = RPG.Factory.fx();
+  fx.initialize();
   
   var socket = RPG.Factory.transport();
   socket.initialize();
-
-  if(RPG.audio){
-	  var fx = RPG.Factory.fx();
-	  fx.enable();
-  }
-
-  var action = RPG.Factory.action();
-  action.initialize();
 
   var animation = RPG.Factory.animation();
   animation.initialize();
