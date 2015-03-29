@@ -65,18 +65,24 @@ RPG.module('GfxDom', function() {
   };
   GfxDom.prototype.drawActionsPanel = function(actionsList){
     var frag = document.createDocumentFragment();
-    actionsList.forEach(function(action, index){
+    actionsList.forEach(function(actionObject, index){
       var span = document.createElement('span');
-      ['btn', 'btn-lg', 'btn-info'].forEach(function(cssClass){
+      ['btn', 'btn-lg', 'btn-extension-action'].forEach(function(cssClass){
         span.classList.add(cssClass);
       });
       span.dataset.index = index;
-      span.innerHTML += (index+1)+': '+action.name+' ';
+      span.setAttribute('title', actionObject.info.name+' is mapped to key: '+(index+1) );
+      span.style.backgroundImage = 'url('+actionObject.info.icon+')';
+      span.style.backgroundRepeat = 'no-repeat';
       frag.appendChild(span);
     }.bind(this));
     this.actionsList.appendChild(frag);
     this.actionsList.addEventListener('click', function(e){
-      actionsList[+e.target.dataset.index].action();
+      var index = -1;
+      if(e.target.classList.contains('btn-extension-action')){
+        index = +e.target.dataset.index;
+        actionsList[index].action();
+      }
     });
   };
   GfxDom.prototype.createEntity = function(obj, type) {

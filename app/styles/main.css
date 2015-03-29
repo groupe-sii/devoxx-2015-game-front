@@ -9,6 +9,9 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 1em;
+  background-image: url(../images/fantasy_forest_background_1_by_indigodeep.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1, h2, h3, h4, a.btn {
@@ -93,6 +96,7 @@ hr.soften {
 }
 
 .menu {
+  z-index: 9;
   position: absolute;
   top: 0;
   left: 0;
@@ -276,6 +280,36 @@ b.text-danger {
 
 .blur {
   -webkit-filter: blur(10px);
+}
+
+.btn-extension-action {
+  width: 64px;
+  height: 64px;
+  background-size: contain;
+  margin: 2px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.btn-extension-action:hover {
+  opacity: 1;
+}
+
+button[data-action="leave"]{
+  background: url(../images/hud/options_optButtons_off.png) no-repeat;
+  width: 48px;
+  height: 48px;
+}
+button[data-action="fx"]{
+  background: url(../images/hud/options_optButtons_0001.png) no-repeat;
+  width: 48px;
+  height: 48px;
+  background-size: contain;
+}
+button[data-action="audio"]{
+  background: url(../images/hud/options_optButtons_0003.png) no-repeat;
+  width: 48px;
+  height: 48px;
+  background-size: contain;
 }
 
 input[type="checkbox"] {

@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="styles/fonts.css">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/sprites/players.css">
-  <link rel="stylesheet" href="styles/sprites/effects.css">
   <!-- endbuild -->
 
   <link rel="import" href="components/components.html">
@@ -30,11 +29,29 @@
   <p id="message" class="alert alert-danger hidden" role="alert"></p>
   <div class="container" id="container">
     <div class="header">
-      <ul class="nav pull-right" id="upper-buttons">
-        <li><button class="btn btn-lg btn-danger hidden" role="button" data-action="leave" href="#">Leave the game</button></li>
-      </ul>
+      <div class="pull-right" id="upper-buttons">
+        <button class="btn btn-lg hidden" role="button" data-action="leave" href="#"></button>
+        <button class="btn btn-lg" role="button" data-action="fx" href="#"></button>
+        <button class="btn btn-lg" role="button" data-action="audio" href="#"></button>
+      </div>
       <h3 class="text-muted">Devoxx 2015</h3>
     </div>
+
+    <div class="row marketing">
+      <p class="action-buttons">
+        <div class="debug-buttons" hidden="true">
+          <a class="btn btn-lg btn-success" role="button" data-action="hit" href="#">Hit!</a>
+          <a class="btn btn-lg btn-success" role="button" data-action="heal" href="#">Heal!</a>
+          <a class="btn btn-lg btn-success" role="button" data-action="kill" href="#">Kill!</a>
+          <a class="btn btn-lg btn-success" role="button" data-action="revive" href="#">Revive!</a>
+        </div>
+        <label for="debug">
+          <input type="checkbox" class="form-control" name="debug" id="debug">
+        </label>
+      </p>
+    </div>
+
+    <div id="actions-list"></div>
     <div class="jumbotron blur">
       <div class="rpg-player-info">
         <rpg-player-info id="rpg-selected-player"></rpg-player-info>
@@ -63,27 +80,13 @@
           <i class="avatar img-circle players-sprite players-sprite-wmn2_fr2" data-name="wmn2_fr2"></i>
         </div>
         <div class="form-group center-block">
-          <input maxlength="10" placeholder="Enter your username" type="text" class="form-control input-sm" id="username" placeholder="Enter email"/>
-          <a class="btn btn-primary" disabled="disabled" role="button" data-action="join" href="#">Join</a>
+          <input maxlength="10" placeholder="Enter your username" type="text" class="form-control input-sm" id="username" placeholder="Enter username"/>
+          <a class="btn btn-primary" disabled="disabled" role="button" data-action="join" href="#">Play</a>
         </div>
         <p class="action-buttons">
           <a class="btn btn-lg btn-danger hidden" disabled="disabled" role="button" data-action="quit" href="#">Leave...</a>
         </p>
       </div>
-    </div>
-    <div id="actions-list"></div>
-    <div class="row marketing">
-      <p class="action-buttons">
-        <div class="debug-buttons" hidden="true">
-          <a class="btn btn-lg btn-success" role="button" data-action="hit" href="#">Hit!</a>
-          <a class="btn btn-lg btn-success" role="button" data-action="heal" href="#">Heal!</a>
-          <a class="btn btn-lg btn-success" role="button" data-action="kill" href="#">Kill!</a>
-          <a class="btn btn-lg btn-success" role="button" data-action="revive" href="#">Revive!</a>
-        </div>
-        <label for="debug">
-          <input type="checkbox" class="form-control" name="debug" id="debug">
-        </label>
-      </p>
     </div>
     <div class="footer">
       <p>Devoxx <b class="text-danger">♥</b> 2015 (by <a href="http://www.groupe-sii.com/en">SII Group - The partner in technology</a>)</p>
