@@ -48,19 +48,19 @@ RPG.run(function() {
   });
   document.querySelector('a[data-action="hit"]').addEventListener('click', function(e){
     e.preventDefault();
-    ps.publish(RPG.topics.SUB_PLAYER_HIT, hit);
+    ps.publish(RPG.config.topics.SUB_PLAYER_HIT, hit);
   });
   document.querySelector('a[data-action="heal"]').addEventListener('click', function(e){
   	e.preventDefault();
-    ps.publish(RPG.topics.SUB_PLAYER_HEALED, hit);
+    ps.publish(RPG.config.topics.SUB_PLAYER_HEALED, hit);
   });
   document.querySelector('a[data-action="kill"]').addEventListener('click', function(e){
   	e.preventDefault();
-    ps.publish(RPG.topics.SUB_PLAYER_DIED, died.player);
+    ps.publish(RPG.config.topics.SUB_PLAYER_DIED, died.player);
   });
   document.querySelector('a[data-action="revive"]').addEventListener('click', function(e){
   	e.preventDefault();
-    ps.publish(RPG.topics.SUB_PLAYER_REVIVED, hit.player);
+    ps.publish(RPG.config.topics.SUB_PLAYER_REVIVED, hit.player);
   });
 
 });
