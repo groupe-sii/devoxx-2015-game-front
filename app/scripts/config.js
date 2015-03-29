@@ -6,21 +6,24 @@
  * @author Wassim Chegham
  */
 RPG.config({
-  'audio': false,
-  'server': {
-    'host': 'http://localhost:8080'
+  debug: {
+    transport: false
   },
-  'socket': {
-    // 'url': 'http://10.6.192.222:8080/survival-game/game'
-    // 'url': 'http://192.168.1.17:8080/survival-game/game'
-    'url': 'http://localhost:8080/game'
-    // 'url': 'http://10.6.192.98:8080/game'
+  audio: {
+    background: true,
+    fx: true
+  },
+  server: {
+    host: 'http://localhost:8080'
+  },
+  socket: {
+    url: 'http://localhost:8080/game'
   },
   /**
    * Topics list mapping
    * @type {Object}
    */
-  'topics': {
+  topics: {
     'PUB_GAME_CREATE': '/topic/game/create',
     'PUB_GAME_SELECT': '/topic/game/select',
     'PUB_GAME_INFO': '/topic/game/info',
