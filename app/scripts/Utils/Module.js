@@ -98,6 +98,14 @@ var RPG = (function() {
 
     },
 
+    /**
+     * Defines an extension
+     * @param  {String}   type     One of the RPG.extensions
+     * @param  {Object}   info     The extension meta-information
+     *                             name: The name of the extension.
+     *                             icon: The image source of the extennsion.
+     * @param  {Function} callback The extension definition
+     */
     extension: function(type, info, callback){
 
       var actionManager;
