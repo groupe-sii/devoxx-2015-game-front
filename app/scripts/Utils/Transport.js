@@ -6,36 +6,47 @@
  * @author Wassim Chegham
  */
 RPG.module('Transport', function() {
+  
   'use strict';
-  var socket = null;
+
   var topics = {};
+  var connectTimer = null;
+  var reconnections = 0;
 
   function onClose() {
+    this.socket.close();
     this.client.disconnect();
-    this.pubsub.publish('/transport/close');
+    this.pubsub.publish('/transport/connecting');
+    this.reconnect();
   }
 
   function onGameSelected(topic, data) {
 
-    RPG.game = data;
+    RPG.config.game = data;
 
-    // auto subscriptions
-    Object.keys(RPG.topics).forEach(function(topic, index) {
-      var serverTopic = RPG.topics[topic];
-      if (topic.startsWith('SUB_')) {
-        serverTopic = computeTopic(serverTopic);
-        this.subscribe(serverTopic);
-      } else if (topic.startsWith('PUB_')) {
-        this.pubsub.subscribe(serverTopic, this.send.bind(this));
-      }
-    }.bind(this));
-    handleServerErrors.call(this);
-    handleAnimationTopics.call(this);
+    if(reconnections===0){
+
+      // auto subscriptions
+      Object.keys(RPG.config.topics).forEach(function(topic, index) {
+        var serverTopic = RPG.config.topics[topic];
+        if (topic.startsWith('SUB_')) {
+          serverTopic = computeTopic(serverTopic);
+          this.subscribe(serverTopic);
+        } else if (topic.startsWith('PUB_')) {
+          this.pubsub.subscribe(serverTopic, this.send.bind(this));
+        }
+      }.bind(this));
+      handleServerErrors.call(this);
+      handleAnimationTopics.call(this);
+
+    }
   }
 
   function onConnect() {
-    this.subscribe(RPG.topics.SUB_ME_GAME_SELECTED, onGameSelected.bind(this));
-    this.send(RPG.topics.PUB_GAME_SELECT);
+    clearInterval(connectTimer);
+    this.pubsub.publish('/transport/connected');    
+    this.subscribe(RPG.config.topics.SUB_ME_GAME_SELECTED, onGameSelected.bind(this));
+    this.send(RPG.config.topics.PUB_GAME_SELECT);
   }
 
   function uncomputeTopic(topic) {
@@ -47,40 +58,41 @@ RPG.module('Transport', function() {
 
   function computeTopic(topic) {
     if (topic.indexOf('{gameId}') !== -1) {
-      topic = topic.replace('{gameId}', RPG.game.id);
+      topic = topic.replace('{gameId}', RPG.config.game.id);
     }
     return topic;
   }
 
   function handleServerErrors() {
-    this.subscribe(RPG.topics.SUB_ERROR_GLOBAL, function(topic, data) {
+    this.subscribe(RPG.config.topics.SUB_ERROR_GLOBAL, function(topic, data) {
       console.error('Transport::SUB_ERROR_GLOBAL', JSON.stringify(data));
     });
-    this.subscribe(RPG.topics.SUB_ME_ERROR_LOCAL, function(topic, data) {
+    this.subscribe(RPG.config.topics.SUB_ME_ERROR_LOCAL, function(topic, data) {
       console.error('Transport::SUB_ME_ERROR_LOCAL', JSON.stringify(data));
     });
-    this.subscribe(RPG.topics.SUB_MESSAGE_GLOBAL, function(topic, data) {
+    this.subscribe(RPG.config.topics.SUB_MESSAGE_GLOBAL, function(topic, data) {
       console.error('Transport::SUB_MESSAGE_GLOBAL', JSON.stringify(data));
     });
   }
 
   function handleAnimationTopics(){
-    this.subscribe(RPG.topics.SUB_ANIMATION_ALL);
-    this.send(RPG.topics.PUB_ANIMATION_ALL);
+    this.subscribe(RPG.config.topics.SUB_ANIMATION_ALL);
+    this.send(RPG.config.topics.PUB_ANIMATION_ALL);
   }
 
   function noop(topic, data) {}
 
   function Transport(PubSub) {
     this.pubsub = PubSub;
-    socket = new SockJS(RPG.socket.url);
-    this.client = Stomp.over(socket);
-    this.client.onclose = onClose.bind(this);
-    this.client.onerror = onClose.bind(this);
-    // this.client.debug = null;
   }
   Transport.prototype.initialize = function() {
+    this.socket = new SockJS(RPG.config.socket.url);
+    this.client = Stomp.over(this.socket);
     this.client.connect({}, onConnect.bind(this), onClose.bind(this));
+    
+    if(RPG.config.debug.transport === false){
+      this.client.debug =  null;
+    }
   };
   Transport.prototype.subscribe = function(topic, callback) {
     this.client.subscribe(topic, function(data) {
@@ -91,7 +103,7 @@ RPG.module('Transport', function() {
       catch(e){
         console.error('Transport::ParseError', 'can not parse server message', data);
       }
-      
+
       topic = uncomputeTopic(topic);
       this.pubsub.publish(topic, data);
       if (callback && callback.call) {
@@ -104,5 +116,11 @@ RPG.module('Transport', function() {
     topic = computeTopic(topic);
     this.client.send(topic, {}, JSON.stringify(data));
   };
+  Transport.prototype.reconnect = function(){
+    connectTimer = setTimeout(function(){
+      reconnections++;
+      this.initialize();
+    }.bind(this), 3000);
+  }
   return Transport;
 });

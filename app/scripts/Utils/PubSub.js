@@ -14,19 +14,20 @@ RPG.module('PubSub', function() {
 
 	return {
 		publish: function(topic) {
-			// console.log('publish', topic, args);
+
+			var args = [].slice.call(arguments);
+
 			if (!topics[topic]) {
 				return false;
 			}
-			var subscribers = topics[topic],
-				            len = subscribers ? subscribers.length : 0;
+			var subscribers = topics[topic];
+			var len = subscribers ? subscribers.length : 0;
 			while (len--) {
-				subscribers[len].func.apply(null, arguments);
+				subscribers[len].func.apply(null, args.concat(+subscribers[len].token));
 			}
 			return this;
 		},
 		subscribe: function(topic, func) {
-			// console.log('subscribe', topic, func);
 			if (!topics[topic]) {
 				topics[topic] = [];
 			}

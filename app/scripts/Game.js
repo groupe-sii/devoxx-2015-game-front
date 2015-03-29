@@ -53,7 +53,7 @@ RPG.module('Game', function() {
     
     this.pubsub.subscribe('/gfx/item/place', function() {});
     
-    this.pubsub.subscribe(RPG.topics.SUB_PLAYER_JOINED, function(topic, data) {
+    this.pubsub.subscribe(RPG.config.topics.SUB_PLAYER_JOINED, function(topic, data) {
       
       this.gfx.placeEntity(data, 'player');
       
@@ -70,17 +70,17 @@ RPG.module('Game', function() {
 		  
     }.bind(this));
     
-    this.pubsub.subscribe(RPG.topics.SUB_PLAYER_LEFT, function(topic, data) {
+    this.pubsub.subscribe(RPG.config.topics.SUB_PLAYER_LEFT, function(topic, data) {
       this.removePlayer(data.oldCell);
     }.bind(this));
     
-    this.pubsub.subscribe(RPG.topics.SUB_OTHER_JOINED, function(topic, data) {});
+    this.pubsub.subscribe(RPG.config.topics.SUB_OTHER_JOINED, function(topic, data) {});
     
     this.on('beforeunload', function() {
       this.transport.close();
     }.bind(this));
     
-    this.pubsub.subscribe(RPG.topics.SUB_PLAYER_MOVED, function(topic, data) {
+    this.pubsub.subscribe(RPG.config.topics.SUB_PLAYER_MOVED, function(topic, data) {
       this.gfx.moveTo(data);
     }.bind(this));
   };
