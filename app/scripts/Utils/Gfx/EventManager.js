@@ -11,24 +11,25 @@ RPG.module('GfxEventManager', function() {
   var directionKeyCodes = {
     37: {
       key: 'left',
-      topic: RPG.topics.PUB_PLAYER_MOVE_LEFT
+      topic: RPG.config.topics.PUB_PLAYER_MOVE_LEFT
     },
     38: {
       key: 'up',
-      topic: RPG.topics.PUB_PLAYER_MOVE_UP
+      topic: RPG.config.topics.PUB_PLAYER_MOVE_UP
     },
     39: {
       key: 'right',
-      topic: RPG.topics.PUB_PLAYER_MOVE_RIGHT
+      topic: RPG.config.topics.PUB_PLAYER_MOVE_RIGHT
     },
     40: {
       key: 'down',
-      topic: RPG.topics.PUB_PLAYER_MOVE_DOWN
+      topic: RPG.config.topics.PUB_PLAYER_MOVE_DOWN
     }
   };
 
-  function GfxEventManager(PubSub, ActionManager) {
-  	this.actionManager = ActionManager;
+  function GfxEventManager(PubSub, ActionManager, AudioManager) {
+    this.actionManager = ActionManager;
+  	this.audioManager = AudioManager;
     this.pubsub = PubSub;
   }
   GfxEventManager.prototype.initialize = function(dom) {
@@ -44,7 +45,7 @@ RPG.module('GfxEventManager', function() {
         entity.debug = debug;
       });
     }.bind(this));
-    this.s(RPG.topics.SUB_PLAYER_STATES, function(topic, data){
+    this.s(RPG.config.topics.SUB_PLAYER_STATES, function(topic, data){
       var entity = dom.findEntity(data.player.id);
       if(entity){
         if(data.changes && data.changes.length > 0){
@@ -55,25 +56,25 @@ RPG.module('GfxEventManager', function() {
         }
       }
     });
-    this.s(RPG.topics.SUB_ME_GAME_SELECTED, function(topic, data){
+    this.s(RPG.config.topics.SUB_ME_GAME_SELECTED, function(topic, data){
     	dom.build(data);
     });
-    this.s(RPG.topics.SUB_PLAYER_CREATED, function(topic, data) {
+    this.s(RPG.config.topics.SUB_PLAYER_CREATED, function(topic, data) {
       dom.placeEntity(data);
     });
-    this.s(RPG.topics.SUB_PLAYER_LIFE_LEVEL, function(topic, data) {
+    this.s(RPG.config.topics.SUB_PLAYER_LIFE_LEVEL, function(topic, data) {
       var entity = dom.findEntity(data.player.id);
       if (entity) {
         entity.life = data.player.life;
       }
     });
-    this.s(RPG.topics.SUB_PLAYER_LEFT_GAME, function(topic, data) {
+    this.s(RPG.config.topics.SUB_PLAYER_LEFT_GAME, function(topic, data) {
       var entity = dom.findEntity(data.player.id);
       if (entity) {
         entity.destroy();
       }
     });
-    this.s(RPG.topics.SUB_PLAYER_MOVED, function(topic, data) {
+    this.s(RPG.config.topics.SUB_PLAYER_MOVED, function(topic, data) {
       var entity = dom.findEntity(data.player.id);
       if (!entity) {
         entity = dom.placeEntity(data);
@@ -85,41 +86,44 @@ RPG.module('GfxEventManager', function() {
       };
       dom.moveTo(entity);
     });
-    this.s(RPG.topics.SUB_PLAYER_DIED, function(topic, data) {
+    this.s(RPG.config.topics.SUB_PLAYER_DIED, function(topic, data) {
       var entity = dom.findEntity(data.id);
       if (entity) {
         entity.explode().setDead();
       }
     });
-    this.s(RPG.topics.SUB_PLAYER_REVIVED, function(topic, data) {
+    this.s(RPG.config.topics.SUB_PLAYER_REVIVED, function(topic, data) {
       var entity = dom.findEntity(data.id);
       if (entity) {
         entity.revive(data);
       }
     });
-    this.s(RPG.topics.SUB_PLAYER_HIT, function(topic, data) {
+    this.s(RPG.config.topics.SUB_PLAYER_HIT, function(topic, data) {
       var entity = dom.findEntity(data.player.id);
       if (entity) {
         entity.hit(data.amount);
       }
     });
-    this.s(RPG.topics.SUB_PLAYER_HEALED, function(topic, data) {
+    this.s(RPG.config.topics.SUB_PLAYER_HEALED, function(topic, data) {
       var entity = dom.findEntity(data.player.id);
       if (entity) {
         entity.heal(data.amount);
       }
     });
-    this.s(RPG.topics.PUB_GAME_LEAVE, function(topic) {
+    this.s(RPG.config.topics.PUB_GAME_LEAVE, function(topic) {
       var entity = dom.findEntity();
       if (entity) {
         entity.explode(true);
       }
     });
-    this.s('/transport/close', function() {
+    this.s('/transport/connecting', function() {
       dom.showMessage('Connecting to server...');
     });
+    this.s('/transport/connected', function() {
+      dom.showMessage(null, true);
+    });
     window.addEventListener('beforeunload', function() {
-      this.pubsub.publish('/transport/close');
+      this.pubsub.publish('/transport/connecting');
     }.bind(this));
   };
   GfxEventManager.prototype.bindEvents = function(dom) {
@@ -128,7 +132,7 @@ RPG.module('GfxEventManager', function() {
         if (cell && cell.nodeName === 'TD' && !cell.classList.contains('rpg-occupied')) {
           cell.classList.toggle('rpg-selected');
           cell.classList.toggle('rpg-obstacle');
-          this.pubsub.publish('/gfx/item/selected', {
+          this.pubsub.publish('/gfx/cell/selected', {
           	x: +cell.dataset.x,
 						y: +cell.dataset.y
           });
@@ -136,7 +140,7 @@ RPG.module('GfxEventManager', function() {
       }.bind(this));
       dom.joinBtn.on('click', function(e) {
         e.preventDefault();
-        this.pubsub.publish(RPG.topics.PUB_GAME_JOIN, {
+        this.pubsub.publish(RPG.config.topics.PUB_GAME_JOIN, {
           name: dom.username.value,
           avatar: {
             '@c': '.ClientImage',
@@ -144,12 +148,12 @@ RPG.module('GfxEventManager', function() {
           }
         });
       });
-      this.s(RPG.topics.SUB_ME_JOINED_GAME, function() {
+      this.s(RPG.config.topics.SUB_ME_JOINED_GAME, function() {
         dom.board.classList.remove('blur');
         dom.quitBtn.classList.remove('hidden');
         dom.menuContainer.classList.add('move-top');
       });
-      this.s(RPG.topics.SUB_ME_LEFT_GAME, function() {
+      this.s(RPG.config.topics.SUB_ME_LEFT_GAME, function() {
         dom.quitBtn.classList.add('hidden');
         dom.menuContainer.classList.remove('move-top');
         dom.board.classList.add('blur');
@@ -161,13 +165,19 @@ RPG.module('GfxEventManager', function() {
         if (action && action.nodeName === 'BUTTON') {
           switch (action.dataset.action) {
             case 'leave':
-              this.pubsub.publish(RPG.topics.PUB_GAME_LEAVE);
+              this.pubsub.publish(RPG.config.topics.PUB_GAME_LEAVE);
               if(isSpectatorMode){
               	isSpectatorMode =! isSpectatorMode;
               	dom.board.classList.add('blur');
 				        dom.quitBtn.classList.add('hidden');
 				        dom.menuContainer.classList.remove('move-top');
               }
+              break;
+            case 'fx':
+              this.audioManager.toggleFx();
+              break;
+            case 'audio':
+              this.audioManager.toggleAudio();
               break;
           }
         }
