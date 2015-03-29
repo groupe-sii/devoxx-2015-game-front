@@ -13,7 +13,7 @@ RPG.module('AnimationManager', function() {
     this.pubsub = PubSub;
   }
   AnimationManager.prototype.initialize = function() {
-  	this.pubsub.subscribe(RPG.topics.SUB_ANIMATION_ALL, function(topic, data){
+  	this.pubsub.subscribe(RPG.config.topics.SUB_ANIMATION_ALL, function(topic, data){
   		data.forEach(function(animationObject){
   			this.buildKeyFrames(animationObject);
   		}.bind(this));

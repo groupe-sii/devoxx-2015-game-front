@@ -15,7 +15,7 @@ RPG.module('Factory', function() {
 	var player = null;
 	var ia = null;
 	var transport = null;
-	var action = null;
+	var actionManager = null;
 	var animation = null;
 	var pubsub = null;
 	var constructors = {};
@@ -69,11 +69,11 @@ RPG.module('Factory', function() {
 			}
 			return transport;
 		},
-		action: function(){
-			if(!action){
-				action = di.invoke(RPG.ActionList);
+		actionManager: function(){
+			if(!actionManager){
+				actionManager = di.invoke(RPG.ActionManager);
 			}
-			return action;
+			return actionManager;
 		},
 		animation: function(){
 			if(!animation){
@@ -86,12 +86,6 @@ RPG.module('Factory', function() {
 				pubsub = di.invoke(RPG.PubSub);
 			}
 			return pubsub;
-		},
-		ia: function() {
-			if(!ia){
-				ia = di.invoke(RPG.AI);
-			}
-			return ia;
 		}
 	};
 

@@ -17,25 +17,30 @@ RPG.module('ActionManager', function() {
   ActionManager.prototype.initialize = function(dom){
   	this.dom = dom;
   	this.dom.drawActionsPanel(actionsList);
-  	this.pubsub.subscribe('/gfx/item/selected', this.setSelectedPosition.bind(this));
+  	this.pubsub.subscribe('/gfx/cell/selected', this.setCurrentPosition.bind(this));
   };
-  ActionManager.prototype.addAction = function(actionName, actionFunction){
+  ActionManager.prototype.addAction = function(actionInfo, actionFunction){
   	actionsList.push({
-  		name: actionName,
+  		info: actionInfo,
   		action: (typeof actionFunction === 'function') ? actionFunction.bind(this) : function(){
-  		this.sendAction(actionFunction);
+  		this.sendAction(actionName, actionFunction);
   	}.bind(this)
   	});
+  };  
+  ActionManager.prototype.getCurrentPosition = function(){
+    return this.currentPosition;
   };
-  ActionManager.prototype.setSelectedPosition = function(topic, cell){
+  ActionManager.prototype.setCurrentPosition = function(topic, cell){
   	this.currentPosition = cell;
   };
   ActionManager.prototype.runAction = function(index){
   	actionsList[index-1] && actionsList[index-1].action.apply(this, [this.currentPosition]);
   };
 
-  ActionManager.prototype.sendAction = function(action){
-  	this.pubsub.publish(RPG.topics.PUB_GAME_ACTION, action);
+  ActionManager.prototype.sendAction = function(actionName, actionObject){
+    actionObject['@c'] = '.'+actionName;
+    actionObject.cell = this.currentPosition;
+    this.pubsub.publish(RPG.config.topics.PUB_GAME_ACTION, action);
   }
   ActionManager.prototype.repeat = function(howMany, target, callback){
   	if(!target){

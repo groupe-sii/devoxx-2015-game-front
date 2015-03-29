@@ -18,22 +18,24 @@ var RPG = (function() {
     __modules__: {},
     __config__: {},
 
+
+    /**
+     * Authorized extensions types
+     * @type {Enum}
+     */
+    extensions: {
+      ACTION: 'extension_action'
+    },
+
     /**
      * Defines a configuration module.
      * @param  {Object} obj A configuration object.
      */
     config: function config(obj) {
-      var defineProperty = function(cf){
-        Object.defineProperty(RPG, cf, {
-          get: function get() {
-            return this.__config__[cf];
-          }
-        });
-      };
+
       for (var cf in obj) {
         if (obj.hasOwnProperty(cf)) {
-          RPG.__config__[cf] = obj[cf];
-          defineProperty(cf);
+          RPG.config[cf] = obj[cf];
         }
       }
 
@@ -93,6 +95,21 @@ var RPG = (function() {
           return this.__entities__[name];
         }
       });
+
+    },
+
+    extension: function(type, info, callback){
+
+      var actionManager;
+
+      switch(type){
+        case RPG.extensions.ACTION:
+          actionManager = RPG.Factory.actionManager();
+          actionManager.addAction(info, callback);
+        break;
+        default: 
+          throw Error('Extension "',type+':'+info.name,'" not allowed! Valid extensions are: ', Object.keys(RPG.extensions))
+      }
 
     },
 
