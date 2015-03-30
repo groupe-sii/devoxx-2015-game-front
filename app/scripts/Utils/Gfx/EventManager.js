@@ -27,6 +27,13 @@ RPG.module('GfxEventManager', function() {
     }
   };
 
+  function selectCell(dom, position){
+    return dom.placeAnimationNode({
+      position: position,
+      name: 'selecting-cell'
+    });
+  }
+
   function GfxEventManager(PubSub, ActionManager, AudioManager) {
     this.actionManager = ActionManager;
   	this.audioManager = AudioManager;
@@ -34,7 +41,7 @@ RPG.module('GfxEventManager', function() {
   }
   GfxEventManager.prototype.initialize = function(dom) {
     this.bindTopics(dom);
-    this.bindEvents(dom);
+    this.bindDomEvents(dom);
     this.actionManager.initialize(dom);
   };
   GfxEventManager.prototype.bindTopics = function(dom) {
@@ -116,6 +123,17 @@ RPG.module('GfxEventManager', function() {
         entity.explode(true);
       }
     });
+    this.s(RPG.config.topics.SUB_ME_JOINED_GAME, function() {
+      dom.board.classList.remove('blur');
+      dom.quitBtn.classList.remove('hidden');
+      dom.menuContainer.classList.add('move-top');
+    });
+    this.s(RPG.config.topics.SUB_ME_LEFT_GAME, function() {
+      dom.quitBtn.classList.add('hidden');
+      dom.menuContainer.classList.remove('move-top');
+      dom.board.classList.add('blur');
+      dom.selectPlayer(null);
+    });
     this.s('/transport/connecting', function() {
       dom.showMessage('Connecting to server...');
     });
@@ -126,16 +144,28 @@ RPG.module('GfxEventManager', function() {
       this.pubsub.publish('/transport/connecting');
     }.bind(this));
   };
-  GfxEventManager.prototype.bindEvents = function(dom) {
+  GfxEventManager.prototype.bindDomEvents = function(dom) {
       dom.boardContainer.on('click', function(e) {
+        var animation;
         var cell = e.target;
+        var position = {};
         if (cell && cell.nodeName === 'TD' && !cell.classList.contains('rpg-occupied')) {
           cell.classList.toggle('rpg-selected');
-          cell.classList.toggle('rpg-obstacle');
-          this.pubsub.publish('/gfx/cell/selected', {
-          	x: +cell.dataset.x,
-						y: +cell.dataset.y
+          position = {
+            x: +cell.dataset.x,
+            y: +cell.dataset.y
+          };
+          
+          animation = selectCell(dom, position);
+          animation
+          .addAnimation(animation.name)
+          .play(animation.name, function(){
+            animation.destroy();
+            cell.classList.toggle('rpg-selected');
+            cell.classList.toggle('rpg-occupied')
           });
+
+          this.pubsub.publish('/gfx/cell/selected', position);
         }
       }.bind(this));
       dom.joinBtn.on('click', function(e) {
@@ -147,17 +177,6 @@ RPG.module('GfxEventManager', function() {
             name: dom.avatars.selected
           }
         });
-      });
-      this.s(RPG.config.topics.SUB_ME_JOINED_GAME, function() {
-        dom.board.classList.remove('blur');
-        dom.quitBtn.classList.remove('hidden');
-        dom.menuContainer.classList.add('move-top');
-      });
-      this.s(RPG.config.topics.SUB_ME_LEFT_GAME, function() {
-        dom.quitBtn.classList.add('hidden');
-        dom.menuContainer.classList.remove('move-top');
-        dom.board.classList.add('blur');
-        dom.selectPlayer(null);
       });
       dom.upperButtons.on('click', function(e) {
         e.preventDefault();

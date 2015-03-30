@@ -1,0 +1,22 @@
+.selecting-cell {
+  background: url(../../images/sprites/selecting-cell.png) no-repeat left center;
+  display: block;
+  width: 48px;
+  height: 48px;
+  background-position: -5px -5px;
+  -webkit-animation-name: selecting-cell;
+  -webkit-animation-fill-mode: none;
+  -webkit-animation-direction: normal;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: 0;
+  -webkit-animation-timing-function: steps(23);
+}
+@-webkit-keyframes selecting-cell {
+  from {
+    background-position: -5px -5px;
+  }
+  to {
+    background-position: -1334px -5px;
+  }
+}

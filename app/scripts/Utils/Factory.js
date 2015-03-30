@@ -11,12 +11,12 @@ RPG.module('Factory', function() {
 
 	var gfx = null;
 	var fx = null;
-	var game = null;
 	var player = null;
+	var animation = null;
 	var ia = null;
 	var transport = null;
 	var actionManager = null;
-	var animation = null;
+	var animationManager = null;
 	var pubsub = null;
 	var constructors = {};
 	var di = RPG.Injector;
@@ -32,6 +32,10 @@ RPG.module('Factory', function() {
 		},
 		enemy: function() {
 			return di.invoke(RPG.Enemy);
+		},
+		animation: function() {
+			// treat an animation entity as if is a player!!
+			return di.invoke(RPG.Player);
 		},
 		player: function(type) {
 			type = RPG[type] || RPG.Player;
@@ -57,12 +61,6 @@ RPG.module('Factory', function() {
 			}
 			return fx;
 		},
-		game: function() {
-			if (!game) {
-				game = di.invoke(RPG.Game);
-			}
-			return game;
-		},
 		transport: function(){
 			if(!transport){
 				transport = di.invoke(RPG.Transport);
@@ -75,11 +73,11 @@ RPG.module('Factory', function() {
 			}
 			return actionManager;
 		},
-		animation: function(){
-			if(!animation){
-				animation = di.invoke(RPG.AnimationManager);
+		animationManager: function(){
+			if(!animationManager){
+				animationManager = di.invoke(RPG.AnimationManager);
 			}
-			return animation;
+			return animationManager;
 		},
 		pubsub: function(){
 			if(!pubsub){

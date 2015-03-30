@@ -98,12 +98,19 @@ RPG.module('GfxDom', function() {
     };
     entity.host = RPG.config.server.host;
     entity.addEventListener('click', function(e) {
-      this.selectEntity(e.target);
+      if(e.target.type !== 'animation'){
+        this.selectEntity(e.target);
+      }
     }.bind(this), false);
     return entity;
   };
   GfxDom.prototype.placeEntity = function(entity) {
-    var type = entity.player.id.indexOf('Enemy') !== -1 ? 'enemy' : 'player';
+    var entityClass = entity.player['@c'];
+    var type = entityClass.startsWith('.SimpleWizard') ? 'player' : 'enemy';
+    var isAnimationEntity = entityClass.startsWith('.SimpleAnimation');
+    if(isAnimationEntity){
+      type = 'animation';
+    }
 
     if(entity.player.playerInfo.name === this.username.value){
       type = 'my-player';
@@ -116,6 +123,31 @@ RPG.module('GfxDom', function() {
       this.selectPlayer(entity);
     }
     return entity;
+  };
+  GfxDom.prototype.placeAnimationNode = function(animation) {
+    // 1) create an animation entity of type ".SimpleAnimation"
+    // 2) register the animation
+    // 3) play it
+    // 4) kill it
+    return this.placeEntity({
+      player: {
+        '@c': '.SimpleAnimation',
+        id: 'animation-'+animation.name+'-'+animation.position.x+animation.position.y,
+        life: {
+          max: 0,
+          current: 0
+        },
+        playerInfo: {
+          name: animation.name,
+          avatar: {
+            '@c': '.ServerImage',
+            content: ''
+          }
+        }
+      },
+      newCell: animation.position
+    },'animation');
+
   };
   GfxDom.prototype.selectEntity = function(entity) {
     switch (entity.type) {

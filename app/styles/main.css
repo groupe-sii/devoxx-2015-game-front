@@ -12,6 +12,7 @@ body {
   background-image: url(../images/fantasy_forest_background_1_by_indigodeep.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 h1, h2, h3, h4, a.btn {
@@ -90,7 +91,7 @@ hr.soften {
   border-radius: 5px;
   margin: 0 auto;
   width: 700px;
-  top: 20px;
+  top: 50%;
   left: 0;
   right: 0;
 }
@@ -203,10 +204,7 @@ label[for="debug"] {
   border-radius: 4px;
   transition: background-color 0.3s;
 }
-/*.rpg-grid td.rpg-obstacle {
-  background-color: #80bde9;
-  background-image: url(../images/rock.png);
-}*/
+.rpg-grid td.rpg-obstacle {}
 .rpg-grid td:hover:not(.rpg-obstacle):not(.rpg-occupied) {
   background-color: rgba(255,255,255,0.3);
 }
