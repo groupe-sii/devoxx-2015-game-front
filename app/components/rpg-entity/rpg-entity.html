@@ -12,14 +12,14 @@ Example:
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../rpg-avatar/rpg-avatar.html">
 
-<polymer-element name="rpg-entity">
+<polymer-element name="rpg-entity" attributes="host">
   <template>
 	  <link rel="stylesheet" href="rpg-entity.css">
 	  <div class="entity-template" id="entity-template">
 	  	<span class="rpg-life"><i style="width:{{life.current/10}}%;"></i></span>
 	  	<span class="rpg-name">{{name}}</span>
 	  	
-	  	<rpg-animation-layers id="animationLayers"></rpg-animation-layers>
+	  	<rpg-animation-layers id="animationLayers" host="{{host}}"></rpg-animation-layers>
 			<rpg-avatar class="avatar" avatar="{{avatar_content}}" is-uri="{{avatar_is_uri}}"></rpg-avatar>
 	  	
 	  	<span class="hit-amount">-{{amount}}</span>
@@ -49,7 +49,8 @@ Example:
     			previous: {x:0, y:0},
     		},
 	    	debug: false,
-	    	avatar_content: null
+	    	avatar_content: null,
+	    	'host': ''
     	},
     	debugChanged: function(oldValue, newValue){
     		this.$['debug-info'].classList.toggle('show-debug');

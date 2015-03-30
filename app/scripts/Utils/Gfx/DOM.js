@@ -96,6 +96,7 @@ RPG.module('GfxDom', function() {
       current: obj.newCell,
       previous: obj.oldCell
     };
+    entity.host = RPG.config.server.host;
     entity.addEventListener('click', function(e) {
       this.selectEntity(e.target);
     }.bind(this), false);
