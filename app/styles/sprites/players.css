@@ -173,7 +173,7 @@
   height: 32px;
   background-position: -1391px -5px;
 }
-.players-sprite-avt1_fr1 {
+.regenerator, .players-sprite-avt1_fr1 {
   width: 32px;
   height: 32px;
   background-position: -1433px -5px;
@@ -213,7 +213,7 @@
   height: 32px;
   background-position: -1727px -5px;
 }
-.players-sprite-avt2_fr1 {
+.lemming, .players-sprite-avt2_fr1 {
   width: 32px;
   height: 32px;
   background-position: -1769px -5px;
