@@ -11,11 +11,10 @@ Example:
 -->
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<polymer-element name="rpg-animation-layers">
+<polymer-element name="rpg-animation-layers" attributes="host">
   <template>
 	  <link rel="stylesheet" href="../../styles/sprites/explosion.css">
 	  <link rel="stylesheet" href="../../styles/sprites/healing.css">
-	  <link rel="stylesheet" href="http://localhost:1337/styles/animations/remote-animations.css">
 	  <style>
 	  	:host {
 	  		position: absolute;
@@ -42,6 +41,18 @@ Example:
   </template>
   <script>
   Polymer({
+    publish : {
+    	'host': ''
+    },
+    domReady: function() {
+    	// Polymer doesn't replace variables in link tags => need to load it manually
+    	var link=document.createElement("link")
+        link.setAttribute("rel", "stylesheet")
+        link.setAttribute("type", "text/css")
+        link.setAttribute("href", this.host+'/animations.css')
+        this.shadowRoot.appendChild(link);
+    	this.element.convertSheetsToStyles(this.shadowRoot);
+    },
   	register: function(name){
   		this.animations.push(name);
   	},

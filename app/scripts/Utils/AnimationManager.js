@@ -44,7 +44,7 @@ RPG.module('AnimationManager', function() {
     .replace('#duration', animationObject.duration/1000)
     .replace('#options.delay', animationObject.options.delay)
     .replace('#frames.length', animationObject.frames.length)
-    .replace('#sprite.image.uri', RPG.server.host+animationObject.sprite.image.uri)
+    .replace('#sprite.image.uri', animationObject.sprite.image.uri)
     .replace('#frames', '100% {background-position: -'+animationObject.sprite.width+'px;}');
 
     return {
