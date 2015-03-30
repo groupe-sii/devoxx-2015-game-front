@@ -158,6 +158,7 @@ RPG.module('GfxDom', function() {
         this.selectEnemy(entity);
         break;
     }
+    this.eventManager.pubsub.publish('/gfx/cell/selected', entity.position.current);
   };
   GfxDom.prototype.selectPlayer = function(player) {
     document.querySelector('#rpg-selected-player').setEntity(player);

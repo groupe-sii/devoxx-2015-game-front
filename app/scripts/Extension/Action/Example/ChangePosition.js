@@ -12,7 +12,7 @@ RPG.extension(RPG.extensions.ACTION, {
   
   'use strict';
   
-	var cell = RPG.Factory.actionManager().getCurrentPosition();
+	var cell = RPG.Factory.actionManager().getSelectedPosition();
 
   return {
     '@c': '.ChangePosition',
