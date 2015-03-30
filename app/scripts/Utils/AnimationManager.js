@@ -15,6 +15,7 @@ RPG.module('AnimationManager', function() {
   AnimationManager.prototype.initialize = function() {
   	this.pubsub.subscribe(RPG.config.topics.SUB_ANIMATION_ALL, function(topic, data){
   		data.forEach(function(animationObject){
+        this.pubsub.publish('/gfx/animation/register', data);
   			this.buildKeyFrames(animationObject);
   		}.bind(this));
   	}.bind(this));
@@ -27,7 +28,7 @@ RPG.module('AnimationManager', function() {
     var content = [
 	    '@-webkit-keyframes #name { #frames }',
 	    '  ',
-	    'rpg-entity /deep/ .#name {',
+	    '.#name {',
 	    '-webkit-animation-fill-mode: none;',
 	    '-webkit-animation-direction: #options.direction;',
 	    '-webkit-animation-iteration-count: #options.count;',

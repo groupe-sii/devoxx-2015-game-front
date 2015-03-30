@@ -17,7 +17,7 @@ Example:
 		<link rel="stylesheet" href="rpg-player-info.css">
 		<div hidden?="{{!model.name}}">
 			<rpg-avatar avatar="{{model.avatar_content}}" is-uri="{{model.avatar_is_uri}}"></rpg-avatar>
-			<span class="rpg-life"><i style="width:{{ model.life.current/10 }}%;"></i></span>
+			<span class="rpg-life"><i style="width:{{ model.life.current/10 }}%;" title="{{ model.life.current/10 }}"></i></span>
 	    <span class="rpg-name">{{ model.name }}</span>
 		</div>
   </template>

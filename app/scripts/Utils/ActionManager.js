@@ -17,7 +17,7 @@ RPG.module('ActionManager', function() {
   ActionManager.prototype.initialize = function(dom){
   	this.dom = dom;
   	this.dom.drawActionsPanel(actionsList);
-  	this.pubsub.subscribe('/gfx/cell/selected', this.setCurrentPosition.bind(this));
+  	this.pubsub.subscribe('/gfx/cell/selected', this.setSelectedPosition.bind(this));
   };
   ActionManager.prototype.addAction = function(actionInfo, actionFunction){
   	actionsList.push({
@@ -27,10 +27,10 @@ RPG.module('ActionManager', function() {
   	}.bind(this)
   	});
   };  
-  ActionManager.prototype.getCurrentPosition = function(){
+  ActionManager.prototype.getSelectedPosition = function(){
     return this.currentPosition;
   };
-  ActionManager.prototype.setCurrentPosition = function(topic, cell){
+  ActionManager.prototype.setSelectedPosition = function(topic, cell){
   	this.currentPosition = cell;
   };
   ActionManager.prototype.runAction = function(index){
@@ -38,8 +38,8 @@ RPG.module('ActionManager', function() {
   };
 
   ActionManager.prototype.sendAction = function(actionName, actionObject){
-    actionObject['@c'] = '.'+actionName;
-    actionObject.cell = this.currentPosition;
+    // actionObject['@c'] = '.'+actionName;
+    // actionObject.cell = this.currentPosition;
     this.pubsub.publish(RPG.config.topics.PUB_GAME_ACTION, action);
   }
   ActionManager.prototype.repeat = function(howMany, target, callback){

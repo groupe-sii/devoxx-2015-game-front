@@ -16,10 +16,10 @@ Example:
   <template>
 	  <link rel="stylesheet" href="rpg-entity.css">
 	  <div class="entity-template" id="entity-template">
-	  	<span class="rpg-life"><i style="width:{{life.current/10}}%;"></i></span>
-	  	<span class="rpg-name">{{name}}</span>
+	  	<span class="rpg-life" hidden?="{{!life.current}}"><i style="width:{{life.current/10}}%;"></i></span>
+	  	<span class="rpg-name" hidden?="{{!life.current}}">{{name}}</span>
 	  	
-	  	<rpg-animation-layers id="animationLayers" host="{{host}}"></rpg-animation-layers>
+	  	<rpg-animation-layers id="animation-layers" host="{{host}}"></rpg-animation-layers>
 			<rpg-avatar class="avatar" avatar="{{avatar_content}}" is-uri="{{avatar_is_uri}}"></rpg-avatar>
 	  	
 	  	<span class="hit-amount">-{{amount}}</span>
@@ -55,9 +55,6 @@ Example:
     	debugChanged: function(oldValue, newValue){
     		this.$['debug-info'].classList.toggle('show-debug');
     	},
-    	typeChanged: function(oldValue, newValue){
-    		
-    	},
     	positionChanged: function(oldValue, newValue){
     		entity.position.current.x = newValue;
     	},
@@ -76,15 +73,8 @@ Example:
     	lifeChanged: function(oldValue, newValue){
     		entity.life = newValue;
     	},
-    	// collide: function() {
-  		 //  this.classList.add('collide');
-		   //  setTimeout(function() {
-		   //    this.classList.remove('collide');
-		   //  }.bind(this), 1000);
-		   //  return this;
-    	// },
     	explode: function(autoDestroy) {
-    		this.$.animationLayers.play('explosion', function(){
+    		this.$['animation-layers'].play('explosion', function(){
     			if(autoDestroy){
     				this.destroy();
     			}
@@ -98,8 +88,8 @@ Example:
     	},
     	heal: function(amount){
   			this.life.current += amount;
-  			this.$.animationLayers.play('healing');
-    		return this;
+    		this.addState('healing');
+        return this;
     	},
     	hit: function(amount){
     		this.life.current -= amount;
@@ -123,26 +113,34 @@ Example:
     		return this;
     	},
     	addState: function(state){
-    		this.$.animationLayers.play(state);
+    		this.$['animation-layers'].play(state);
     	},
     	removeState: function(state){
-    		this.$.animationLayers.stop(state);
+    		this.$['animation-layers'].stop(state);
     	},
+      addAnimation: function(name){
+        return this.$['animation-layers'].add(name);
+      },
     	created: function(){
+
     		this.debug = false;
     		this.avatar_is_uri = false;
     		try {
 					entity = RPG.Factory[this.type]();
     		}
     		catch(e){
-    			console.error('The entity type "'+this.type+'" is not valid. Here is the stack trace...');
-    			console.trace();
+    			console.error('RpgEntity::TypeError', 'The entity type "'+this.type+'" is not valid. Here is the stack trace...');
     		}
     	},
     	ready: function(){
-    		this.$.animationLayers.register('explosion');
-    		this.$.animationLayers.register('healing');
-    		this.$.animationLayers.register('immobilized');
+
+    		this.$['animation-layers'].add('explosion');
+    		this.$['animation-layers'].add('healing');
+
+        RPG.Factory.pubsub().subscribe('/gfx/animation/register', function(data){
+          console.info('registering animation', name);
+    		  this.$['animation-layers'].add(data.name);
+        }.bind(this));
     	}
     });
   </script>
