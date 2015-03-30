@@ -61,7 +61,8 @@ Example:
   		this.animationManager.start.call(this, name, callback);
   	},
   	stop: function(name){
-  		this.$['states-container'].classList.remove(name);
+  		//this.$['states-container'].classList.remove(name);
+  		this.animationManager.__end.call(this, name);
   	},
   	animationManager: {
   		start: function(name, callback){
