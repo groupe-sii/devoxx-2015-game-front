@@ -2,7 +2,7 @@
 `rpg-animation-layers` is the custom element that handles the animations.
 
 Example:
-    <rpg-animation-layers type="player"></rpg-animation-layers>
+    <rpg-animation-layers host="htt://localhost:8080/"></rpg-animation-layers>
 
 
 @element rpg-animation-layers
@@ -13,8 +13,9 @@ Example:
 
 <polymer-element name="rpg-animation-layers" attributes="host">
   <template>
-	  <link rel="stylesheet" href="../../styles/sprites/explosion.css">
-	  <link rel="stylesheet" href="../../styles/sprites/healing.css">
+	  <link rel="stylesheet" href="../../styles/animations/explosion.css">
+    <link rel="stylesheet" href="../../styles/animations/healing.css">
+	  <link rel="stylesheet" href="../../styles/animations/selecting-cell.css">
 	  <style>
 	  	:host {
 	  		position: absolute;
@@ -23,8 +24,8 @@ Example:
 			  margin-left: -16px;
 	  	}
 			:host /deep/ span {
-		    position: absolute;
-  			background-color: rgba(0, 0, 0, 0);
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0);
 			  opacity: 1;
 			  display: block;
 			  margin-top: -2px;
@@ -34,7 +35,7 @@ Example:
 			}
 		</style>
 		<div id="states-container">
-			<template bind repeat="{{animation in animations}}">
+			<template repeat="{{animation in animationLayers}}">
 		    <span class="layer-{{animation}}"></span>
 		  </template>
 		</div>
@@ -42,31 +43,49 @@ Example:
   <script>
   Polymer({
     publish : {
-    	'host': ''
+    	host: ''
     },
-    domReady: function() {
-    	// Polymer doesn't replace variables in link tags => need to load it manually
-    	var link=document.createElement("link")
-        link.setAttribute("rel", "stylesheet")
-        link.setAttribute("type", "text/css")
-        link.setAttribute("href", this.host+'/animations.css')
-        this.shadowRoot.appendChild(link);
-    	this.element.convertSheetsToStyles(this.shadowRoot);
-    },
-  	register: function(name){
-  		this.animations.push(name);
+  	add: function(name){
+
+      if(name.forEach){
+        name.forEach(function(n){
+          this.animationLayers.push(n);
+        }.bind(this));
+      }
+      else if(typeof name === 'string'){
+  		  this.animationLayers.push(name);
+      }
+
+      return this;
   	},
-  	play: function(name, callback){
-  		// this.$['states-container'].classList.add(name);
-  		this.animationManager.start.call(this, name, callback);
+  	play: function(nameOrCallback, callback){
+
+      if(!this.isReady){
+        this.playAnimationOnDomReady.push({
+          nameOrCallback: nameOrCallback, 
+          callback: callback          
+        });
+      }
+      else {
+        if(typeof callback === 'function'){
+    		  this.animationManager.start.call(this, nameOrCallback, callback);
+        }
+        else {
+         this.animationManager.start.call(this, 0, nameOrCallback); 
+        }
+      }
+
+
+      return this;
   	},
   	stop: function(name){
-  		//this.$['states-container'].classList.remove(name);
   		this.animationManager.__end.call(this, name);
+      return this;
   	},
   	animationManager: {
   		start: function(name, callback){
-  			var animationLayer = this.$[ 'states-container' ].querySelector('.layer-'+name);
+        var stateContainer = this.$[ 'states-container' ];
+        var animationLayer = stateContainer.querySelector( name === 0 ? 'span' : '.layer-'+name);
   			this.async(function() {
     			if(animationLayer){
 	    			animationLayer.addEventListener('webkitAnimationEnd', function(){
@@ -81,14 +100,33 @@ Example:
 	      if(animationLayer){
 		      animationLayer.removeEventListener('webkitAnimationEnd', this.animationManager.__end.bind(this), false);
 		      animationLayer.classList.remove(name);
-		      if(callback && callback.call){
+		      if(typeof callback === 'function'){
 		      	callback();
 		      }
 	      }
   		}
   	},
+    domReady: function() {
+      // Polymer doesn't replace variables in link tags => need to load it manually
+      var link = document.createElement("link");
+      link.setAttribute("rel", "stylesheet");
+      link.setAttribute("type", "text/css");
+      link.setAttribute("href", this.host+'/animations.css');
+      // this.shadowRoot.appendChild(link);
+      // this.element.convertSheetsToStyles(this.shadowRoot);
+      
+      this.isReady = true;
+      if(this.playAnimationOnDomReady.length > 0){
+        this.playAnimationOnDomReady.forEach(function(animation){
+          this.play(animation.nameOrCallback, animation.callback);
+        }.bind(this));
+        this.playAnimationOnDomReady = [];
+      }
+    },
   	created: function(){
-  		this.animations = [];
+      this.isReady = false;
+  		this.animationLayers = [];
+      this.playAnimationOnDomReady = [];
   	}
   })
   </script>
