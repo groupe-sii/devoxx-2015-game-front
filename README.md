@@ -32,7 +32,7 @@ This command does three things:
 
 3) Then, install local deps:
 
-```npm i```
+```npm i && bower i```
 
 ## Start coding
 
