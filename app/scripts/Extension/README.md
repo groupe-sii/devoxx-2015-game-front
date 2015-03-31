@@ -1,24 +1,23 @@
-# devoxx-2015-game-front Extension
-extension module for the SII coding game
+# devoxx-2015-game-front Extension Definition Module (EDM)
+The extension definition module for the SII coding game
 
-#API
-[the API](http://game.api.devoxx.sii.fr/#!/public/) is available to expose all the features you can invoke from client side.
+# Action Extension API
 
-# Action Extension
 ## Create your own actions
-To add an action to your client game, you have to create an Action Extension for your game stating: 
-`RPG.extension(RPG.extensions.ACTION, metadata, callback);`
+In order to implement a new action in the client side, you have to create an Extension Definition Module or EDM of type Action for your game using the provided API: `RPG.extension(RPG.extensions.ACTION, metadata, callback);`
 
-We recommend you do this in a new file in the *app/scripts/Extension/Action* folder
-with metadata object being the following attributes  to build the action button
-```javascript
-{
- name: 'Attack',
- icon: 'pathToIcon.png'
-}
-```
+##Convention
+Our convention states that each action must be defined in its own file in the *app/scripts/Extension/Action* folder.
 
-and callback being the definition of your action (respecting [the action API](http://game.api.devoxx.sii.fr/#!/public/topic_game_action_post)): 
+##API Documentation
+The API documentation is:
+- `type`: Enum - must be `RPG.extensions.ACTION`
+- `metadata`: the object with the following attributes:
+  - `name`: String - the name of the action
+  - `icon`: String - the image source of the action (used to draw the action button)
+- `callback`: Function - the action definition according to [the action API](http://game.api.devoxx.sii.fr/#!/public/topic_game_action_post)
+
+Here is a boilerplate of an EDM of type Action:
 
 ```javascript
 RPG.extension(RPG.extensions.ACTION, { /*metadata*/ }, function() {
