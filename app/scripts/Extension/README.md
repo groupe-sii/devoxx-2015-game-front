@@ -1,4 +1,4 @@
-# devoxx-2015-game-front Extension Definition Module (EDM)
+# Extension Definition Module (EDM)
 The extension definition module for the SII coding game
 
 # Action Extension API
