@@ -7,6 +7,36 @@
 var RPG = (function() {
 
   'use strict';
+
+  function validateActionDefinition(){
+    var args = [].slice.call(arguments);
+    if(args.length !== 3){
+      throw Error('EDM::WrongParameters: Expected 3 parameters, got '+args.length);
+    }
+    
+    if(!args[0]){
+      throw Error('EDM::MissingParameter: Extension type is missing.');
+    }
+    if(!args[1]){
+      throw Error('EDM::MissingParameter: Extension metadata is missing.');
+    }
+    if(!args[2]){
+      throw Error('EDM::MissingParameter: Extension function definition is missing.');
+    }
+
+    if(Object.keys(RPG.extensions).indexOf(args[0]) !== -1){
+      throw Error('EDM::WrongParameter: Extension type "'+args[0]+'" is not valid.');
+    }
+    if(typeof args[1].name !== 'string'){
+      throw Error('EDM::WrongParameter: Extention name "'+args[1].name+'" is not valid.');
+    }
+    if(typeof args[1].icon !== 'string'){
+      throw Error('EDM::WrongParameter: Extention icon "'+args[1].icon+'" is not valid.');
+    }
+    if(typeof args[2] !== 'function'){
+      throw Error('EDM::WrongParameter: Extention function definition "'+args[2]+'" is not valid.');
+    }
+  }
   
   return {
 
@@ -24,7 +54,9 @@ var RPG = (function() {
      * @type {Enum}
      */
     extensions: {
-      ACTION: 'extension_action'
+      ACTION: 'extension_action',
+      ANIMATION: 'extension_animation',
+      AUDIO: 'extension_audio'
     },
 
     /**
@@ -108,7 +140,8 @@ var RPG = (function() {
      */
     extension: function(type, info, callback){
 
-      var actionManager;
+      var actionManager, ext;
+      validateActionDefinition.apply(null, arguments);
 
       switch(type){
         case RPG.extensions.ACTION:
@@ -116,7 +149,10 @@ var RPG = (function() {
           actionManager.addAction(info, callback);
         break;
         default: 
-          throw Error('Extension "',type+':'+info.name,'" not allowed! Valid extensions are: ', Object.keys(RPG.extensions))
+          ext = Object.keys(RPG.extensions).map(function(x){
+            return 'RPG.extensions.'+x;
+          })
+          throw Error('Extension "'+type+':'+info.name+'" not valid! Allowed extensions are: '+ ext);
       }
 
     },
