@@ -6,35 +6,36 @@ extension module for the SII coding game
 
 # Action Extension
 ## Create your own actions
-To add an action to your client game, you have to create an Action Extension for your game stating : 
-` RPG.extension(RPG.extensions.ACTION, metadata, callback);`
+To add an action to your client game, you have to create an Action Extension for your game stating: 
+`RPG.extension(RPG.extensions.ACTION, metadata, callback);`
 
-We recommed you do this in a new file  in the *app/scripts/Extension/Action* folder
-
-with metadata being a two attributes (name, icon) object to build the action button
+We recommend you do this in a new file in the *app/scripts/Extension/Action* folder
+with metadata object being the following attributes  to build the action button
 ```javascript
-{'name' : 'Attack',
- 'icon' : 'pathToIcon.png'
+{
+ name: 'Attack',
+ icon: 'pathToIcon.png'
 }
 ```
 
-and callback being the code of your action (respecting [the action API](http://game.api.devoxx.sii.fr/#!/public/topic_game_action_post)) : 
+and callback being the definition of your action (respecting [the action API](http://game.api.devoxx.sii.fr/#!/public/topic_game_action_post)): 
+
 ```javascript
-var attack = function() {
+RPG.extension(RPG.extensions.ACTION, { /*metadata*/ }, function() {
+
   'use strict';
-  //local variables
 
-  return object;//the action properties according to the action API
-}
+  // put the action logic here
+
+  //the action properties according to the action API
+  return { /*action*/ };
+});
 ```
 
-##Tools
-In the Utils folder you'll find some tolls to help you in coding your functions, here are the most useful for actions : 
-* Factory.js is a module containing all tools
-  * to summon the modulle use RPG.Factory
-* ActionManager contains the tools to help using actions
-  * summoned by RPG.Factory.actionManager()
-  * RPG.Factory.actionManager().getSelectedPosition(); returns the last clicked cell
+##Helpers
+In order to help you code your action definitions, here are some useful helpers: 
+- Use an instance of the ActionManager via `RPG.Factory.actionManager()`: 
+  - `RPG.Factory.actionManager().getSelectedPosition()` returns the last selected cell.
 
 ##Test
 - To test without building the app, you have to add your new script in your *app/index.html* file (thank you captain obvious)
@@ -43,7 +44,7 @@ In the Utils folder you'll find some tolls to help you in coding your functions,
 ##Samples
 ```javascript
 RPG.extension(RPG.extensions.ACTION, {
-  name: 'Attack',
+  name: 'MyAttack',
   icon: 'images/hud/special_icons_0015.png'
 }, function attack() {
   
@@ -59,7 +60,7 @@ RPG.extension(RPG.extensions.ACTION, {
 });
 
 RPG.extension(RPG.extensions.ACTION, {
-  name: 'Heal',
+  name: 'MyHeal',
   icon: 'images/hud/special_icons_0016.png'
 }, function heal() {
   
