@@ -1,8 +1,10 @@
-node_modules
-dist
 .tmp
 .sass-cache
+npm-debug.log
 app/bower_components
 test/bower_components
 tools
 reporters
+deploy
+node_modules
+dist
