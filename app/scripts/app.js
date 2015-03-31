@@ -9,7 +9,7 @@ RPG.run(function() {
   'use strict';
 
   var fx = RPG.Factory.fx();
-  fx.initialize();
+  // fx.initialize();
   
   var socket = RPG.Factory.transport();
   socket.initialize();

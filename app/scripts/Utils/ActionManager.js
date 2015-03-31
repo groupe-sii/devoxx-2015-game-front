@@ -41,7 +41,7 @@ RPG.module('ActionManager', function() {
   		info: actionInfo,
   		action: actionDefinition.bind(this)
   	});
-  };  
+  };
   ActionManager.prototype.getSelectedPosition = function(){
     return this.currentPosition;
   };
@@ -54,7 +54,6 @@ RPG.module('ActionManager', function() {
   ActionManager.prototype.sendAction = function(actionName, actionDefinition){
     [].concat(actionDefinition.call(this)).forEach(function(action){
       
-      console.info(RPG.config.topics.PUB_GAME_ACTION, action);
       this.pubsub.publish(RPG.config.topics.PUB_GAME_ACTION, action);
 
     }.bind(this));

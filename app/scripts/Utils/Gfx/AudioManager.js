@@ -85,6 +85,7 @@ RPG.module('AudioManager', function() {
       for(var topic in topics){
         if(topics[topic][0] && topics[topic][0].startsWith(soundProfile)){
           this.pubsub.unsubscribe(topics[topic].slice(-1));
+          this.stopSound(topics[topic][0]);
         }
       }      
     }
