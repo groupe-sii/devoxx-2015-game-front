@@ -20,11 +20,25 @@ RPG.module('ActionManager', function() {
   	this.pubsub.subscribe('/gfx/cell/selected', this.setSelectedPosition.bind(this));
   };
   ActionManager.prototype.addAction = function(actionInfo, actionFunction){
-  	actionsList.push({
+  	
+    function actionDefinition(){
+      debugger;
+
+      function send(){
+        return this.sendAction(actionInfo.name, actionFunction);
+      };
+
+      if(actionInfo.repeat){
+        return this.repeat(actionInfo.repeat.iteration, actionInfo.repeat.duration, send.bind(this));
+      }
+      else {
+        return send.call(this);
+      }
+    }
+
+    actionsList.push({
   		info: actionInfo,
-  		action: (typeof actionFunction === 'function') ? actionFunction.bind(this) : function(){
-  		this.sendAction(actionName, actionFunction);
-  	}.bind(this)
+  		action: actionDefinition.bind(this)
   	});
   };  
   ActionManager.prototype.getSelectedPosition = function(){
@@ -34,25 +48,27 @@ RPG.module('ActionManager', function() {
   	this.currentPosition = cell;
   };
   ActionManager.prototype.runAction = function(index){
-  	actionsList[index-1] && actionsList[index-1].action.apply(this, [this.currentPosition]);
+  	actionsList[index] && actionsList[index].action.apply(this, [this.currentPosition]);
   };
-
-  ActionManager.prototype.sendAction = function(actionName, actionObject){
-    // actionObject['@c'] = '.'+actionName;
-    // actionObject.cell = this.currentPosition;
-    this.pubsub.publish(RPG.config.topics.PUB_GAME_ACTION, action);
+  ActionManager.prototype.sendAction = function(actionName, actionDefinition){
+    console.info(RPG.config.topics.PUB_GAME_ACTION, actionDefinition.call(this));
+    this.pubsub.publish(RPG.config.topics.PUB_GAME_ACTION, actionDefinition.call(this));
   }
-  ActionManager.prototype.repeat = function(howMany, target, callback){
-  	if(!target){
-  		return false;
-  	}
-  	var counter = 0;
+  ActionManager.prototype.repeat = function(howMany, howLong, action){
+  	if(howLong < 1000){
+      throw Error('ActionManager::Repeat: Action duration should last more than 1s (1000ms).');
+    }
+
+    var counter = 1;
+
+    action.call(this);
+
   	var timer = setInterval(function(){
-  		callback.call(this, target);
+  		action.call(this);
   		if(++counter >= howMany){
   			clearInterval(timer);
   		}
-  	}.bind(this), 1000);
+  	}.bind(this), howLong);
   }
 
   return ActionManager;

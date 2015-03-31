@@ -80,8 +80,7 @@ RPG.module('GfxDom', function() {
     this.actionsList.addEventListener('click', function(e){
       var index = -1;
       if(e.target.classList.contains('btn-extension-action')){
-        index = +e.target.dataset.index;
-        actionsList[index].action();
+        actionsList[+e.target.dataset.index].action();
       }
     });
   };

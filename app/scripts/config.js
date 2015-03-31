@@ -10,8 +10,8 @@ RPG.config({
     transport: false
   },
   audio: {
-    background: true,
-    fx: true
+    background: false,
+    fx: false
   },
   server: {
     host: 'http://localhost:8080'
