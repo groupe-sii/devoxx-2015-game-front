@@ -9,6 +9,7 @@ RPG.module('ActionManager', function() {
   'use strict';
 
 	var actionsList = [];
+  var minActionDuration = 1000;
 
   function ActionManager(PubSub){
   	this.pubsub = PubSub;
@@ -51,12 +52,17 @@ RPG.module('ActionManager', function() {
   	actionsList[index] && actionsList[index].action.apply(this, [this.currentPosition]);
   };
   ActionManager.prototype.sendAction = function(actionName, actionDefinition){
-    console.info(RPG.config.topics.PUB_GAME_ACTION, actionDefinition.call(this));
-    this.pubsub.publish(RPG.config.topics.PUB_GAME_ACTION, actionDefinition.call(this));
-  }
+    [].concat(actionDefinition.call(this)).forEach(function(action){
+      
+      console.info(RPG.config.topics.PUB_GAME_ACTION, action);
+      this.pubsub.publish(RPG.config.topics.PUB_GAME_ACTION, action);
+
+    }.bind(this));
+
+  };
   ActionManager.prototype.repeat = function(howMany, howLong, action){
-  	if(howLong < 1000){
-      throw Error('ActionManager::Repeat: Action duration should last more than 1s (1000ms).');
+  	if(howLong < minActionDuration){
+      throw Error('ActionManager::Repeat: Action duration should last more than '+minActionDuration/1000+'s ('+minActionDuration+'ms).');
     }
 
     var counter = 1;
