@@ -32,14 +32,16 @@ RPG.module('GfxDom', function() {
     elements.connectionMsg = document.querySelector('#message');
     elements.actionsList = document.querySelector('#actions-list');
     
+    function addEvent(currentElement){
+      // closure FTW!!!!
+      return function(eventName, fn) {
+        currentElement.addEventListener(eventName, fn.bind(self.eventManager), false);
+      };
+    }
+
     for(var el in elements){
     	if(elements.hasOwnProperty(el) && elements[el]){
-    		elements[el].on = (function(current_element){
-    			// closure FTW!!!!
-    			return function(eventName, fn) {
-					  current_element.addEventListener(eventName, fn.bind(self.eventManager), false);
-					};
-    		}(elements[el]));
+    		elements[el].on = addEvent(elements[el]);
     		self[el] = elements[el];
     	}
     }
@@ -78,7 +80,6 @@ RPG.module('GfxDom', function() {
     }.bind(this));
     this.actionsList.appendChild(frag);
     this.actionsList.addEventListener('click', function(e){
-      var index = -1;
       if(e.target.classList.contains('btn-extension-action')){
         actionsList[+e.target.dataset.index].action();
       }
@@ -223,7 +224,7 @@ RPG.module('GfxDom', function() {
       this.modal.classList.remove('show');
       this.connectionMsg.innerHTML = msg;
     }
-  }
+  };
   GfxDom.prototype.createStyleTag = function(id, css) {
     var styleContainer = document.createElement('div');
     styleContainer.id = id;

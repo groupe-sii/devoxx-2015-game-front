@@ -1,5 +1,5 @@
 /* jshint devel:true */
-/* globals RPG,Enemy */
+/* globals RPG */
 /**
  * Factory module.
  * @type {Class}
@@ -12,8 +12,6 @@ RPG.module('Factory', function() {
 	var gfx = null;
 	var fx = null;
 	var player = null;
-	var animation = null;
-	var ia = null;
 	var transport = null;
 	var actionManager = null;
 	var animationManager = null;

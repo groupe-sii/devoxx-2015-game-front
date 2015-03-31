@@ -38,7 +38,7 @@ RPG.module('AudioManager', function() {
 		  ['fx-007', 'fx/Jump-4.wav', false, false, 0.2],
 		  ['fx-008', 'fx/Pickup.wav', false, false, 0.2],
 		  ['fx-009', 'fx/Powerup.wav', false, false, 0.2]
-	  ].forEach(function(config, index){
+	  ].forEach(function(config){
 	  	this.loadSound.apply(this, config);
 	  }.bind(this));
 

@@ -12,6 +12,8 @@ RPG.module('ActionManager', function() {
   var minActionDuration = 1000;
 
   function repeat(howMany, howLong, action){
+    /*jshint validthis:true */
+    
     if(howLong < minActionDuration){
       throw Error('ActionManager::Repeat: Action duration should last more than '+minActionDuration/1000+'s ('+minActionDuration+'ms).');
     }
@@ -28,12 +30,10 @@ RPG.module('ActionManager', function() {
     }.bind(this), howLong);
   }
 
-  function ActionManager(PubSub){
-  	this.pubsub = PubSub;
-  	this.currentPosition = {x:0, y:0};
-  }
 
   function sendAction(actionName, actionDefinition){
+    /*jshint validthis:true */
+
     [].concat(actionDefinition.call(this)).forEach(function(action){
       
       this.pubsub.publish(RPG.config.topics.PUB_GAME_ACTION, action);
@@ -42,6 +42,10 @@ RPG.module('ActionManager', function() {
 
   }
 
+  function ActionManager(PubSub){
+    this.pubsub = PubSub;
+  	this.currentPosition = {x:0, y:0};
+  }
   ActionManager.prototype.initialize = function(dom){
   	this.dom = dom;
   	this.dom.drawActionsPanel(actionsList);
@@ -50,9 +54,11 @@ RPG.module('ActionManager', function() {
   ActionManager.prototype.addAction = function(actionInfo, actionFunction){
   	
     function actionDefinition(){
+      /*jshint validthis:true */
+
       function send(){
         return sendAction.call(this, actionInfo.name, actionFunction);
-      };
+      }
 
       if(actionInfo.repeat){
         return repeat.call(this, actionInfo.repeat.iteration, actionInfo.repeat.duration, send.bind(this));
@@ -74,7 +80,9 @@ RPG.module('ActionManager', function() {
   	this.currentPosition = cell;
   };
   ActionManager.prototype.runAction = function(index){
-  	actionsList[index] && actionsList[index].action.apply(this, [this.currentPosition]);
+  	if(actionsList[index]){
+      actionsList[index].action.apply(this, [this.currentPosition]);
+    }
   };
 
   return ActionManager;

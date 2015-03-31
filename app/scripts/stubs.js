@@ -9,37 +9,37 @@ RPG.run(function() {
   'use strict';
   var ps = RPG.Factory.pubsub();
   var died = {
-    "player": {
-      "@c": "string",
-      "id": null,
-      "life": {
-        "current": 0,
-        "max": 0
+    'player': {
+      '@c': 'string',
+      'id': null,
+      'life': {
+        'current': 0,
+        'max': 0
       },
-      "playerInfo": {
-        "name": "string",
-        "avatar": "string"
+      'playerInfo': {
+        'name': 'string',
+        'avatar': 'string'
       },
-      "states": "string"
+      'states': 'string'
     }
   };
   var hit = {
-    "player": {
-      "@c": "string",
-      "id": null,
-      "life": {
-        "current": 700,
-        "max": 0
+    'player': {
+      '@c': 'string',
+      'id': null,
+      'life': {
+        'current': 700,
+        'max': 0
       },
-      "playerInfo": {
-        "name": "string",
-        "avatar": "string"
+      'playerInfo': {
+        'name': 'string',
+        'avatar': 'string'
       },
-      "states": "string"
+      'states': 'string'
     },
-    "amount": 100
+    'amount': 100
   };
-  document.querySelector('#debug').addEventListener('change', function(e){
+  document.querySelector('#debug').addEventListener('change', function(){
   	if(this.checked){
       document.querySelector('.debug-buttons').removeAttribute('hidden');
     } else {

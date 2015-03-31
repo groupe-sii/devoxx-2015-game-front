@@ -51,7 +51,7 @@ RPG.module('AnimationManager', function() {
     return {
       id: animationObject.id,
       content: content
-    }
+    };
   };
   return AnimationManager;
 });

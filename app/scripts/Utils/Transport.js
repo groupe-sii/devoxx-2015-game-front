@@ -9,11 +9,12 @@ RPG.module('Transport', function() {
   
   'use strict';
 
-  var topics = {};
   var connectTimer = null;
   var reconnections = 0;
 
   function onClose() {
+    /*jshint validthis:true */
+
     this.socket.close();
     this.client.disconnect();
     this.pubsub.publish('/transport/connecting');
@@ -21,13 +22,14 @@ RPG.module('Transport', function() {
   }
 
   function onGameSelected(topic, data) {
+    /*jshint validthis:true */
 
     RPG.config.game = data;
 
     if(reconnections===0){
 
       // auto subscriptions
-      Object.keys(RPG.config.topics).forEach(function(topic, index) {
+      Object.keys(RPG.config.topics).forEach(function(topic) {
         var serverTopic = RPG.config.topics[topic];
         if (topic.startsWith('SUB_')) {
           serverTopic = computeTopic(serverTopic);
@@ -43,6 +45,8 @@ RPG.module('Transport', function() {
   }
 
   function onConnect() {
+    /*jshint validthis:true */
+
     clearInterval(connectTimer);
     this.pubsub.publish('/transport/connected');    
     this.subscribe(RPG.config.topics.SUB_ME_GAME_SELECTED, onGameSelected.bind(this));
@@ -64,6 +68,8 @@ RPG.module('Transport', function() {
   }
 
   function handleServerErrors() {
+    /*jshint validthis:true */
+
     this.subscribe(RPG.config.topics.SUB_ERROR_GLOBAL, function(topic, data) {
       console.error('Transport::SUB_ERROR_GLOBAL', JSON.stringify(data));
     });
@@ -76,13 +82,15 @@ RPG.module('Transport', function() {
   }
 
   function handleAnimationTopics(){
+    /*jshint validthis:true */
+
     this.subscribe(RPG.config.topics.SUB_ANIMATION_ALL);
     this.send(RPG.config.topics.PUB_ANIMATION_ALL);
   }
 
-  function noop(topic, data) {}
-
   function Transport(PubSub) {
+    /*jshint validthis:true */
+
     this.pubsub = PubSub;
   }
   Transport.prototype.initialize = function() {
@@ -121,6 +129,6 @@ RPG.module('Transport', function() {
       reconnections++;
       this.initialize();
     }.bind(this), 3000);
-  }
+  };
   return Transport;
 });

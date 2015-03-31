@@ -7,6 +7,7 @@
  */
 RPG.module('GfxEventManager', function() {
   'use strict';
+
   var isSpectatorMode = false;
   var directionKeyCodes = {
     37: {
@@ -27,7 +28,7 @@ RPG.module('GfxEventManager', function() {
     }
   };
 
-  function selectCell(dom, position){
+  function selectCell(dom, position) {
     return dom.placeAnimationNode({
       position: position,
       name: 'selecting-cell'
@@ -36,7 +37,7 @@ RPG.module('GfxEventManager', function() {
 
   function GfxEventManager(PubSub, ActionManager, AudioManager) {
     this.actionManager = ActionManager;
-  	this.audioManager = AudioManager;
+    this.audioManager = AudioManager;
     this.pubsub = PubSub;
   }
   GfxEventManager.prototype.initialize = function(dom) {
@@ -52,19 +53,19 @@ RPG.module('GfxEventManager', function() {
         entity.debug = debug;
       });
     }.bind(this));
-    this.s(RPG.config.topics.SUB_PLAYER_STATES, function(topic, data){
+    this.s(RPG.config.topics.SUB_PLAYER_STATES, function(topic, data) {
       var entity = dom.findEntity(data.player.id);
-      if(entity){
-        if(data.changes && data.changes.length > 0){
-          data.changes.forEach(function(change){
+      if (entity) {
+        if (data.changes && data.changes.length > 0) {
+          data.changes.forEach(function(change) {
             var state = change.state.toLowerCase();
-            entity[change.change === 'ADD' ? 'addState':'removeState'](state);
+            entity[change.change === 'ADD' ? 'addState' : 'removeState'](state);
           });
         }
       }
     });
-    this.s(RPG.config.topics.SUB_ME_GAME_SELECTED, function(topic, data){
-    	dom.build(data);
+    this.s(RPG.config.topics.SUB_ME_GAME_SELECTED, function(topic, data) {
+      dom.build(data);
     });
     this.s(RPG.config.topics.SUB_PLAYER_CREATED, function(topic, data) {
       dom.placeEntity(data);
@@ -117,7 +118,7 @@ RPG.module('GfxEventManager', function() {
         entity.heal(data.amount);
       }
     });
-    this.s(RPG.config.topics.PUB_GAME_LEAVE, function(topic) {
+    this.s(RPG.config.topics.PUB_GAME_LEAVE, function() {
       var entity = dom.findEntity();
       if (entity) {
         entity.explode(true);
@@ -145,104 +146,99 @@ RPG.module('GfxEventManager', function() {
     }.bind(this));
   };
   GfxEventManager.prototype.bindDomEvents = function(dom) {
-      dom.boardContainer.on('click', function(e) {
-        var animation;
-        var cell = e.target;
-        var position = {};
-        if (cell && cell.nodeName === 'TD' && !cell.classList.contains('rpg-occupied')) {
+    dom.boardContainer.on('click', function(e) {
+      var animation;
+      var cell = e.target;
+      var position = {};
+      if (cell && cell.nodeName === 'TD' && !cell.classList.contains('rpg-occupied')) {
+        cell.classList.toggle('rpg-selected');
+        position = {
+          x: +cell.dataset.x,
+          y: +cell.dataset.y
+        };
+        animation = selectCell(dom, position);
+        animation.addAnimation(animation.name).play(animation.name, function() {
+          animation.destroy();
           cell.classList.toggle('rpg-selected');
-          position = {
-            x: +cell.dataset.x,
-            y: +cell.dataset.y
-          };
-          
-          animation = selectCell(dom, position);
-          animation
-          .addAnimation(animation.name)
-          .play(animation.name, function(){
-            animation.destroy();
-            cell.classList.toggle('rpg-selected');
-            cell.classList.toggle('rpg-occupied')
-          });
-
-          this.pubsub.publish('/gfx/cell/selected', position);
-        }
-      }.bind(this));
-      dom.joinBtn.on('click', function(e) {
-        e.preventDefault();
-        this.pubsub.publish(RPG.config.topics.PUB_GAME_JOIN, {
-          name: dom.username.value,
-          avatar: {
-            '@c': '.ClientImage',
-            name: dom.avatars.selected
-          }
+          cell.classList.toggle('rpg-occupied');
         });
+        this.pubsub.publish('/gfx/cell/selected', position);
+      }
+    }.bind(this));
+    dom.joinBtn.on('click', function(e) {
+      e.preventDefault();
+      this.pubsub.publish(RPG.config.topics.PUB_GAME_JOIN, {
+        name: dom.username.value,
+        avatar: {
+          '@c': '.ClientImage',
+          name: dom.avatars.selected
+        }
       });
-      dom.upperButtons.on('click', function(e) {
+    });
+    dom.upperButtons.on('click', function(e) {
+      e.preventDefault();
+      var action = e.target;
+      if (action && action.nodeName === 'BUTTON') {
+        switch (action.dataset.action) {
+          case 'leave':
+            this.pubsub.publish(RPG.config.topics.PUB_GAME_LEAVE);
+            if (isSpectatorMode) {
+              isSpectatorMode = !isSpectatorMode;
+              dom.board.classList.add('blur');
+              dom.quitBtn.classList.add('hidden');
+              dom.menuContainer.classList.remove('move-top');
+            }
+            break;
+          case 'fx':
+            this.audioManager.toggleFx();
+            break;
+          case 'audio':
+            this.audioManager.toggleAudio();
+            break;
+        }
+      }
+    });
+    dom.avatars.on('click', function(e) {
+      e.preventDefault();
+      var action = e.target;
+      if (action && action.classList.contains('avatar')) {
+        action.parentElement.querySelector('.selected').classList.remove('selected');
+        action.classList.add('selected');
+        dom.avatars.selected = action.dataset.name;
+      }
+    });
+    dom.spectatorBtn.on('click', function() {
+      isSpectatorMode = true;
+      dom.board.classList.remove('blur');
+      dom.quitBtn.classList.remove('hidden');
+      dom.menuContainer.classList.add('move-top');
+    });
+    dom.username.on('keyup', function(e) {
+      var value = e.target.value;
+      if (value === '') {
+        dom.joinBtn.setAttribute('disabled', true);
+      } else {
+        dom.joinBtn.removeAttribute('disabled');
+        dom.username.value = value;
+      }
+    });
+    document.addEventListener('keydown', function(e) {
+      var key = e.which;
+      if (directionKeyCodes[key]) {
         e.preventDefault();
-        var action = e.target;
-        if (action && action.nodeName === 'BUTTON') {
-          switch (action.dataset.action) {
-            case 'leave':
-              this.pubsub.publish(RPG.config.topics.PUB_GAME_LEAVE);
-              if(isSpectatorMode){
-              	isSpectatorMode =! isSpectatorMode;
-              	dom.board.classList.add('blur');
-				        dom.quitBtn.classList.add('hidden');
-				        dom.menuContainer.classList.remove('move-top');
-              }
-              break;
-            case 'fx':
-              this.audioManager.toggleFx();
-              break;
-            case 'audio':
-              this.audioManager.toggleAudio();
-              break;
-          }
+        this.pubsub.publish(directionKeyCodes[key].topic);
+      } else {
+        if (e.target.id !== 'username' && key >= 48 && key <= 57) {
+          this.actionManager.runAction(+String.fromCharCode(key));
         }
-      });
-      dom.avatars.on('click', function(e) {
-        e.preventDefault();
-        var action = e.target;
-        if (action && action.classList.contains('avatar')) {
-          action.parentElement.querySelector('.selected').classList.remove('selected');
-          action.classList.add('selected');
-          dom.avatars.selected = action.dataset.name;
-        }
-      });
-      dom.spectatorBtn.on('click', function(e) {
-      	isSpectatorMode = true;
-        dom.board.classList.remove('blur');
-        dom.quitBtn.classList.remove('hidden');
-        dom.menuContainer.classList.add('move-top');
-      });
-      dom.username.on('keyup', function(e) {
-        var value = e.target.value;
-        if (value === '') {
-          dom.joinBtn.setAttribute('disabled', true);
-        } else {
-          dom.joinBtn.removeAttribute('disabled');
-          dom.username.value = value;
-        }
-      });
-      document.addEventListener('keydown', function(e) {
-      	var key = e.which;
-        if (directionKeyCodes[key]) {
-          e.preventDefault();
-          this.pubsub.publish(directionKeyCodes[key].topic);
-        }
-        else {
-        	if(e.target.id !== 'username' && key >= 48 && key <= 57){
-        		this.actionManager.runAction(+String.fromCharCode(key));
-        	}
-        }
-      }.bind(this));
-    }
-    /**
-     * A helper function that subscribes to given a topic
-     */
+      }
+    }.bind(this));
+  };
+  /**
+   * A helper function that subscribes to given a topic
+   */
   GfxEventManager.prototype.s = function(topic, callback) {
     this.pubsub.subscribe(topic, callback.bind(this));
-  }
+  };
   return GfxEventManager;
 });

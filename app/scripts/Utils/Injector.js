@@ -38,7 +38,6 @@ RPG.module('Injector', function() {
 		},
 		invoke: function(dependency) {
 			if(typeof dependency === 'function'){
-				var name = functionName(dependency);
 				var args = functionArgs(dependency);
 				args = args === '' ? [] : getDependencies(args);
 				var Constructor = function() {

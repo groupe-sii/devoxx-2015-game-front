@@ -99,7 +99,7 @@ var RPG = (function() {
     entity: function entity(name, inherit, callback) {
       
       var ent = null;
-      var inherited = null;
+      var Inherited = null;
 
       if(typeof name !== 'string'){
         throw 'Entity name must be a String.';
@@ -108,17 +108,17 @@ var RPG = (function() {
         callback = inherit;
       }
       else if(typeof inherit === 'string'){
-        inherited = RPG.__entities__[inherit];
-        if (!inherited){
+        Inherited = RPG.__entities__[inherit];
+        if (!Inherited){
           throw 'Inherited entity "'+inherit+'" was not found.';
         }
       }
 
       RPG.__entities__[name] = callback.apply(RPG);
 
-      if(inherited){
+      if(Inherited){
         ent = RPG.__entities__[name];
-        ent.prototype = new inherited();
+        ent.prototype = new Inherited();
         ent.prototype.constructor = ent;
       }
 
@@ -151,7 +151,7 @@ var RPG = (function() {
         default: 
           ext = Object.keys(RPG.extensions).map(function(x){
             return 'RPG.extensions.'+x;
-          })
+          });
           throw Error('Extension "'+type+':'+info.name+'" not valid! Allowed extensions are: '+ ext);
       }
 
