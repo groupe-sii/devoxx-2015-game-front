@@ -8,3 +8,6 @@ reporters
 deploy
 node_modules
 dist
+cssLint.json
+htmlHint.json
+jsHint.json

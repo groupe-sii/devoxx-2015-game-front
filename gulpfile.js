@@ -9,7 +9,8 @@ gulp.paths = {
     src: 'src',
     dist: 'dist',
     tmp: '.tmp',
-    doc: 'doc'
+    doc: 'doc',
+    picFolder: 'ci'
 };
 
 gulp.config = {
