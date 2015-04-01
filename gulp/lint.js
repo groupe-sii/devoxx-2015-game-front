@@ -55,3 +55,7 @@ gulp.task('plato', function() {
 
     return $.plato.inspect(config.JS_FILES, config.OUTPUT_DIRS.PLATO, options, callback);
 });
+
+gulp.task('lint', function() {
+    return $.runSequence('jshint', 'css-lint', 'html-hint');
+});
