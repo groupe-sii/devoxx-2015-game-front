@@ -36,7 +36,7 @@ gulp.task('css-lint', function() {
 
 gulp.task('html-hint', function() {
     htmlReporter.openReporter(p.name, './', 'html');
-    return gulp.src(config.HTML_FILES)
+    return gulp.src(['app/**/*.html', '!app/{bower_components,test}/**/*.html'])
         .pipe($.htmlhint({
             htmlhintrc: '.htmlhintrc'
         }))
