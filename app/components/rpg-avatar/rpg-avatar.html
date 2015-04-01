@@ -14,6 +14,13 @@ Example:
 <polymer-element name="rpg-avatar" attributes="avatar is-uri">
   <template>
 		<link rel="stylesheet" href="../../styles/animations/players.css">
+		<style>
+			.avatar {
+				width: 32px;
+				height: 32px;
+				display: block;
+			}
+		</style>
 		<template if="{{isUri}}">
 			<img class="avatar" src="{{avatar}}" width="32px" height="32px"/>
 		</template>
@@ -27,6 +34,9 @@ Example:
 		publish: {
 			isUri: false,
 			avatar: ''
+		},
+		created: function(){
+			this.isUri = this.avatar.startsWith('data:');
 		}
 	});
 	</script>
