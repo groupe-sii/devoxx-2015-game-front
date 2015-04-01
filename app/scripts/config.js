@@ -19,6 +19,9 @@ RPG.config({
   socket: {
     url: 'http://localhost:8080/game'
   },
+  animations: {
+    url: 'http://localhost:31338/animations.css'
+  },
   /**
    * Topics list mapping
    * @type {Object}
@@ -58,7 +61,9 @@ RPG.config({
     'SUB_ME_ERROR_LOCAL': '/user/queue/errors',
 
     'SUB_ANIMATION_ALL': '/user/topic/game/animation/all',
-    'PUB_ANIMATION_ALL': '/topic/game/animation/all'
+    'PUB_ANIMATION_ALL': '/topic/game/animation/all',
+
+    'GFX_ANIMATION_REGISTER': '/gfx/animation/register'
 
   }
 });

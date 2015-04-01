@@ -6,6 +6,8 @@
  * @author Wassim Chegham
  */
 RPG.module('Transport', function() {
+
+  /* jshint validthis:true */
   
   'use strict';
 
@@ -13,7 +15,6 @@ RPG.module('Transport', function() {
   var reconnections = 0;
 
   function onClose() {
-    /*jshint validthis:true */
 
     this.socket.close();
     this.client.disconnect();
@@ -22,8 +23,6 @@ RPG.module('Transport', function() {
   }
 
   function onGameSelected(topic, data) {
-    /*jshint validthis:true */
-
     RPG.config.game = data;
 
     if(reconnections===0){
@@ -45,8 +44,6 @@ RPG.module('Transport', function() {
   }
 
   function onConnect() {
-    /*jshint validthis:true */
-
     clearInterval(connectTimer);
     this.pubsub.publish('/transport/connected');    
     this.subscribe(RPG.config.topics.SUB_ME_GAME_SELECTED, onGameSelected.bind(this));
@@ -68,8 +65,6 @@ RPG.module('Transport', function() {
   }
 
   function handleServerErrors() {
-    /*jshint validthis:true */
-
     this.subscribe(RPG.config.topics.SUB_ERROR_GLOBAL, function(topic, data) {
       console.error('Transport::SUB_ERROR_GLOBAL', JSON.stringify(data));
     });
@@ -82,15 +77,11 @@ RPG.module('Transport', function() {
   }
 
   function handleAnimationTopics(){
-    /*jshint validthis:true */
-
     this.subscribe(RPG.config.topics.SUB_ANIMATION_ALL);
     this.send(RPG.config.topics.PUB_ANIMATION_ALL);
   }
 
   function Transport(PubSub) {
-    /*jshint validthis:true */
-
     this.pubsub = PubSub;
   }
   Transport.prototype.initialize = function() {
@@ -104,6 +95,7 @@ RPG.module('Transport', function() {
   };
   Transport.prototype.subscribe = function(topic, callback) {
     this.client.subscribe(topic, function(data) {
+
       
       try{
         data = JSON.parse(data.body || data);

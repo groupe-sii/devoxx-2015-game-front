@@ -34,6 +34,9 @@ Example:
 			  height: 48px;
 			}
 		</style>
+    
+    <style>{{cssAnimationContent}}</style>
+
 		<div id="states-container">
 			<template repeat="{{animation in animationLayers}}">
 		    <span class="layer-{{animation}}"></span>
@@ -47,14 +50,17 @@ Example:
     },
   	add: function(name){
 
-      if(name.forEach){
-        name.forEach(function(n){
+      if(!name.forEach){
+  		  name = [name];
+      }
+
+      name.forEach(function(n){
+          
+        if(this.animationLayers.indexOf(n) === -1){
           this.animationLayers.push(n);
-        }.bind(this));
-      }
-      else if(typeof name === 'string'){
-  		  this.animationLayers.push(name);
-      }
+        }
+
+      }.bind(this));
 
       return this;
   	},
@@ -67,14 +73,13 @@ Example:
         });
       }
       else {
-        if(typeof callback === 'function'){
+        // if(typeof callback === 'function'){
     		  this.animationManager.start.call(this, nameOrCallback, callback);
-        }
-        else {
-         this.animationManager.start.call(this, 0, nameOrCallback); 
-        }
+        // }
+        // else {
+        //  this.animationManager.start.call(this, , nameOrCallback); 
+        // }
       }
-
 
       return this;
   	},
@@ -107,11 +112,12 @@ Example:
   		}
   	},
     domReady: function() {
+
       // Polymer doesn't replace variables in link tags => need to load it manually
-      var link = document.createElement("link");
-      link.setAttribute("rel", "stylesheet");
-      link.setAttribute("type", "text/css");
-      link.setAttribute("href", this.host+'/animations.css');
+      // var link = document.createElement("link");
+      // link.setAttribute("rel", "stylesheet");
+      // link.setAttribute("type", "text/css");
+      // link.setAttribute("href", this.host+'/animations.css');
       // this.shadowRoot.appendChild(link);
       // this.element.convertSheetsToStyles(this.shadowRoot);
       
@@ -127,6 +133,13 @@ Example:
       this.isReady = false;
   		this.animationLayers = [];
       this.playAnimationOnDomReady = [];
+      this.registerAnimationOnDomReady = [];
+
+      RPG.Factory.animationManager().getAnimationsList().forEach(function(animationObject){
+        this.cssAnimationContent = animationObject.content;
+        this.add(animationObject.info.name.toLowerCase());
+      }.bind(this));
+
   	}
   })
   </script>

@@ -35,22 +35,22 @@ Example:
   	var entity;
     Polymer({
     	publish : {
-    		'type': 'player',
-    		'name': 'player', 
-    		'life': {
+    		type: 'player',
+    		name: 'player', 
+    		life: {
     			current: 1000,
     			max: 1000
     		},
-    		'avatar': {
+    		avatar: {
     			name: ''
     		},
-    		'position': {
+    		position: {
     			current: {x:0, y:0},
     			previous: {x:0, y:0},
     		},
 	    	debug: false,
 	    	avatar_content: null,
-	    	'host': ''
+	    	host: ''
     	},
     	debugChanged: function(oldValue, newValue){
     		this.$['debug-info'].classList.toggle('show-debug');
@@ -131,15 +131,16 @@ Example:
     		catch(e){
     			console.error('RpgEntity::TypeError', 'The entity type "'+this.type+'" is not valid. Here is the stack trace...');
     		}
+        
     	},
     	ready: function(){
 
     		this.$['animation-layers'].add('explosion');
-    		this.$['animation-layers'].add('healing');
+        this.$['animation-layers'].add('healing');
 
-        RPG.Factory.pubsub().subscribe('/gfx/animation/register', function(data){
-          console.info('registering animation', name);
-    		  this.$['animation-layers'].add(data.name);
+        RPG.Factory.pubsub().subscribe(RPG.config.topics.GFX_ANIMATION_REGISTER, function(data){
+          console.info('registering animation', data);
+    		  this.addAnimation(data.name);
         }.bind(this));
     	}
     });
