@@ -1,61 +1,67 @@
+/* jshint node:true */
+/**
+ * @author Wassim Chegham <maneki.nekko@gmail.com>
+ * @author Vincent Ogloblinsky <vincent.ogloblinsky@gmail.com>
+ */
+
 'use strict';
 
 var gulp = require('gulp'),
-    p = require('../package.json'),
-    paths = gulp.paths,
-    config = gulp.config,
-    $ = require('gulp-load-plugins')({
-        pattern: ['gulp-*', 'run-sequence', 'plato']
-    }),
+  p = require('../package.json'),
+  paths = gulp.paths,
+  config = gulp.config,
+  $ = require('gulp-load-plugins')({
+      pattern: ['gulp-*', 'run-sequence', 'plato']
+  }),
 
-    JSReporter = require('../' + paths.picFolder + '/jsReporter.js'),
-    jsReporter = new JSReporter('jsHint.json'),
+  JSReporter = require('../' + paths.picFolder + '/jsReporter.js'),
+  jsReporter = new JSReporter('jsHint.json'),
 
-    CSSReporter = require('../' + paths.picFolder + '/cssReporter.js'),
-    cssReporter = new CSSReporter('cssLint.json'),
+  CSSReporter = require('../' + paths.picFolder + '/cssReporter.js'),
+  cssReporter = new CSSReporter('cssLint.json'),
 
-    HTMLReporter = require('../' + paths.picFolder + '/htmlReporter.js'),
-    htmlReporter = new HTMLReporter('htmlHint.json');
+  HTMLReporter = require('../' + paths.picFolder + '/htmlReporter.js'),
+  htmlReporter = new HTMLReporter('htmlHint.json');
 
 gulp.task('jshint', function() {
-    jsReporter.openReporter(p.name, './', 'js');
-    return gulp.src(config.JS_FILES)
-        .pipe($.jshint())
-        .pipe(jsReporter.reporter)
-        .pipe($.jshint.reporter('jshint-stylish'))
-        .on('end', jsReporter.closeReporter.bind(jsReporter));
+  jsReporter.openReporter(p.name, './', 'js');
+  return gulp.src(config.JS_FILES)
+    .pipe($.jshint())
+    .pipe(jsReporter.reporter)
+    .pipe($.jshint.reporter('jshint-stylish'))
+    .on('end', jsReporter.closeReporter.bind(jsReporter));
 });
 
 gulp.task('css-lint', function() {
-    cssReporter.openReporter(p.name, './', 'css');
-    return gulp.src(config.CSS_FILES)
-        .pipe($.csslint('.csslintrc'))
-        .pipe($.csslint.reporter(cssReporter.reporter.bind(cssReporter)))
-        .on('end', cssReporter.closeReporter.bind(cssReporter));
+  cssReporter.openReporter(p.name, './', 'css');
+  return gulp.src(config.CSS_FILES)
+    .pipe($.csslint('.csslintrc'))
+    .pipe($.csslint.reporter(cssReporter.reporter.bind(cssReporter)))
+    .on('end', cssReporter.closeReporter.bind(cssReporter));
 });
 
 gulp.task('html-hint', function() {
-    htmlReporter.openReporter(p.name, './', 'html');
-    return gulp.src(['app/**/*.html', '!app/{bower_components,test}/**/*.html'])
-        .pipe($.htmlhint({
-            htmlhintrc: '.htmlhintrc'
-        }))
-        .pipe($.htmlhint.reporter(htmlReporter.reporter.bind(htmlReporter)))
-        .on('end', htmlReporter.closeReporter.bind(htmlReporter));
+  htmlReporter.openReporter(p.name, './', 'html');
+  return gulp.src(['app/**/*.html', '!app/{bower_components,test}/**/*.html'])
+    .pipe($.htmlhint({
+      htmlhintrc: '.htmlhintrc'
+    }))
+    .pipe($.htmlhint.reporter(htmlReporter.reporter.bind(htmlReporter)))
+    .on('end', htmlReporter.closeReporter.bind(htmlReporter));
 });
 
 gulp.task('plato', function() {
-    var options = {
-        title: p.name + ' - Plato Report'
-    };
+  var options = {
+    title: p.name + ' - Plato Report'
+  };
 
-    var callback = function(report) {
-        console.log('Plato report done.');
-    };
+  var callback = function(report) {
+    console.log('Plato report done.');
+  };
 
-    return $.plato.inspect(config.JS_FILES, config.OUTPUT_DIRS.PLATO, options, callback);
+  return $.plato.inspect(config.JS_FILES, config.OUTPUT_DIRS.PLATO, options, callback);
 });
 
 gulp.task('lint', function() {
-    return $.runSequence('jshint', 'css-lint', 'html-hint');
+  return $.runSequence('jshint', 'css-lint', 'html-hint');
 });
