@@ -95,6 +95,7 @@ span.hit-amount {
 }
 .dead {
   -webkit-filter: grayscale(100%);
+  opacity: 0.4;
 }
 
 @-webkit-keyframes hit {

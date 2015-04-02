@@ -20,7 +20,7 @@ RPG.config({
     url: 'http://localhost:8080/game'
   },
   animations: {
-    url: 'http://localhost:31338/animations.css'
+    url: 'http://localhost:8080/animations.css'
   },
   /**
    * Topics list mapping
