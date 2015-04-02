@@ -124,6 +124,12 @@ RPG.module('GfxEventManager', function() {
         entity.explode(true);
       }
     });
+    this.s(RPG.config.topics.SUB_PLAYER_DESTROYED, function(topic, data) {
+      var entity = dom.findEntity(data.player.id);
+      if (entity) {
+        entity.explode(true);
+      }
+    });
     this.s(RPG.config.topics.SUB_ME_JOINED_GAME, function() {
       dom.board.classList.remove('blur');
       dom.quitBtn.classList.remove('hidden');
@@ -235,7 +241,7 @@ RPG.module('GfxEventManager', function() {
     }.bind(this));
   };
   /**
-   * A helper function that subscribes to given a topic
+   * A helper function that subscribes to a given topic
    */
   GfxEventManager.prototype.s = function(topic, callback) {
     this.pubsub.subscribe(topic, callback.bind(this));
