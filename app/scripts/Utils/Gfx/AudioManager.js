@@ -131,8 +131,6 @@ RPG.module('AudioManager', function() {
     if(fx && fx instanceof Array){
       fx = fx[ (Math.random() * fx.length-1) | 0 ];
     }
-    
-    console.log('playing ', fx);
 
     var buffer = fxBuffer[fx];
     if (buffer) {
