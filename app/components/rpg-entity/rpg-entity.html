@@ -20,14 +20,14 @@ Example:
 	  	<span class="rpg-name" hidden?="{{!life.current}}">{{name}}</span>
 	  	
 	  	<rpg-animation-layers id="animation-layers" host="{{host}}"></rpg-animation-layers>
-			<rpg-avatar class="avatar" avatar="{{avatar_content}}" is-uri="{{avatar_is_uri}}"></rpg-avatar>
+			<rpg-avatar hidden?="{{!life.current}}" class="avatar" avatar="{{avatar_content}}" is-uri="{{avatar_is_uri}}"></rpg-avatar>
 	  	
 	  	<span class="hit-amount">-{{amount}}</span>
 
 	  	<span class="debug-info" id="debug-info">
-				life: {{life.current}}<br>
-				p1: {{position.current.x}},{{position.current.y}}<br>
-				p2: {{position.previous.x}},{{position.previous.y}}<br>
+		life: {{life.current}}<br>
+		p1: {{position.current.x}},{{position.current.y}}<br>
+		p2: {{position.previous.x}},{{position.previous.y}}<br>
 	  	</span>
 	  </div>
 	</template>

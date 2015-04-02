@@ -1,5 +1,5 @@
 .explosion {
-  background: url(../../images/sprites/explosion.png) no-repeat 48px center;
+  background: url(../../images/sprites/explosion.png) no-repeat 60px center;
   z-index: 88;
   -webkit-animation-name: explosion;
   -webkit-animation-fill-mode: none;

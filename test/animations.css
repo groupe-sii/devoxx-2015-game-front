@@ -1,0 +1,15 @@
+.immobilized {
+	-webkit-animation-fill-mode: none;
+	-webkit-animation-direction: normal;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-name: immobilized;
+	-webkit-animation-duration: 5s;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-timing-function: steps(74);
+	background: transparent url("http://localhost:8080/images/sprite6559654545855806715.png") no-repeat left center;
+}
+
+@-webkit-keyframes immobilized {
+	100% {background-position-x: -4440px;} 
+} 
+

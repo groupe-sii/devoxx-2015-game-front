@@ -213,12 +213,12 @@ RPG.module('GfxEventManager', function() {
         dom.avatars.selected = action.dataset.name;
       }
     });
-    dom.spectatorBtn.on('click', function() {
-      isSpectatorMode = true;
-      dom.board.classList.remove('blur');
-      dom.quitBtn.classList.remove('hidden');
-      dom.menuContainer.classList.add('move-top');
-    });
+    // dom.spectatorBtn.on('click', function() {
+    //   isSpectatorMode = true;
+    //   dom.board.classList.remove('blur');
+    //   dom.quitBtn.classList.remove('hidden');
+    //   dom.menuContainer.classList.add('move-top');
+    // });
     dom.username.on('keyup', function(e) {
       var value = e.target.value;
       if (value === '') {

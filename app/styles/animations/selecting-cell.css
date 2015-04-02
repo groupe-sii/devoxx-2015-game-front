@@ -1,8 +1,5 @@
 .selecting-cell {
   background: url(../../images/sprites/selecting-cell.png) no-repeat left center;
-  display: block;
-  width: 48px;
-  height: 48px;
   background-position: -5px -5px;
   -webkit-animation-name: selecting-cell;
   -webkit-animation-fill-mode: none;

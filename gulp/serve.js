@@ -46,7 +46,7 @@ gulp.task('watch', ['connect'], function() {
     config.FONT_FILES
   ]);
   gulp.watch(watching).on('change', $.livereload.changed);
-  gulp.watch(config.JS_FILES, ['jshint']);
+  // gulp.watch(config.JS_FILES, ['jshint']);
   gulp.watch(config.CSS_FILES, ['styles']);
   gulp.watch('bower.json', ['wiredep']);
 });

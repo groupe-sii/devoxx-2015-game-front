@@ -10,7 +10,7 @@ RPG.config({
     transport: false
   },
   audio: {
-    background: false,
+    background: true,
     fx: false
   },
   server: {
