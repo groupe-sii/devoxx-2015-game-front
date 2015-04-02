@@ -1,4 +1,4 @@
-::-webkit-input-placeholder {
+input::-webkit-input-placeholder {
   color: white;
 }
 
@@ -117,17 +117,18 @@ hr.soften {
 
 .menu .jumbotron {
   color: rgb(255, 255, 255);
-  background: url(../images/wood.jpg);
-  background-size: contain;
+  background: url(../images/wood.jpg) 0 0/contain;
   text-align: center;
   position: absolute;
   top: 30%;
   width: 100%;
   left: 0;
-  box-shadow: 0px 0 100px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
   border-radius: 0;
-  transition: all 0.4s ease-in;
+  transition: all .4s ease-in;
+  padding-bottom: 120px;
   text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  padding-top: 120px;
 }
 
 .menu input {
@@ -167,6 +168,17 @@ hr.soften {
 
 label[for="debug"] {
   float: right;
+}
+
+.btn-start {
+  background: url(../images/button_start_0001.png) no-repeat center center;
+  background-size: contain;
+  width: 200px;
+  height: 90px;
+  border: 0 none;
+  line-height: 62px;
+  margin-top: -30px;
+  color: rgb(255, 255, 255);
 }
 
 @media screen and (min-width: 768px) {
