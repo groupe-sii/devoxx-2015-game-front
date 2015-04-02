@@ -22,7 +22,7 @@ RPG.module('AudioManager', function() {
   topics[RPG.config.topics.SUB_ME_JOINED_GAME] = ['fx-015', false, 1];
   topics[RPG.config.topics.SUB_PLAYER_HIT] = [['fx-010','fx-011', 'fx-012', 'fx-013'], false, 1];
   topics[RPG.config.topics.SUB_PLAYER_DIED] = ['fx-001', false, 1];
-  topics[RPG.config.topics.SUB_PLAYER_HEALED] = ['fx-008', false];
+  // topics[RPG.config.topics.SUB_PLAYER_HEALED] = ['fx-008', false];
   topics[RPG.config.topics.PUB_GAME_ACTION] = [['fx-010','fx-011', 'fx-012', 'fx-013'], false, 1];
 
   function AudioManager(PubSub){
@@ -63,17 +63,13 @@ RPG.module('AudioManager', function() {
   AudioManager.prototype.subscribeToTopics = function(){
   	var playSoundOnTopic = function(topic) {
       var token;
-      var fx = arguments[1];
-      if(fx && fx instanceof Array){
-        arguments[1] = fx[ (Math.random() * fx.length-1) | 0 ];
-      }
 
       // if(playing[fx]){
 
         this.playSound.apply(this, topics[topic]);
         token = [].slice.call(arguments).pop();
         topics[topic].push(token);
-        playing[fx] = true;
+        // playing[fx] = true;
         
       // }
 
@@ -131,6 +127,13 @@ RPG.module('AudioManager', function() {
     this.toggle('fx');
   };
   AudioManager.prototype.playSound = function(fx, loop, gain) {
+
+    if(fx && fx instanceof Array){
+      fx = fx[ (Math.random() * fx.length-1) | 0 ];
+    }
+    
+    console.log('playing ', fx);
+
     var buffer = fxBuffer[fx];
     if (buffer) {
       var source = fxSource[fx] || context.createBufferSource();
