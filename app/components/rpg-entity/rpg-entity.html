@@ -68,6 +68,10 @@ Example:
     			this.avatar_is_uri = true;
     			this.avatar_content = 'data:image/png;base64,'+newValue.content;
     		}
+            else if (newValue['@c'] && newValue['@c'].indexOf('UriImage') !== -1) {
+                this.avatar_is_uri = true;
+                this.avatar_content = newValue.uri;
+            }
     		entity.avatar = this.avatar_content;
     	},
     	lifeChanged: function(oldValue, newValue){
