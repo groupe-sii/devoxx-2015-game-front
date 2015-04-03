@@ -1,7 +1,3 @@
-input::-webkit-input-placeholder {
-  color: white;
-}
-
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -21,6 +17,7 @@ body {
 
 h1, h2, h3, h4, a.btn {
   font-family: 'Press Start 2P';
+  color: rgb(245, 245, 220);
 }
 
 hr.soften {
@@ -120,7 +117,7 @@ hr.soften {
   background: url(../images/wood.jpg) 0 0/contain;
   text-align: center;
   position: absolute;
-  top: 30%;
+  top: 310px;
   width: 100%;
   left: 0;
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
@@ -140,6 +137,8 @@ hr.soften {
   display: inline-block;
   background: rgba(255, 255, 255, 0.2);
   color: rgb(255, 255, 255);
+  border-color: rgb(102, 75, 57);
+  border-width: 5px;
 }
 
 .menu .avatar {
@@ -179,6 +178,10 @@ label[for="debug"] {
   line-height: 62px;
   margin-top: -30px;
   color: rgb(255, 255, 255);
+}
+
+::-webkit-input-placeholder { 
+  color: rgba(255, 255, 255, 0.7) !important; 
 }
 
 @media screen and (min-width: 768px) {
