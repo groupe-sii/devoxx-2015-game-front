@@ -54,11 +54,15 @@ gulp.config = {
 
 require('require-dir')('./gulp');
 
-gulp.task('default', ['clean'], function(cb) {
+gulp.task('build', ['clean'], function(cb) {
   return $.runSequence(
     ['copy', 'styles', 'animation-styles'], ['plato', 'images', 'fonts', 'html'],
     'vulcanize',
     'update-server-url',
     'war',
     cb);
+});
+
+gulp.task('default', function(){
+  gulp.start('build');
 });
