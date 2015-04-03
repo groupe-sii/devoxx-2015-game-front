@@ -58,6 +58,7 @@ gulp.task('default', ['clean'], function(cb) {
   return $.runSequence(
     ['copy', 'styles', 'animation-styles'], ['plato', 'images', 'fonts', 'html'],
     'vulcanize',
+    'update-server-url',
     'war',
     cb);
 });

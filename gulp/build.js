@@ -12,6 +12,8 @@ var gulp = require('gulp'),
   config = gulp.config,
   $ = require('gulp-load-plugins')();
 
+var SERVER_HOST = process.env.SERVER_HOST;
+
 gulp.task('html', function() {
   var assets = $.useref.assets({
     searchPath: ['.tmp', 'app', 'dist']
@@ -86,6 +88,21 @@ gulp.task('vulcanize', function() {
     .pipe($.size({
       title: 'vulcanize'
     }));
+});
+
+gulp.task('update-server-url', function(callback) {
+
+  if(SERVER_HOST){
+    return gulp.src('dist/scripts/main.js')
+      .pipe($.replace(/(http:\/\/[a-z\/]+[:0-9]+)/gm, SERVER_HOST))
+      .pipe(gulp.dest('dist/scripts/'))
+      .on('end', function(){
+        console.log('Configuration of remote server done: ', SERVER_HOST);
+      })
+  }
+
+  callback();
+
 });
 
 gulp.task('clean', require('del').bind(null, ['.tmp', 'deploy', 'dist']));
