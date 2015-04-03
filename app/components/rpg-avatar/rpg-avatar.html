@@ -36,7 +36,7 @@ Example:
 			avatar: ''
 		},
 		domReady: function(){
-			this.isUri = this.avatar && this.avatar.startsWith('data:');
+			this.isUri = this.avatar && (this.avatar.startsWith('data:') || this.avatar.startsWith('http://'));
 		}
 	});
 	</script>
