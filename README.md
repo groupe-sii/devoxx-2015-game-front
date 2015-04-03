@@ -1,10 +1,8 @@
 # devoxx-2015-game-front
 Game development challenge for devoxx 2015
 
+![Alt text](screenshots/0.png?raw=true "Devoxx ♥ 2015")
 ![Alt text](screenshots/1.png?raw=true "Devoxx ♥ 2015")
-![Alt text](screenshots/2.png?raw=true "Devoxx ♥ 2015")
-![Alt text](screenshots/3.png?raw=true "Devoxx ♥ 2015")
-![Alt text](screenshots/4.png?raw=true "Devoxx ♥ 2015")
 
 # Contribute
 
