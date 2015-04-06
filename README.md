@@ -47,7 +47,10 @@ If you need to build your code on your machine, use this command:
 ## Read the socket server API
 
 The Socket server API documentation is in the documention folder. It is based on Swagger (http://swagger.io/). 
-To access it, please refere to this repo (https://github.com/groupe-sii/devoxx-2015-game-doc)
+To run it locally, please refere to this repo (https://github.com/groupe-sii/devoxx-2015-game-doc).
+
+You can also [browse the API](http://game.api.devoxx.sii.fr/)
+
 
 # Troubleshooting
 ## Error: Cannot find module 'xxx'
