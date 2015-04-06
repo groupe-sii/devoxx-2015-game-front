@@ -56,7 +56,7 @@ You can also [browse the API](http://game.api.devoxx.sii.fr/)
 
 ## Ask access
 
-Before you can push your changes, you need to ask for write access to the repository. Please contact Aurélien Baudet on the SII stand.
+Before you can push your changes, you need to ask for write access to the repository. First, you need to create a Github account. Then, you can contact Aurélien Baudet on the SII stand to send you an invitation.
 
 ## Pull and push
 
