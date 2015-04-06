@@ -52,6 +52,34 @@ To run it locally, please refere to this repo (https://github.com/groupe-sii/dev
 You can also [browse the API](http://game.api.devoxx.sii.fr/)
 
 
+# Push your extensions
+
+## Ask access
+
+Before you can push your changes, you need to ask for write access to the repository. Please contact Aurélien Baudet on the SII stand.
+
+## Pull and push
+
+Once you have developed your extension and you want to view it online, you need to push your changes to the remote git. But before doing this, ensure that you have the latest sources:
+```
+git pull
+```
+
+The merge should be done automatically. If you have conflicts, you can follow these guides to manually merge:
+- [Command line merge](https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/)
+- [Using git mergetool](http://www.gitguys.com/topics/merging-with-a-gui/)
+
+ 
+Now you can push to remote git server:
+```
+git push origin master
+```
+
+Our Jenkins will automatically build your extensions and deploy them on the server. You will soon see your extensions in action.
+
+/!\ Please, this game has been done for making devoxx even funnier so do not break code of other participants
+
+
 # Troubleshooting
 ## Error: Cannot find module 'xxx'
 You need to install the xxx module manually:
