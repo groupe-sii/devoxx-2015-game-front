@@ -16,7 +16,7 @@ Example:
   <template>
 	  <link rel="stylesheet" href="rpg-entity.css">
 	  <div class="entity-template" id="entity-template">
-	  	<span class="rpg-life" hidden?="{{!life.current}}"><i style="width:{{life.current/10}}%;"></i></span>
+	  	<span class="rpg-life" hidden?="{{!life.current}}"><i style="width:{{life.current/life.max*100}}%;"></i></span>
 	  	<span class="rpg-name" hidden?="{{!life.current}}">{{name}}</span>
 	  	
 	  	<rpg-animation-layers id="animation-layers" host="{{host}}"></rpg-animation-layers>
