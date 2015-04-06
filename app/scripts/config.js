@@ -14,7 +14,7 @@ RPG.config({
     fx: false
   },
   server: {
-    host: 'http://localhost:8080'
+    host: 'http://localhost:8080/'
   },
   socket: {
     url: 'http://localhost:8080/game'
@@ -55,7 +55,9 @@ RPG.config({
 
     'SUB_ME_GAME_SELECTED': '/user/topic/game/selected',
     'SUB_ME_GAME_CREATED': '/user/topic/game/created',
-    'SUB_ACTION_IMAGE_MOVED': '/topic/game/{gameId}/action/image/moved',
+    'SUB_ACTION_IMAGE_ADDED': '/topic/game/{gameId}/image/added',
+    'SUB_ACTION_IMAGE_MOVED': '/topic/game/{gameId}/image/moved',
+    'SUB_ACTION_IMAGE_REMOVED': '/topic/game/{gameId}/image/removed',
     'SUB_ERROR_GLOBAL': '/topic/game/message/error',
     'SUB_MESSAGE_GLOBAL': '/topic/game/message',
     'SUB_ME_ERROR_LOCAL': '/user/queue/errors',

@@ -141,6 +141,15 @@ RPG.module('GfxEventManager', function() {
       dom.board.classList.add('blur');
       dom.selectPlayer(null);
     });
+    this.s(RPG.config.topics.SUB_ACTION_IMAGE_ADDED, function(topic, data) {
+      dom.addImage(data.image, data.cell);
+    });
+    this.s(RPG.config.topics.SUB_ACTION_IMAGE_MOVED, function(topic, data) {
+      dom.moveImage(data.image, data.start, data.end);
+    });
+    this.s(RPG.config.topics.SUB_ACTION_IMAGE_REMOVED, function(topic, data) {
+      dom.removeImage(data.image, data.cell);
+    });
     this.s('/transport/connecting', function() {
       dom.showMessage('Connecting to server...');
     });

@@ -232,6 +232,34 @@ RPG.module('GfxDom', function() {
     document.querySelector('body').appendChild(styleContainer);
   };
 
+  GfxDom.prototype.addImage = function(image, cell) {
+    var img = document.createElement('img');
+    var src = image.uri || ('data:'+image.mimetype+';base64,'+image.content);
+    // this is needed to reset gif animation
+    src += '?'+new Date().getTime();
+    img.setAttribute('src', src);
+    img.setAttribute('id', image.id+cell.x+cell.y);
+    img.classList.add("game-image");
+    var boardCell = this.findCell(cell);
+    img.style.position = 'absolute';
+    img.style.top = (boardCell.offsetTop + 0) + 'px';
+    img.style.left = (boardCell.offsetLeft + 40) + 'px';
+    this.boardContainer.appendChild(img);
+  };
+
+  GfxDom.prototype.moveImage = function(image, start, end) {
+    var img = this.boardContainer.querySelector('#'+image.id+start.x+start.y);
+    var endCell = this.findCell(end);
+    // move will be done by css animation
+    img.style.top = (endCell.offsetTop + 0) + 'px';
+    img.style.left = (endCell.offsetLeft + 40) + 'px';
+  };
+
+  GfxDom.prototype.removeImage = function(image, cell) {
+    var img = this.boardContainer.querySelector('#'+image.id+cell.x+cell.y);
+    this.boardContainer.removeChild(img);
+  };
+
   return GfxDom;
 
 });
