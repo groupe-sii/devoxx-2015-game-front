@@ -49,7 +49,7 @@ RPG.extension(RPG.extensions.ACTION, { /*metadata*/ }, function() {
 });
 ```
 
-####Reaptable actions
+####Repeatable actions
 ```javascript
 RPG.extension(RPG.extensions.ACTION, {
   ...
