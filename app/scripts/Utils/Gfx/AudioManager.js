@@ -106,9 +106,21 @@ RPG.module('AudioManager', function() {
     }
     else {
       for(var topic in topics){
-        if(topics[topic][0] && topics[topic][0].startsWith(soundProfile)){
-          this.pubsub.unsubscribe(topics[topic].slice(-1));
-          this.stopSound(topics[topic][0]);
+        if(topics[topic][0])
+          if (typeof topics[topic][0] === 'string' && topics[topic][0].startsWith(soundProfile)){
+            this.pubsub.unsubscribe(topics[topic].slice(-1));
+            this.stopSound(topics[topic][0]);
+          }
+          else if(topics[topic][0] instanceof Array){
+            
+            for (var i = 0; i < topics[topic][0].length; i++) {
+
+              if(typeof topics[topic][0][i] === 'string' && topics[topic][0][i].startsWith(soundProfile)){
+              this.pubsub.unsubscribe(topics[topic].slice(-1));
+              this.stopSound(topics[topic][0][i]);
+
+            };
+          }
         }
       }      
     }
@@ -135,7 +147,9 @@ RPG.module('AudioManager', function() {
     var buffer = fxBuffer[fx];
     if (buffer) {
       var source = fxSource[fx] || context.createBufferSource();
-      source.buffer = buffer;
+      if (!source.buffer){
+        source.buffer = buffer;
+      }
       source.loop = loop || false;
       var volumeNode = context.createGain();
       volumeNode.gain.value = gain || 0.5;

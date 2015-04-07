@@ -6,16 +6,19 @@
  * @author Wassim Chegham
  */
 RPG.run(function() {
+
   'use strict';
 
-  var fx = RPG.Factory.fx();
-  fx.initialize();
+  // var fx = RPG.Factory.fx();
+  // fx.initialize();
   
   var socket = RPG.Factory.transport();
-  socket.initialize();
+  socket.initialize(function(){
 
-  var animationManager = RPG.Factory.animationManager();
-  animationManager.initialize();
+	  var animationManager = RPG.Factory.animationManager();
+	  animationManager.initialize();
+
+  });
 
   var gfx = RPG.Factory.gfx();
   gfx.initialize();

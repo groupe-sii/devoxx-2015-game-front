@@ -23,9 +23,6 @@
   <link rel="import" href="components/components.html">
 </head>
 <body>
-  <!--[if lt IE 10]>
-    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
   <div id="modal" class="hidden"></div>
   <p id="message" class="alert alert-danger hidden" role="alert"></p>
   <div class="container" id="container">
@@ -35,17 +32,21 @@
         <button class="btn btn-lg" role="button" data-action="fx" href="#"></button>
         <button class="btn btn-lg" role="button" data-action="audio" href="#"></button>
       </div>
-      <h3 class="text-muted">Devoxx 2015</h3>
+      <h3 class="text-muted">Dev<b class="text-danger iso">♥</b>xx 2015</h3>
     </div>
 
     <div id="actions-list"></div>
+    
     <div class="jumbotron blur">
       <div class="rpg-player-info">
         <rpg-player-info id="rpg-selected-player"></rpg-player-info>
         <rpg-player-info id="rpg-selected-enemy"></rpg-player-info>
       </div>
-      <div id="rpg-grid" class="rpg-grid"></div>
+      <div class="grid-container">
+        <div id="rpg-grid" class="rpg-grid"></div>
+      </div>
     </div>
+
     <div class="menu">
       <div class="jumbotron">
         <div id="avatar-container">
@@ -93,7 +94,7 @@
     </div>
 
     <div class="footer">
-      <p>Devoxx <b class="text-danger">♥</b> 2015 (by <a href="http://www.groupe-sii.com/en">SII Group - The partner in technology</a>)</p>
+      <p>Devoxx <b class="text-danger iso">♥</b> 2015 (by <a href="http://www.groupe-sii.com/en">SII Group - The partner in technology</a>)</p>
     </div>
   </div>
   <!-- build:js scripts/vendor.js -->

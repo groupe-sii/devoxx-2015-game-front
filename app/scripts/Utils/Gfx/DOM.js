@@ -249,15 +249,19 @@ RPG.module('GfxDom', function() {
 
   GfxDom.prototype.moveImage = function(image, start, end) {
     var img = this.boardContainer.querySelector('#'+image.id+start.x+start.y);
-    var endCell = this.findCell(end);
-    // move will be done by css animation
-    img.style.top = (endCell.offsetTop + 0) + 'px';
-    img.style.left = (endCell.offsetLeft + 40) + 'px';
+    if(img){
+      var endCell = this.findCell(end);
+      // move will be done by css animation
+      img.style.top = (endCell.offsetTop + 0) + 'px';
+      img.style.left = (endCell.offsetLeft + 40) + 'px';
+    }
   };
 
   GfxDom.prototype.removeImage = function(image, cell) {
     var img = this.boardContainer.querySelector('#'+image.id+cell.x+cell.y);
-    this.boardContainer.removeChild(img);
+    if(img){
+      this.boardContainer.removeChild(img);
+    }
   };
 
   return GfxDom;

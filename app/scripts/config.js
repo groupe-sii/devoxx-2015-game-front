@@ -10,7 +10,7 @@ RPG.config({
     transport: false
   },
   audio: {
-    background: true,
+    background: false,
     fx: false
   },
   server: {
@@ -25,6 +25,9 @@ RPG.config({
   /**
    * Topics list mapping
    * @type {Object}
+   *
+   * Note: topics keys startings with "_" will not be subscribed automagically!
+   * You need to subscribe to them manually.
    */
   topics: {
     'PUB_GAME_CREATE': '/topic/game/create',
@@ -62,7 +65,7 @@ RPG.config({
     'SUB_MESSAGE_GLOBAL': '/topic/game/message',
     'SUB_ME_ERROR_LOCAL': '/user/queue/errors',
 
-    'SUB_ANIMATION_ALL': '/user/topic/game/animation/all',
+    '_SUB_ANIMATION_ALL': '/user/topic/game/animation/all',
     'PUB_ANIMATION_ALL': '/topic/game/animation/all',
 
     'GFX_ANIMATION_REGISTER': '/gfx/animation/register'

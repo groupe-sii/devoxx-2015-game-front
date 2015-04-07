@@ -111,16 +111,7 @@ Example:
 	      }
   		}
   	},
-    domReady: function() {
-
-      // Polymer doesn't replace variables in link tags => need to load it manually
-      // var link = document.createElement("link");
-      // link.setAttribute("rel", "stylesheet");
-      // link.setAttribute("type", "text/css");
-      // link.setAttribute("href", this.host+'/animations.css');
-      // this.shadowRoot.appendChild(link);
-      // this.element.convertSheetsToStyles(this.shadowRoot);
-      
+    domReady: function() {      
       this.isReady = true;
       if(this.playAnimationOnDomReady.length > 0){
         this.playAnimationOnDomReady.forEach(function(animation){

@@ -128,24 +128,17 @@ Example:
     	created: function(){
 
     		this.debug = false;
-    		this.avatar_is_uri = false;
-    		try {
-					entity = RPG.Factory[this.type]();
-    		}
-    		catch(e){
-    			console.error('RpgEntity::TypeError', 'The entity type "'+this.type+'" is not valid. Here is the stack trace...');
-    		}
+        this.avatar_is_uri = false;
+        try {
+          entity = RPG.Factory[this.type]();
+        }
+        catch(e){
+          console.error('RpgEntity::TypeError', 'The entity type "'+this.type+'" is not valid. Here is the stack trace...');
+        }
         
-    	},
-    	ready: function(){
-
-    		this.$['animation-layers'].add('explosion');
-        this.$['animation-layers'].add('healing');
-
-        RPG.Factory.pubsub().subscribe(RPG.config.topics.GFX_ANIMATION_REGISTER, function(data){
-          console.info('registering animation', data);
-    		  this.addAnimation(data.name);
-        }.bind(this));
+      },
+      ready: function(){ 
+        this.addAnimation(['explosion', 'healing']);
     	}
     });
   </script>

@@ -13,24 +13,34 @@ RPG.module('AnimationManager', function() {
 
   var xhr = new XMLHttpRequest();
   var animationsList = [];
+  (function(){
+    [].slice.call(document.querySelectorAll('.iso')).forEach(function(el){
+      el.addEventListener('click', function(e){
+        document.body.classList.toggle('isometric');
+      });
+    });
+  }());
 
   function bindTopics(content) {
-    this.pubsub.subscribe(RPG.config.topics.SUB_ANIMATION_ALL, function(topic, data){
+    RPG.Factory.transport().handleAnimationTopics(function(topic, data){
+
       data.forEach(function(animationObject){
-        animationsList.push({
+        var anim = {
           info: animationObject,
           content: content
-        });
-        // this.buildKeyFrames(animationObject);
+        };
+
+        this.pubsub.publish(RPG.config.topics.GFX_ANIMATION_REGISTER, anim);
+        animationsList.push(anim);
       }.bind(this));
+
     }.bind(this));
   }
 
   function loadAnimation(styleSheet, callback) {
-    xhr.open('GET', styleSheet, true);
+    xhr.open('GET', styleSheet+'?_='+(+new Date()), true);
     xhr.onload = function(response) {
       this.animationsContent = response.target.response;
-      this.pubsub.publish(RPG.config.topics.GFX_ANIMATION_REGISTER, this.animationsContent);
       callback.call(this, this.animationsContent);
     }.bind(this);
     xhr.send();

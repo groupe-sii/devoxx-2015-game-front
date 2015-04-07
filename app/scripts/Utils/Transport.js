@@ -25,7 +25,10 @@ RPG.module('Transport', function() {
   function onGameSelected(topic, data) {
     RPG.config.game = data;
 
+
     if(reconnections===0){
+  
+      createGameSession.call(this, data);
 
       // auto subscriptions
       Object.keys(RPG.config.topics).forEach(function(topic) {
@@ -37,15 +40,26 @@ RPG.module('Transport', function() {
           this.pubsub.subscribe(serverTopic, this.send.bind(this));
         }
       }.bind(this));
-      handleServerErrors.call(this);
-      handleAnimationTopics.call(this);
+
+      handleServerErrorsTopics.call(this);
 
     }
   }
 
+  function createGameSession(data) {
+    data.board.occupiedCells.forEach(function(cellObject){
+      cellObject.players.forEach(function(playerObject){
+        this.pubsub.publish(RPG.config.topics.SUB_PLAYER_CREATED, {
+          player: playerObject,
+          newCell: cellObject.cell
+        });
+      }.bind(this));
+    }.bind(this));
+  }
+
   function onConnect() {
     clearInterval(connectTimer);
-    this.pubsub.publish('/transport/connected');    
+    this.pubsub.publish('/transport/connected');
     this.subscribe(RPG.config.topics.SUB_ME_GAME_SELECTED, onGameSelected.bind(this));
     this.send(RPG.config.topics.PUB_GAME_SELECT);
   }
@@ -64,7 +78,7 @@ RPG.module('Transport', function() {
     return topic;
   }
 
-  function handleServerErrors() {
+  function handleServerErrorsTopics() {
     this.subscribe(RPG.config.topics.SUB_ERROR_GLOBAL, function(topic, data) {
       console.error('Transport::SUB_ERROR_GLOBAL', JSON.stringify(data));
     });
@@ -76,18 +90,18 @@ RPG.module('Transport', function() {
     });
   }
 
-  function handleAnimationTopics(){
-    this.subscribe(RPG.config.topics.SUB_ANIMATION_ALL);
-    this.send(RPG.config.topics.PUB_ANIMATION_ALL);
-  }
-
   function Transport(PubSub) {
     this.pubsub = PubSub;
   }
-  Transport.prototype.initialize = function() {
+  Transport.prototype.initialize = function(callback) {
     this.socket = new SockJS(RPG.config.socket.url);
     this.client = Stomp.over(this.socket);
-    this.client.connect({}, onConnect.bind(this), onClose.bind(this));
+    this.client.connect({}, function(){
+
+      onConnect.call(this);
+      callback.call(this);
+
+    }.bind(this), onClose.bind(this));
     
     if(RPG.config.debug.transport === false){
       this.client.debug =  null;
@@ -96,7 +110,6 @@ RPG.module('Transport', function() {
   Transport.prototype.subscribe = function(topic, callback) {
     this.client.subscribe(topic, function(data) {
 
-      
       try{
         data = JSON.parse(data.body || data);
       }
@@ -106,6 +119,7 @@ RPG.module('Transport', function() {
 
       topic = uncomputeTopic(topic);
       this.pubsub.publish(topic, data);
+
       if (callback && callback.call) {
         callback(topic, data);
       }
@@ -115,6 +129,10 @@ RPG.module('Transport', function() {
   Transport.prototype.send = function(topic, data) {
     topic = computeTopic(topic);
     this.client.send(topic, {}, JSON.stringify(data));
+  };
+  Transport.prototype.handleAnimationTopics = function(callback) {
+    this.subscribe(RPG.config.topics._SUB_ANIMATION_ALL, callback);
+    this.send(RPG.config.topics.PUB_ANIMATION_ALL);
   };
   Transport.prototype.reconnect = function(){
     connectTimer = setTimeout(function(){
